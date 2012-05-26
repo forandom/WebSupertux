@@ -3,7 +3,7 @@
   (version 1)
   (name "Hello World")
   (author "unknown author")
-  (music "theme.mod")
+  (music "theme.ogg")
   (background "arctis2.jpg")
   (particle_system "")
   (bkgd_speed "2")

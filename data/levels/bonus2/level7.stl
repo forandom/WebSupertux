@@ -3,7 +3,7 @@
   (version 1)
   (name "In Flanders Ice Field")
   (author "Kevin")
-  (music "Mortimers_chipdisko.mod")
+  (music "Mortimers_chipdisko.ogg")
   (background "arctis2.jpg")
   (particle_system "")
   (bkgd_speed 50)

@@ -3,7 +3,7 @@
   (version 1)
   (name "Mario's Supposed to Deal With This...")
   (author "Kevin")
-  (music "fortress2.mod")
+  (music "fortress2.ogg")
   (background "ocean.png")
   (particle_system "clouds")
   (bkgd_speed 50)

@@ -3,7 +3,7 @@
   (version 1)
   (name "You have 1 minute")
   (author "Denilson")
-  (music "Mortimers_chipdisko.mod")
+  (music "Mortimers_chipdisko.ogg")
   (background "arctis2.jpg")
   (particle_system "clouds")
   (bkgd_speed 70)

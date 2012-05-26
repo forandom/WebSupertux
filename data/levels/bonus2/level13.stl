@@ -3,7 +3,7 @@
   (version 1)
   (name "snarf")
   (author "Thomas Nilsen")
-  (music "fortress2.mod")
+  (music "fortress2.ogg")
   (background "cave2.jpg")
   (particle_system "")
   (bkgd_speed 50)

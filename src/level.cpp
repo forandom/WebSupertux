@@ -229,7 +229,7 @@ Level::init_defaults()
 {
   name       = "UnNamed";
   author     = "UnNamed";
-  song_title = "Mortimers_chipdisko.mod";
+  song_title = "Mortimers_chipdisko.ogg";
   bkgd_image = "arctis.png";
   width      = 21;
   start_pos_x = 100;

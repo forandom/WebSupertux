@@ -3,7 +3,7 @@
   (version 1)
   (name "A Path Trough The Clouds")
   (author "Tobe Deprez")
-  (music "Mortimers_chipdisko.mod")
+  (music "Mortimers_chipdisko.ogg")
   (background "")
   (particle_system "clouds")
   (bkgd_speed 50)

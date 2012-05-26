@@ -342,7 +342,7 @@ void title(void)
                   music_manager->play_music(menu_song,0);
                   display_text_file("CREDITS", bkg_title, SCROLL_SPEED_CREDITS);
                   music_manager->halt_music();
-                  menu_song = music_manager->load_music(datadir + "/music/theme.mod");
+                  menu_song = music_manager->load_music(datadir + "/music/theme.ogg");
                   music_manager->play_music(menu_song);
                   Menu::set_current(main_menu);
                   break;

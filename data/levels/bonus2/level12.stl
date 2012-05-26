@@ -3,7 +3,7 @@
   (version 1)
   (name "Blind To The World")
   (author "Daniel Alston")
-  (music "Mortimers_chipdisko.mod")
+  (music "Mortimers_chipdisko.ogg")
   (background "arctis2.jpg")
   (particle_system "clouds")
   (bkgd_speed 50)

@@ -24,8 +24,8 @@ EXTRA_DIST = \
   $(wildcard levels/misc/*.stl) \
   $(wildcard levels/world1/*.stl) \
   $(wildcard music/*.ogg) \
-  $(wildcard music/*.mod) \
-  $(wildcard music/*.MOD) \
+  $(wildcard music/*.ogg) \
+  $(wildcard music/*.ogg) \
   $(wildcard sounds/*.wav)
 
 nobase_dist_pkgdata_DATA = $(EXTRA_DIST)

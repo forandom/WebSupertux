@@ -3,7 +3,7 @@
   (version 1)
   (name "23rd Airborne")
   (author "Ingo Ruhnke")
-  (music "Mortimers_chipdisko.mod")
+  (music "Mortimers_chipdisko.ogg")
   (background "arctis2.jpg")
   (particle_system "")
   (bkgd_speed "2")

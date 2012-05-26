@@ -3,7 +3,7 @@
   (version 1)
   (name "Nolok's Party Pit")
   (author "Penguinmaster")
-  (music "fortress.mod")
+  (music "fortress.ogg")
   (background "")
   (particle_system "snow")
   (bkgd_speed 50)

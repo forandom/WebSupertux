@@ -3,7 +3,7 @@
   (version 1)
   (name "fjerd")
   (author "Thomas")
-  (music "Mortimers_chipdisko.mod")
+  (music "Mortimers_chipdisko.ogg")
   (background "arctis2.jpg")
   (particle_system "clouds")
   (bkgd_speed 50)

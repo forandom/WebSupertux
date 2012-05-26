@@ -3,7 +3,7 @@
   (version 1)
   (name "Firestorm")
   (author "Penguinmaster")
-  (music "Mortimers_chipdisko.mod")
+  (music "Mortimers_chipdisko.ogg")
   (background "ocean.png")
   (particle_system "")
   (bkgd_speed 50)

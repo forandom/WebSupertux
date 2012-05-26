@@ -33,7 +33,7 @@ look at a quotation:
 ; Background image; if none is specified, the color below will be used
   (background "")
 ; Music file
-  (music "Mortimers_chipdisko.mod")
+  (music "Mortimers_chipdisko.ogg")
 ; Colors, as you can see you can have different colors in the top
 ; and in the bottom, thus creating a gradient
   (bkgd_red_top    0)
