@@ -80,11 +80,16 @@ class GameSession
 
   Timer time_left;
 
+  //pxx
+  int fps_cnt;
+
   GameSession(const std::string& subset, int levelnb, int mode);
   ~GameSession();
 
   /** Enter the busy loop */
   ExitStatus run();
+
+  void mainloop(); 
 
   void draw();
   void action(double frame_ratio);

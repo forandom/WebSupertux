@@ -26,6 +26,7 @@ unsigned int st_pause_ticks, st_pause_count;
 
 unsigned int st_get_ticks(void)
 {
+//  printf("pxx: %s, %s, %d\n", __FILE__, __FUNCTION__, __LINE__);
   if(st_pause_count != 0)
     return /*SDL_GetTicks()*/ - st_pause_ticks /*- SDL_GetTicks()*/ + st_pause_count;
   else
@@ -71,20 +72,30 @@ Timer::init(bool st_ticks)
 {
   period    = 0;
   time      = 0;
-  get_ticks = st_ticks ? st_get_ticks : SDL_GetTicks;
+  //get_ticks = st_ticks ? st_get_ticks : SDL_GetTicks;
+  use_st_ticks = st_ticks;
 }
 
 void
 Timer::start(unsigned int period_)
 {
-  time   = get_ticks();
+//  printf("pxx: %s, %s, %d\n", __FILE__, __FUNCTION__, __LINE__);
+  //pxx
+  //time   = get_ticks();
+  if (use_st_ticks)
+    time = st_get_ticks();
+  else
+    time = SDL_GetTicks();
+//  printf("pxx: %s, %s, %d\n", __FILE__, __FUNCTION__, __LINE__);
   period = period_;
 }
 
 void
 Timer::stop()
 {
-  if(get_ticks == st_get_ticks)
+  //pxx
+  //if(get_ticks == st_get_ticks)
+  if(use_st_ticks)
     init(true);
   else
     init(false);
@@ -93,10 +104,20 @@ Timer::stop()
 int
 Timer::check()
 {
-  if((time != 0) && (time + period > get_ticks()))
+//  printf("pxx: %s, %s, %d\n", __FILE__, __FUNCTION__, __LINE__);
+  unsigned int tmp;
+  if (use_st_ticks)
+    tmp = st_get_ticks();
+  else
+    tmp = SDL_GetTicks();
+  if((time != 0) && (time + period > tmp))
+{
+//  printf("pxx: %s, %s, %d\n", __FILE__, __FUNCTION__, __LINE__);
     return true;
+}
   else
     {
+//  printf("pxx: %s, %s, %d\n", __FILE__, __FUNCTION__, __LINE__);
       time = 0;
       return false;
     }
@@ -114,54 +135,60 @@ Timer::started()
 int
 Timer::get_left()
 {
-  return (period - (get_ticks() - time));
+  if(use_st_ticks)
+    return (period - (st_get_ticks() - time));
+  else
+    return (period - (SDL_GetTicks() - time));
 }
 
 int
 Timer::get_gone()
 {
-  return (get_ticks() - time);
+  if(use_st_ticks)
+    return (st_get_ticks() - time);
+  else
+    return (SDL_GetTicks() - time);
 }
 
-void
-Timer::fwrite(FILE* fi)
-{
-  unsigned int diff_ticks;
-  int tick_mode;
-  if(time != 0)
-    diff_ticks = get_ticks() - time;
-  else
-    diff_ticks = 0;
-
-  ::fwrite(&period,sizeof(unsigned int),1,fi);
-  ::fwrite(&diff_ticks,sizeof(unsigned int),1,fi);
-  if(get_ticks == st_get_ticks)
-      tick_mode = true;
-  else
-      tick_mode = false;
-  ::fwrite(&tick_mode,sizeof(unsigned int),1,fi);
-}
-
-void
-Timer::fread(FILE* fi)
-{
-  unsigned int diff_ticks;
-  int tick_mode;
-
-  ::fread(&period,sizeof(unsigned int),1,fi);
-  ::fread(&diff_ticks,sizeof(unsigned int),1,fi);
-  ::fread(&tick_mode,sizeof(unsigned int),1,fi);
-
-  if (tick_mode)
-    get_ticks = st_get_ticks;
-  else
-    get_ticks = SDL_GetTicks;
-
-  if (diff_ticks != 0)
-    time = get_ticks() - diff_ticks;
-  else
-    time = 0;
-
-}
+//void
+//Timer::fwrite(FILE* fi)
+//{
+//  unsigned int diff_ticks;
+//  int tick_mode;
+//  if(time != 0)
+//    diff_ticks = get_ticks() - time;
+//  else
+//    diff_ticks = 0;
+//
+//  ::fwrite(&period,sizeof(unsigned int),1,fi);
+//  ::fwrite(&diff_ticks,sizeof(unsigned int),1,fi);
+//  if(get_ticks == st_get_ticks)
+//      tick_mode = true;
+//  else
+//      tick_mode = false;
+//  ::fwrite(&tick_mode,sizeof(unsigned int),1,fi);
+//}
+//
+//void
+//Timer::fread(FILE* fi)
+//{
+//  unsigned int diff_ticks;
+//  int tick_mode;
+//
+//  ::fread(&period,sizeof(unsigned int),1,fi);
+//  ::fread(&diff_ticks,sizeof(unsigned int),1,fi);
+//  ::fread(&tick_mode,sizeof(unsigned int),1,fi);
+//
+//  if (tick_mode)
+//    get_ticks = st_get_ticks;
+//  else
+//    get_ticks = SDL_GetTicks;
+//
+//  if (diff_ticks != 0)
+//    time = get_ticks() - diff_ticks;
+//  else
+//    time = 0;
+//
+//}
 
 /* EOF */

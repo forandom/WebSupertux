@@ -667,7 +667,12 @@ Level::load_gfx()
       char fname[1024];
       snprintf(fname, 1024, "%s/background/%s", st_dir, bkgd_image.c_str());
       if(!faccessible(fname))
+{
+//printf("pxx: %s, %s, %d, datadir: %s\n", __FILE__, __FUNCTION__, __LINE__, datadir.c_str());
+  //printf("pxx: datadir: %s\n", datadir.c_str());
         snprintf(fname, 1024, "%s/images/background/%s", datadir.c_str(), bkgd_image.c_str());
+}
+//printf("pxx: %s, %s, %d, fname=%s\n", __FILE__, __FUNCTION__, __LINE__, fname);
       delete img_bkgd;
       img_bkgd = new Surface(fname, IGNORE_ALPHA);
     }

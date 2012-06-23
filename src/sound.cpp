@@ -67,13 +67,14 @@ int open_audio (int frequency, Uint16 format, int channels, int chunksize)
   if (Mix_AllocateChannels(8)  != 8)
     return -2;
   
-  /* reserve some channels and register panning effects */
-  if (Mix_ReserveChannels(SOUND_RESERVED_CHANNELS) != SOUND_RESERVED_CHANNELS)
-    return -3;
-
-  /* prepare the spanning effects */
-  Mix_SetPanning( SOUND_LEFT_SPEAKER, 230, 24 );
-  Mix_SetPanning( SOUND_RIGHT_SPEAKER, 24, 230 );
+//  pxx
+//  /* reserve some channels and register panning effects */
+//  if (Mix_ReserveChannels(SOUND_RESERVED_CHANNELS) != SOUND_RESERVED_CHANNELS)
+//    return -3;
+//
+//  /* prepare the spanning effects */
+//  Mix_SetPanning( SOUND_LEFT_SPEAKER, 230, 24 );
+//  Mix_SetPanning( SOUND_RIGHT_SPEAKER, 24, 230 );
   return 0;
 }
 
@@ -83,8 +84,9 @@ int open_audio (int frequency, Uint16 format, int channels, int chunksize)
 void close_audio( void )
 {
   if (audio_device) {
-    Mix_UnregisterAllEffects( SOUND_LEFT_SPEAKER );
-    Mix_UnregisterAllEffects( SOUND_RIGHT_SPEAKER );
+    //pxx
+    //Mix_UnregisterAllEffects( SOUND_LEFT_SPEAKER );
+    //Mix_UnregisterAllEffects( SOUND_RIGHT_SPEAKER );
     Mix_CloseAudio();
   }
 }

@@ -21,6 +21,9 @@
 #ifndef SUPERTUX_TIMER_H
 #define SUPERTUX_TIMER_H
 
+//pxx
+#include <stdio.h>
+
 extern unsigned int st_pause_ticks, st_pause_count;
 
 unsigned int st_get_ticks(void);
@@ -34,7 +37,9 @@ class Timer
  public:
   unsigned int period;
   unsigned int time;
-  unsigned int (*get_ticks) (void);  
+  //pxx
+  //unsigned int (*get_ticks) (void);  
+  bool use_st_ticks;
 
  public:
   Timer();
@@ -58,8 +63,8 @@ class Timer
   int get_left();
 
   int  get_gone();
-  void fwrite(FILE* fi);
-  void fread(FILE* fi);
+//  void fwrite(FILE* fi);
+//  void fread(FILE* fi);
 };
 
 #endif /*SUPERTUX_TIMER_H*/

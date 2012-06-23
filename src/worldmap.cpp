@@ -633,7 +633,8 @@ WorldMap::get_input()
 
   if (!Menu::current())
     {
-      Uint8 *keystate = SDL_GetKeyState(NULL);
+      //Uint8 *keystate = SDL_GetKeyState(NULL);
+      Uint8 *keystate = SDL_GetKeyboardState(NULL);
   
       if (keystate[SDLK_LEFT])
         input_direction = D_WEST;

@@ -337,35 +337,38 @@ void st_directory_setup(void)
   sprintf(str, "%s/levels", st_dir);
   mkdir(str, 0755);
 
-  // User has not that a datadir, so we try some magic
-  if (datadir.empty())
-    {
-#ifndef WIN32
-      // Detect datadir
-      char exe_file[PATH_MAX];
-      if (readlink("/proc/self/exe", exe_file, PATH_MAX) < 0)
-        {
-          puts("Couldn't read /proc/self/exe, using default path: " DATA_PREFIX);
-          datadir = DATA_PREFIX;
-        }
-      else
-        {
-          std::string exedir = std::string(dirname(exe_file)) + "/";
-          
-          datadir = exedir + "../data"; // SuperTux run from source dir
-          if (access(datadir.c_str(), F_OK) != 0)
-            {
-              datadir = exedir + "../share/supertux"; // SuperTux run from PATH
-              if (access(datadir.c_str(), F_OK) != 0) 
-                { // If all fails, fall back to compiled path
-                  datadir = DATA_PREFIX; 
-                }
-            }
-        }
-#else
+//pxx
+//  // User has not that a datadir, so we try some magic
+//  if (datadir.empty())
+//    {
+//#ifndef WIN32
+//      // Detect datadir
+//      char exe_file[PATH_MAX];
+//      if (readlink("/proc/self/exe", exe_file, PATH_MAX) < 0)
+//        {
+//          puts("Couldn't read /proc/self/exe, using default path: " DATA_PREFIX);
+//          datadir = DATA_PREFIX;
+//        }
+//      else
+//        {
+//          std::string exedir = std::string(dirname(exe_file)) + "/";
+//          
+//          datadir = exedir + "../data"; // SuperTux run from source dir
+//          if (access(datadir.c_str(), F_OK) != 0)
+//            {
+//              datadir = exedir + "../share/supertux"; // SuperTux run from PATH
+//              if (access(datadir.c_str(), F_OK) != 0) 
+//                { // If all fails, fall back to compiled path
+//                  datadir = DATA_PREFIX; 
+//                }
+//            }
+//        }
+//#else
+//  datadir = DATA_PREFIX;
+//#endif
+//    }
   datadir = DATA_PREFIX;
-#endif
-    }
+//  datadir = "./share/supertux";
   printf("Datadir: %s\n", datadir.c_str());
 }
 
@@ -503,20 +506,25 @@ bool process_load_game_menu()
 
       if (access(slotfile, F_OK) != 0)
         {
-          draw_intro();
+          //draw_intro();
         }
 
       fadeout();
       WorldMapNS::WorldMap worldmap;
       
       //TODO: Define the circumstances under which BonusIsland is chosen
+      //printf("pxx: %s, %s, %d\n", __FILE__, __FUNCTION__, __LINE__);
       worldmap.set_map_file("world1.stwm");
+      //printf("pxx: %s, %s, %d\n", __FILE__, __FUNCTION__, __LINE__);
       worldmap.load_map();
+      //printf("pxx: %s, %s, %d\n", __FILE__, __FUNCTION__, __LINE__);
      
       // Load the game or at least set the savegame_file variable
       worldmap.loadgame(slotfile);
+      //printf("pxx: %s, %s, %d\n", __FILE__, __FUNCTION__, __LINE__);
 
       worldmap.display();
+      //printf("pxx: %s, %s, %d\n", __FILE__, __FUNCTION__, __LINE__);
       
       Menu::set_current(main_menu);
 
@@ -578,14 +586,15 @@ void st_general_setup(void)
 
   /* Set icon image: */
 
-  seticon();
+  //pxx
+  //seticon();
 
   /* Unicode needed for input handling: */
 
   SDL_EnableUNICODE(1);
 
   /* Load global images: */
-
+//  printf("pxx: first file from preload: %s\n", (datadir + "/images/status/letters-black.png").c_str());
   black_text  = new Text(datadir + "/images/status/letters-black.png", TEXT_TEXT, 16,18);
   gold_text   = new Text(datadir + "/images/status/letters-gold.png", TEXT_TEXT, 16,18);
   silver_text = new Text(datadir + "/images/status/letters-silver.png", TEXT_TEXT, 16,18);
@@ -646,15 +655,16 @@ void st_general_free(void)
 
 void st_video_setup(void)
 {
-  /* Init SDL Video: */
-  if (SDL_Init(SDL_INIT_VIDEO) < 0)
-    {
-      fprintf(stderr,
-              "\nError: I could not initialize video!\n"
-              "The Simple DirectMedia error that occured was:\n"
-              "%s\n\n", SDL_GetError());
-      exit(1);
-    }
+//pxx: put the video init into st_audio_setup
+//  /* Init SDL Video: */
+//  if (SDL_Init(SDL_INIT_VIDEO) < 0)
+//    {
+//      fprintf(stderr,
+//	      "\nError: I could not initialize video!\n"
+//	      "The Simple DirectMedia error that occured was:\n"
+//	      "%s\n\n", SDL_GetError());
+//      exit(1);
+//    }
 
   /* Open display: */
   if(use_gl)
@@ -665,7 +675,7 @@ void st_video_setup(void)
   Surface::reload_all();
 
   /* Set window manager stuff: */
-  SDL_WM_SetCaption("SuperTux " VERSION, "SuperTux");
+  //SDL_WM_SetCaption("SuperTux " VERSION, "SuperTux");
 }
 
 void st_video_setup_sdl(void)
@@ -756,63 +766,64 @@ void st_video_setup_gl(void)
 
 void st_joystick_setup(void)
 {
-
+//pxx
+  use_joystick = false;
   /* Init Joystick: */
 
-  use_joystick = true;
-
-  if (SDL_Init(SDL_INIT_JOYSTICK) < 0)
-    {
-      fprintf(stderr, "Warning: I could not initialize joystick!\n"
-              "The Simple DirectMedia error that occured was:\n"
-              "%s\n\n", SDL_GetError());
-
-      use_joystick = false;
-    }
-  else
-    {
-      /* Open joystick: */
-      if (SDL_NumJoysticks() <= 0)
-        {
-          fprintf(stderr, "Warning: No joysticks are available.\n");
-
-          use_joystick = false;
-        }
-      else
-        {
-          js = SDL_JoystickOpen(joystick_num);
-
-          if (js == NULL)
-            {
-              fprintf(stderr, "Warning: Could not open joystick %d.\n"
-                      "The Simple DirectMedia error that occured was:\n"
-                      "%s\n\n", joystick_num, SDL_GetError());
-
-              use_joystick = false;
-            }
-          else
-            {
-              if (SDL_JoystickNumAxes(js) < 2)
-                {
-                  fprintf(stderr,
-                          "Warning: Joystick does not have enough axes!\n");
-
-                  use_joystick = false;
-                }
-              else
-                {
-                  if (SDL_JoystickNumButtons(js) < 2)
-                    {
-                      fprintf(stderr,
-                              "Warning: "
-                              "Joystick does not have enough buttons!\n");
-
-                      use_joystick = false;
-                    }
-                }
-            }
-        }
-    }
+//  use_joystick = true;
+//
+//  if (SDL_Init(SDL_INIT_JOYSTICK) < 0)
+//    {
+//      fprintf(stderr, "Warning: I could not initialize joystick!\n"
+//              "The Simple DirectMedia error that occured was:\n"
+//              "%s\n\n", SDL_GetError());
+//
+//      use_joystick = false;
+//    }
+//  else
+//    {
+//      /* Open joystick: */
+//      if (SDL_NumJoysticks() <= 0)
+//        {
+//          fprintf(stderr, "Warning: No joysticks are available.\n");
+//
+//          use_joystick = false;
+//        }
+//      else
+//        {
+//          js = SDL_JoystickOpen(joystick_num);
+//
+//          if (js == NULL)
+//            {
+//              fprintf(stderr, "Warning: Could not open joystick %d.\n"
+//                      "The Simple DirectMedia error that occured was:\n"
+//                      "%s\n\n", joystick_num, SDL_GetError());
+//
+//              use_joystick = false;
+//            }
+//          else
+//            {
+//              if (SDL_JoystickNumAxes(js) < 2)
+//                {
+//                  fprintf(stderr,
+//                          "Warning: Joystick does not have enough axes!\n");
+//
+//                  use_joystick = false;
+//                }
+//              else
+//                {
+//                  if (SDL_JoystickNumButtons(js) < 2)
+//                    {
+//                      fprintf(stderr,
+//                              "Warning: "
+//                              "Joystick does not have enough buttons!\n");
+//
+//                      use_joystick = false;
+//                    }
+//                }
+//            }
+//        }
+//    }
 }
 
 void st_audio_setup(void)
@@ -822,7 +833,7 @@ void st_audio_setup(void)
 
   if (audio_device)
     {
-      if (SDL_Init(SDL_INIT_AUDIO) < 0)
+      if (SDL_Init(SDL_INIT_AUDIO | SDL_INIT_VIDEO) < 0)
         {
           /* only print out message if sound or music
              was not disabled at command-line

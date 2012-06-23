@@ -394,7 +394,8 @@ sdl_surface_from_sdl_surface(SDL_Surface* sdl_surf, int use_alpha)
 
   /* Save the alpha blending attributes */
   saved_flags = sdl_surf->flags&(SDL_SRCALPHA|SDL_RLEACCELOK);
-  saved_alpha = sdl_surf->format->alpha;
+  //pxx
+  //saved_alpha = sdl_surf->format->alpha;
   if ( (saved_flags & SDL_SRCALPHA)
        == SDL_SRCALPHA )
   {
@@ -410,7 +411,8 @@ sdl_surface_from_sdl_surface(SDL_Surface* sdl_surf, int use_alpha)
   if ( (saved_flags & SDL_SRCALPHA)
        == SDL_SRCALPHA )
   {
-    SDL_SetAlpha(sdl_surface, saved_flags, saved_alpha);
+    //pxx
+    //SDL_SetAlpha(sdl_surface, saved_flags, saved_alpha);
   }
 
   if (sdl_surface == NULL)
@@ -505,7 +507,8 @@ SurfaceOpenGL::create_gl(SDL_Surface * surf, GLuint * tex)
 
   /* Save the alpha blending attributes */
   saved_flags = surf->flags&(SDL_SRCALPHA|SDL_RLEACCELOK);
-  saved_alpha = surf->format->alpha;
+  //pxx
+  //saved_alpha = surf->format->alpha;
   if ( (saved_flags & SDL_SRCALPHA)
        == SDL_SRCALPHA )
   {
@@ -518,7 +521,8 @@ SurfaceOpenGL::create_gl(SDL_Surface * surf, GLuint * tex)
   if ( (saved_flags & SDL_SRCALPHA)
        == SDL_SRCALPHA )
   {
-    SDL_SetAlpha(surf, saved_flags, saved_alpha);
+    //pxx
+    //SDL_SetAlpha(surf, saved_flags, saved_alpha);
   }
 
   glGenTextures(1, &*tex);
@@ -785,6 +789,7 @@ SurfaceSDL::draw_part(float sx, float sy, float x, float y, float w, float h, Ui
 {
   SDL_Rect src, dest;
 
+//printf("pxx: %s, %s, %d\n", __FILE__, __FUNCTION__, __LINE__);
   src.x = (int)sx;
   src.y = (int)sy;
   src.w = (int)w;
@@ -795,8 +800,12 @@ SurfaceSDL::draw_part(float sx, float sy, float x, float y, float w, float h, Ui
   dest.w = (int)w;
   dest.h = (int)h;
 
+//printf("pxx: %d, %d, %d, %d, %d, %d, %d, %d\n", src.x, src.y, src.w, src.h, dest.x, dest.y, dest.w, dest.h);
+
+//printf("pxx: %s, %s, %d\n", __FILE__, __FUNCTION__, __LINE__);
   if(alpha != 255)
     {
+//printf("pxx: %s, %s, %d\n", __FILE__, __FUNCTION__, __LINE__);
     /* Create a Surface, make it using colorkey, blit surface into temp, apply alpha
       to temp sur, blit the temp into the screen */
     /* Note: this has to be done, since SDL doesn't allow to set alpha to surfaces that
@@ -807,28 +816,40 @@ SurfaceSDL::draw_part(float sx, float sy, float x, float y, float w, float h, Ui
                                     sdl_surface->format->Rmask, sdl_surface->format->Gmask,
                                     sdl_surface->format->Bmask,
                                     0);
+//printf("pxx: %s, %s, %d\n", __FILE__, __FUNCTION__, __LINE__);
     int colorkey = SDL_MapRGB(sdl_surface_copy->format, 255, 0, 255);
+//printf("pxx: %s, %s, %d\n", __FILE__, __FUNCTION__, __LINE__);
     SDL_FillRect(sdl_surface_copy, NULL, colorkey);
+//printf("pxx: %s, %s, %d\n", __FILE__, __FUNCTION__, __LINE__);
     SDL_SetColorKey(sdl_surface_copy, SDL_SRCCOLORKEY, colorkey);
+//printf("pxx: %s, %s, %d\n", __FILE__, __FUNCTION__, __LINE__);
 
 
     SDL_BlitSurface(sdl_surface, NULL, sdl_surface_copy, NULL);
+//printf("pxx: %s, %s, %d\n", __FILE__, __FUNCTION__, __LINE__);
     SDL_SetAlpha(sdl_surface_copy ,SDL_SRCALPHA,alpha);
+//printf("pxx: %s, %s, %d\n", __FILE__, __FUNCTION__, __LINE__);
 
     int ret = SDL_BlitSurface(sdl_surface_copy, NULL, screen, &dest);
+//printf("pxx: %s, %s, %d\n", __FILE__, __FUNCTION__, __LINE__);
 
     if (update == UPDATE)
       SDL_UpdateRect(screen, dest.x, dest.y, dest.w, dest.h);
+//printf("pxx: %s, %s, %d\n", __FILE__, __FUNCTION__, __LINE__);
 
     SDL_FreeSurface (sdl_surface_copy);
+//printf("pxx: %s, %s, %d\n", __FILE__, __FUNCTION__, __LINE__);
     return ret;
     }
 
+//printf("pxx: %s, %s, %d\n", __FILE__, __FUNCTION__, __LINE__);
   int ret = SDL_BlitSurface(sdl_surface, &src, screen, &dest);
 
+//printf("pxx: %s, %s, %d\n", __FILE__, __FUNCTION__, __LINE__);
   if (update == UPDATE)
     update_rect(screen, dest.x, dest.y, dest.w, dest.h);
 
+//printf("pxx: %s, %s, %d\n", __FILE__, __FUNCTION__, __LINE__);
   return ret;
 }
 

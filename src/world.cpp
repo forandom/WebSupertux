@@ -176,16 +176,19 @@ void
 World::draw()
 {
   int y,x;
-
+//  printf("pxx: %s, %s, %d, World::mainloop, this=%p\n", __FILE__, __FUNCTION__, __LINE__, (void*)this);
+//printf("pxx: %s, %s, %d, img_bkgd=%p\n", __FILE__, __FUNCTION__, __LINE__,(void*)level->img_bkgd);
   /* Draw the real background */
   if(level->img_bkgd)
     {
+//printf("pxx: scroll_x = %lf, bkgd_speed = %d, screen->w=%d, img_bkgd->w=%d, img_bkgd->h=%d\n", scroll_x, level->bkgd_speed, screen->w, level->img_bkgd->w, level->img_bkgd->h);
       int s = (int)((float)scroll_x * ((float)level->bkgd_speed/100.0f)) % screen->w;
       level->img_bkgd->draw_part(s, 0,0,0,level->img_bkgd->w - s, level->img_bkgd->h);
       level->img_bkgd->draw_part(0, 0,screen->w - s ,0,s,level->img_bkgd->h);
     }
   else
     {
+//printf("pxx: %s, %s, %d\n", __FILE__, __FUNCTION__, __LINE__);
       drawgradient(level->bkgd_top, level->bkgd_bottom);
     }
     
@@ -252,9 +255,8 @@ World::draw()
 
   /* Draw particle systems (foreground) */
   for(p = particle_systems.begin(); p != particle_systems.end(); ++p)
-    {
       (*p)->draw(scroll_x, 0, 1);
-    }
+//printf("pxx: %s, %s, %d, world draw finished\n", __FILE__, __FUNCTION__, __LINE__);
 }
 
 void

@@ -93,6 +93,7 @@ GameSession::restart_level()
 
   if (st_gl_mode == ST_GL_LOAD_LEVEL_FILE)
     {
+//printf("pxx: %s, %s, %d\n", __FILE__, __FUNCTION__, __LINE__);
       world = new World(subset);
     }
   else if (st_gl_mode == ST_GL_DEMO_GAME)
@@ -130,11 +131,12 @@ GameSession::restart_level()
         }
     }
     
-  if (st_gl_mode != ST_GL_DEMO_GAME)
-    {
-      if(st_gl_mode == ST_GL_PLAY || st_gl_mode == ST_GL_LOAD_LEVEL_FILE)
-        levelintro();
-    }
+//  pxx
+//  if (st_gl_mode != ST_GL_DEMO_GAME)
+//    {
+//      if(st_gl_mode == ST_GL_PLAY || st_gl_mode == ST_GL_LOAD_LEVEL_FILE)
+//        levelintro();
+//    }
 
   time_left.init(true);
   start_timers();
@@ -239,6 +241,7 @@ GameSession::process_events()
             case SDL_KEYDOWN:     /* A keypress! */
               {
                 SDLKey key = event.key.keysym.sym;
+//printf("pxx: %s, %s, %d\n", __FILE__, __FUNCTION__, __LINE__);
            
                 switch(key)
                   {
@@ -295,6 +298,7 @@ GameSession::process_events()
                 case SDL_KEYDOWN:     /* A keypress! */
                   {
                     SDLKey key = event.key.keysym.sym;
+//printf("pxx: %s, %s, %d\n", __FILE__, __FUNCTION__, __LINE__);
             
                     if(tux.key_event(key,DOWN))
                       break;
@@ -526,9 +530,13 @@ GameSession::action(double frame_ratio)
 void 
 GameSession::draw()
 {
+////  printf("pxx: %s, %s, %d, GameSeesion::draw, this=%p\n", __FILE__, __FUNCTION__, __LINE__, (void*)this);
+////  printf("pxx: %s, %d, before world->draw(), img_bkgd=%p\n", __FUNCTION__, __LINE__, (void*)get_level()->img_bkgd);
   world->draw();
+////  printf("pxx: %s, %d, after world->draw(), img_bkgd=%p\n", __FUNCTION__, __LINE__, (void*)get_level()->img_bkgd);
   drawstatus();
 
+////  printf("pxx: %s, %d, img_bkgd=%p\n", __FUNCTION__, __LINE__, (void*)get_level()->img_bkgd);
   if(game_pause)
     {
       int x = screen->h / 20;
@@ -540,13 +548,16 @@ GameSession::draw()
       blue_text->drawf("PAUSE - Press 'P' To Play", 0, 230, A_HMIDDLE, A_TOP, 1);
     }
 
+////  printf("pxx: %s, %d, img_bkgd=%p\n", __FUNCTION__, __LINE__, (void*)get_level()->img_bkgd);
   if(Menu::current())
     {
       Menu::current()->draw();
       mouse_cursor->draw();
     }
 
+////  printf("pxx: %s, %d, img_bkgd=%p\n", __FUNCTION__, __LINE__, (void*)get_level()->img_bkgd);
   updatescreen();
+////  printf("pxx: %s, %d, img_bkgd=%p\n", __FUNCTION__, __LINE__, (void*)get_level()->img_bkgd);
 }
 
 void
@@ -581,13 +592,118 @@ GameSession::process_menu()
     }
 }
 
+void 
+GameSession::mainloop()
+{
+  /* Calculate the movement-factor */
+  double frame_ratio = ((double)(update_time-last_update_time))/((double)FRAME_RATE);
+////  printf("pxx: %s, %s, %d, GameSession::mainloop, this=%p\n", __FILE__, __FUNCTION__, __LINE__, (void*)this);
+////  printf("pxx: %s, %d, img_bkgd=%p\n", __FUNCTION__, __LINE__, (void*)get_level()->img_bkgd);
+//printf("pxx: mainloop %d start\n", mainloop_cnt);
+  //printf("pxx: %s, %s, %d, datadir=%s\n", __FILE__, __FUNCTION__, __LINE__, datadir.c_str());
+  if(!frame_timer.check())
+    {
+      frame_timer.start(25);
+      ++global_frame_counter;
+    }
+
+  /* Handle events: */
+  world->get_tux()->input.old_fire = world->get_tux()->input.fire;
+
+  process_events();
+//
+  process_menu();
+
+  // Update the world state and all objects in the world
+  // Do that with a constante time-delta so that the game will run
+  // determistic and not different on different machines
+  if(!game_pause && !Menu::current())
+    {
+      // Update the world
+      check_end_conditions();
+      if (end_sequence == ENDSEQUENCE_RUNNING)
+	action(frame_ratio/2);
+      else if(end_sequence == NO_ENDSEQUENCE)
+	action(frame_ratio);
+    }
+  else
+    {
+      ++pause_menu_frame;
+      SDL_Delay(50);
+    }
+////  printf("pxx: %s, %d, img_bkgd=%p\n", __FUNCTION__, __LINE__, (void*)get_level()->img_bkgd);
+////  printf("pxx: tux.x = %f, tux.y = %f\n", world->get_tux()->base.x, world->get_tux()->base.y);
+////  printf("pxx: %s, %s, %d\n", __FILE__, __FUNCTION__, __LINE__);
+////  printf("pxx: %s, %d, img_bkgd=%p\n", __FUNCTION__, __LINE__, (void*)get_level()->img_bkgd);
+  draw();
+////  printf("pxx: %s, %d, img_bkgd=%p\n", __FUNCTION__, __LINE__, (void*)get_level()->img_bkgd);
+////  printf("pxx: %s, %s, %d\n", __FILE__, __FUNCTION__, __LINE__);
+//  /* Time stops in pause mode */
+  if(game_pause || Menu::current())
+    {
+      //continue;
+      return;
+    }
+
+  /* Set the time of the last update and the time of the current update */
+  last_update_time = update_time;
+  update_time      = st_get_ticks();
+
+  /* Pause till next frame, if the machine running the game is too fast: */
+  /* FIXME: Works great for in OpenGl mode, where the CPU doesn't have to do that much. But
+     the results in SDL mode aren't perfect (thought the 100 FPS are reached), even on an AMD2500+. */
+  if(last_update_time >= update_time - 12) 
+    {
+      SDL_Delay(10);
+      update_time = st_get_ticks();
+    }
+
+  /* Handle time: */
+  if (!time_left.check() && world->get_tux()->dying == DYING_NOT
+      && !end_sequence)
+    world->get_tux()->kill(Player::KILL);
+
+  /* Handle music: */
+  if(world->get_tux()->invincible_timer.check() && !end_sequence)
+    {
+      world->play_music(HERRING_MUSIC);
+    }
+  /* are we low on time ? */
+  else if (time_left.get_left() < TIME_WARNING && !end_sequence)
+    {
+      world->play_music(HURRYUP_MUSIC);
+    }
+  /* or just normal music? */
+  else if(world->get_music_type() != LEVEL_MUSIC && !end_sequence)
+    {
+      world->play_music(LEVEL_MUSIC);
+    }
+
+  /* Calculate frames per second */
+  if(show_fps)
+    {
+      ++fps_cnt;
+      fps_fps = (1000.0 / (float)fps_timer.get_gone()) * (float)fps_cnt;
+
+      if(!fps_timer.check())
+	{
+	  fps_timer.start(1000);
+	  fps_cnt = 0;
+	}
+    }
+  //printf("pxx: %s, %s, %d, datadir=%s\n", __FILE__, __FUNCTION__, __LINE__, datadir.c_str());
+////  printf("pxx: %s, %s, %d, finished main loop\n", __FILE__, __FUNCTION__, __LINE__);
+}
+
 GameSession::ExitStatus
 GameSession::run()
 {
+////  printf("pxx: %s, %s, %d, GameSession::run this=%p\n", __FILE__, __FUNCTION__, __LINE__, (void*)this);
   Menu::set_current(0);
   current_ = this;
   
-  int fps_cnt = 0;
+  //int fps_cnt = 0;
+  fps_cnt = 0;
 
   update_time = last_update_time = st_get_ticks();
 
@@ -596,98 +712,103 @@ GameSession::run()
   while (SDL_PollEvent(&event)) {}
 
   draw();
+  //printf("pxx: %s, %s, %d, datadir=%s\n", __FILE__, __FUNCTION__, __LINE__, datadir.c_str());
 
-  while (exit_status == ES_NONE)
-    {
-      /* Calculate the movement-factor */
-      double frame_ratio = ((double)(update_time-last_update_time))/((double)FRAME_RATE);
-
-      if(!frame_timer.check())
-        {
-          frame_timer.start(25);
-          ++global_frame_counter;
-        }
-
-      /* Handle events: */
-      world->get_tux()->input.old_fire = world->get_tux()->input.fire;
-
-      process_events();
-      process_menu();
-
-      // Update the world state and all objects in the world
-      // Do that with a constante time-delta so that the game will run
-      // determistic and not different on different machines
-      if(!game_pause && !Menu::current())
-        {
-          // Update the world
-          check_end_conditions();
-          if (end_sequence == ENDSEQUENCE_RUNNING)
-             action(frame_ratio/2);
-          else if(end_sequence == NO_ENDSEQUENCE)
-             action(frame_ratio);
-        }
-      else
-        {
-          ++pause_menu_frame;
-          SDL_Delay(50);
-        }
-
-      draw();
-
-      /* Time stops in pause mode */
-      if(game_pause || Menu::current())
-        {
-          continue;
-        }
-
-      /* Set the time of the last update and the time of the current update */
-      last_update_time = update_time;
-      update_time      = st_get_ticks();
-
-      /* Pause till next frame, if the machine running the game is too fast: */
-      /* FIXME: Works great for in OpenGl mode, where the CPU doesn't have to do that much. But
-         the results in SDL mode aren't perfect (thought the 100 FPS are reached), even on an AMD2500+. */
-      if(last_update_time >= update_time - 12) 
-        {
-          SDL_Delay(10);
-          update_time = st_get_ticks();
-        }
-
-      /* Handle time: */
-      if (!time_left.check() && world->get_tux()->dying == DYING_NOT
-              && !end_sequence)
-        world->get_tux()->kill(Player::KILL);
-
-      /* Handle music: */
-      if(world->get_tux()->invincible_timer.check() && !end_sequence)
-        {
-          world->play_music(HERRING_MUSIC);
-        }
-      /* are we low on time ? */
-      else if (time_left.get_left() < TIME_WARNING && !end_sequence)
-        {
-          world->play_music(HURRYUP_MUSIC);
-        }
-      /* or just normal music? */
-      else if(world->get_music_type() != LEVEL_MUSIC && !end_sequence)
-        {
-          world->play_music(LEVEL_MUSIC);
-        }
-
-      /* Calculate frames per second */
-      if(show_fps)
-        {
-          ++fps_cnt;
-          fps_fps = (1000.0 / (float)fps_timer.get_gone()) * (float)fps_cnt;
-
-          if(!fps_timer.check())
-            {
-              fps_timer.start(1000);
-              fps_cnt = 0;
-            }
-        }
-    }
+////  printf("pxx: %s, %d, img_bkgd=%p\n", __FUNCTION__, __LINE__, (void*)get_level()->img_bkgd);
+  mainloop();
+//  while (exit_status == ES_NONE)
+//    {
+//      /* Calculate the movement-factor */
+//      double frame_ratio = ((double)(update_time-last_update_time))/((double)FRAME_RATE);
+//
+//      if(!frame_timer.check())
+//        {
+//          frame_timer.start(25);
+//          ++global_frame_counter;
+//        }
+//
+//      /* Handle events: */
+//      world->get_tux()->input.old_fire = world->get_tux()->input.fire;
+//
+//      process_events();
+//
+//      process_menu();
+//
+//      // Update the world state and all objects in the world
+//      // Do that with a constante time-delta so that the game will run
+//      // determistic and not different on different machines
+//      if(!game_pause && !Menu::current())
+//        {
+//          // Update the world
+//          check_end_conditions();
+//          if (end_sequence == ENDSEQUENCE_RUNNING)
+//             action(frame_ratio/2);
+//          else if(end_sequence == NO_ENDSEQUENCE)
+//             action(frame_ratio);
+//        }
+//      else
+//        {
+//          ++pause_menu_frame;
+//          SDL_Delay(50);
+//        }
+//
+//      draw();
+//
+//      /* Time stops in pause mode */
+//      if(game_pause || Menu::current())
+//        {
+//          continue;
+//        }
+//
+//      /* Set the time of the last update and the time of the current update */
+//      last_update_time = update_time;
+//      update_time      = st_get_ticks();
+//
+//      /* Pause till next frame, if the machine running the game is too fast: */
+//      /* FIXME: Works great for in OpenGl mode, where the CPU doesn't have to do that much. But
+//         the results in SDL mode aren't perfect (thought the 100 FPS are reached), even on an AMD2500+. */
+//      if(last_update_time >= update_time - 12) 
+//        {
+//          SDL_Delay(10);
+//          update_time = st_get_ticks();
+//        }
+//
+//      /* Handle time: */
+//      if (!time_left.check() && world->get_tux()->dying == DYING_NOT
+//              && !end_sequence)
+//        world->get_tux()->kill(Player::KILL);
+//
+//      /* Handle music: */
+//      if(world->get_tux()->invincible_timer.check() && !end_sequence)
+//        {
+//          world->play_music(HERRING_MUSIC);
+//        }
+//      /* are we low on time ? */
+//      else if (time_left.get_left() < TIME_WARNING && !end_sequence)
+//        {
+//          world->play_music(HURRYUP_MUSIC);
+//        }
+//      /* or just normal music? */
+//      else if(world->get_music_type() != LEVEL_MUSIC && !end_sequence)
+//        {
+//          world->play_music(LEVEL_MUSIC);
+//        }
+//
+//      /* Calculate frames per second */
+//      if(show_fps)
+//        {
+//          ++fps_cnt;
+//          fps_fps = (1000.0 / (float)fps_timer.get_gone()) * (float)fps_cnt;
+//
+//          if(!fps_timer.check())
+//            {
+//              fps_timer.start(1000);
+//              fps_cnt = 0;
+//            }
+//        }
+//    }
   
+  //printf("pxx: %s, %s, %d, datadir=%s\n", __FILE__, __FUNCTION__, __LINE__, datadir.c_str());
   return exit_status;
 }
 
@@ -706,6 +827,7 @@ GameSession::drawstatus()
 {
   char str[60];
 
+////  printf("pxx: %s, %d, begin, img_bkgd=%p\n", __FUNCTION__, __LINE__, (void*)get_level()->img_bkgd);
   sprintf(str, "%d", player_status.score);
   white_text->draw("SCORE", 0, 0, 1);
   gold_text->draw(str, 96, 0, 1);
@@ -746,6 +868,7 @@ GameSession::drawstatus()
       white_text->draw("FPS", screen->h, 40, 1);
       gold_text->draw(str, screen->h + 60, 40, 1);
     }
+////  printf("pxx: %s, %d, end, img_bkgd=%p\n", __FUNCTION__, __LINE__, (void*)get_level()->img_bkgd);
 }
 
 void

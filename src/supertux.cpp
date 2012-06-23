@@ -36,40 +36,64 @@
 
 int main(int argc, char * argv[])
 {
+//  printf("pxx: %s, %d\n", __FUNCTION__, __LINE__);
   st_directory_setup();
+//  printf("pxx: %s, %d\n", __FUNCTION__, __LINE__);
   parseargs(argc, argv);
+//  printf("pxx: %s, %d\n", __FUNCTION__, __LINE__);
   
   st_audio_setup();
+//  printf("pxx: %s, %d\n", __FUNCTION__, __LINE__);
   st_video_setup();
+//  printf("pxx: %s, %d\n", __FUNCTION__, __LINE__);
   st_joystick_setup();
+//  printf("pxx: %s, %d\n", __FUNCTION__, __LINE__);
   st_general_setup();
+//  printf("pxx: %s, %d\n", __FUNCTION__, __LINE__);
   st_menu();
+//  printf("pxx: %s, %d\n", __FUNCTION__, __LINE__);
   loadshared();
+//  printf("pxx: %s, %d\n", __FUNCTION__, __LINE__);
 
-  if (launch_leveleditor_mode && level_startup_file)
-    {
-    leveleditor(level_startup_file);
-    }
-  else if (level_startup_file)
-    {
+  //pxx
+  level_startup_file = "/home/emscripten/share/supertux/levels/world1/level1.stl"; 
+//  printf("pxx: %s, %d\n", __FUNCTION__, __LINE__);
+
+//  if (launch_leveleditor_mode && level_startup_file)
+//    {
+//    leveleditor(level_startup_file);
+//    }
+//  else if (level_startup_file)
+//    {
+//  printf("pxx: %s, %d\n", __FUNCTION__, __LINE__);
       GameSession session(level_startup_file, 1, ST_GL_LOAD_LEVEL_FILE);
+//  printf("pxx: %s, %d\n", __FUNCTION__, __LINE__);
       session.run();
-    }
-  else
-    {  
-      title();
-    }
+//  printf("pxx: %s, %d\n", __FUNCTION__, __LINE__);
+//    }
+//  else
+//    {  
+//      title();
+//    }
   
-  clearscreen(0, 0, 0);
-  updatescreen();
-
-  unloadshared();
-  st_general_free();
-  TileManager::destroy_instance();
-#ifdef DEBUG
-  Surface::debug_check();
-#endif
-  st_shutdown();
+////  printf("pxx: %s, %d\n", __FUNCTION__, __LINE__);
+//  clearscreen(0, 0, 0);
+////  printf("pxx: %s, %d\n", __FUNCTION__, __LINE__);
+//  updatescreen();
+////  printf("pxx: %s, %d\n", __FUNCTION__, __LINE__);
+//
+//  unloadshared();
+////  printf("pxx: %s, %d\n", __FUNCTION__, __LINE__);
+//  st_general_free();
+////  printf("pxx: %s, %d\n", __FUNCTION__, __LINE__);
+//  TileManager::destroy_instance();
+////  printf("pxx: %s, %d\n", __FUNCTION__, __LINE__);
+//#ifdef DEBUG
+//  Surface::debug_check();
+//#endif
+//  st_shutdown();
+////  printf("pxx: %s, %d\n", __FUNCTION__, __LINE__);
+  //printf("pxx: %s, %s, %d, %s\n", __FILE__, __FUNCTION__, __LINE__, datadir.c_str());
   
   return 0;
 }

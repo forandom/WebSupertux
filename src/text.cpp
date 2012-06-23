@@ -51,7 +51,7 @@ Text::Text(const std::string& file, int kind_, int w_, int h_)
       mx = 0;
       my = 0;
     }
-
+//  //printf("pxx: new surface from %s\n", file.c_str());
   chars = new Surface(file, USE_ALPHA);
 
   // Load shadow font.
@@ -360,7 +360,8 @@ void display_text_file(const std::string& file, Surface* surface, float scroll_s
       if(scroll < 0)
         scroll = 0;
 
-      SDL_Delay(10);
+      //pxx
+      //SDL_Delay(10);
     }
   string_list_free(&names);
 
