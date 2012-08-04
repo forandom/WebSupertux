@@ -230,6 +230,8 @@ void draw_demo(GameSession* session, double frame_ratio)
     }
 
   world->draw();
+
+  //printf("pxx: %s, %s, %d\n", __FILE__, __FUNCTION__, __LINE__);
 }
 
 void title_loop()
@@ -244,6 +246,8 @@ void title_loop()
     frame_ratio = 1.5 + (frame_ratio - 1.5) * 0.85;
   /* Lower the frame_ratio that Tux doesn't jump to hectically throught the demo. */
   frame_ratio /= 2;
+
+//printf("pxx: frame ratio: %f\n", frame_ratio);
 
   SDL_Event event;
   while (SDL_PollEvent(&event))
@@ -367,7 +371,7 @@ void title_loop()
   /* Pause: */
   frame++;
   //SDL_Delay(25);
-
+//printf("pxx: title loop finish\n");
 }
 
 /* --- TITLE SCREEN --- */
@@ -414,7 +418,7 @@ void title(void)
 
   //printf("pxx: %s, %s, %d\n", __FILE__, __FUNCTION__, __LINE__);
 
-  title_loop();
+  //title_loop();
 //  while (Menu::current())
 //    {
 //      // if we spent to much time on a menu entry

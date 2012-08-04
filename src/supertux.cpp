@@ -73,15 +73,17 @@ int main(int argc, char * argv[])
 //  else if (level_startup_file)
 //    {
 //  printf("pxx: %s, %d\n", __FUNCTION__, __LINE__);
-      session = new GameSession(level_startup_file, 1, ST_GL_LOAD_LEVEL_FILE);
+      //session = new GameSession(level_startup_file, 1, ST_GL_LOAD_LEVEL_FILE);
 //  printf("pxx: %s, %d\n", __FUNCTION__, __LINE__);
-      session->run();
-      emscripten_set_main_loop(looponce, 100);
+      //session->run();
+      //emscripten_set_main_loop(looponce, 100);
 //  printf("pxx: %s, %d\n", __FUNCTION__, __LINE__);
 //    }
 //  else
 //    {  
-//      title();
+      title();
+void extern title_loop(void);
+      emscripten_set_main_loop(title_loop, 100);
 //    }
   
 ////  printf("pxx: %s, %d\n", __FUNCTION__, __LINE__);
