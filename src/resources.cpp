@@ -45,14 +45,20 @@ void loadshared()
 {
   int i;
 
+  //printf("pxx: %s, %d\n", __FUNCTION__, __LINE__);
   sprite_manager = new SpriteManager(datadir + "/supertux.strf");
+  //printf("pxx: %s, %d\n", __FUNCTION__, __LINE__);
   music_manager = new MusicManager();
+  //printf("pxx: %s, %d\n", __FUNCTION__, __LINE__);
   music_manager->enable_music(use_music);
+  //printf("pxx: %s, %d\n", __FUNCTION__, __LINE__);
 
   /* Tuxes: */
   smalltux_star = sprite_manager->load("smalltux-star");
+  //printf("pxx: %s, %d\n", __FUNCTION__, __LINE__);
   largetux_star = sprite_manager->load("largetux-star");
   smalltux_gameover = sprite_manager->load("smalltux-gameover");
+  //printf("pxx: %s, %d\n", __FUNCTION__, __LINE__);
 
   smalltux.stand_left  = sprite_manager->load("smalltux-stand-left");
   smalltux.stand_right = sprite_manager->load("smalltux-stand-right");
@@ -66,6 +72,7 @@ void loadshared()
   smalltux.skid_right  = sprite_manager->load("smalltux-skid-right");
   smalltux.grab_left   = sprite_manager->load("smalltux-grab-left");
   smalltux.grab_right  = sprite_manager->load("smalltux-grab-right");
+  //printf("pxx: %s, %d\n", __FUNCTION__, __LINE__);
 
   largetux.stand_left  = sprite_manager->load("largetux-stand-left");
   largetux.stand_right = sprite_manager->load("largetux-stand-right");
@@ -81,6 +88,7 @@ void loadshared()
   largetux.grab_right  = sprite_manager->load("largetux-grab-right");
   largetux.duck_left   = sprite_manager->load("largetux-duck-left");
   largetux.duck_right  = sprite_manager->load("largetux-duck-right");
+  //printf("pxx: %s, %d\n", __FUNCTION__, __LINE__);
 
   firetux.stand_left  = sprite_manager->load("firetux-stand-left");
   firetux.stand_right = sprite_manager->load("firetux-stand-right");
@@ -96,9 +104,11 @@ void loadshared()
   firetux.grab_right  = sprite_manager->load("firetux-grab-right");
   firetux.duck_left   = sprite_manager->load("firetux-duck-left");
   firetux.duck_right  = sprite_manager->load("firetux-duck-right");
+  //printf("pxx: %s, %d\n", __FUNCTION__, __LINE__);
 
   /* Water: */
   img_water = new Surface(datadir + "/images/shared/water.png", IGNORE_ALPHA);
+  //printf("pxx: %s, %d\n", __FUNCTION__, __LINE__);
 
   img_waves[0] = new Surface(datadir + "/images/shared/waves-0.png",
                USE_ALPHA);
@@ -110,6 +120,7 @@ void loadshared()
                USE_ALPHA);
 
 
+  //printf("pxx: %s, %d\n", __FUNCTION__, __LINE__);
   /* Pole: */
 
   img_pole = new Surface(datadir + "/images/shared/pole.png", USE_ALPHA);
@@ -127,6 +138,7 @@ void loadshared()
 
   /* Cloud: */
 
+  //printf("pxx: %s, %d\n", __FUNCTION__, __LINE__);
   img_cloud[0][0] = new Surface(datadir + "/images/shared/cloud-00.png",
                USE_ALPHA);
 
@@ -153,11 +165,14 @@ void loadshared()
                USE_ALPHA);
 
 
+  //printf("pxx: %s, %d\n", __FUNCTION__, __LINE__);
   /* Bad guys: */
   load_badguy_gfx();
+  //printf("pxx: %s, %d\n", __FUNCTION__, __LINE__);
 
   /* Upgrades: */
   load_special_gfx();
+  //printf("pxx: %s, %d\n", __FUNCTION__, __LINE__);
 
   /* Distros: */
   img_distro[0] = new Surface(datadir + "/images/tilesets/coin1.png",
@@ -174,6 +189,7 @@ void loadshared()
 
 
   /* Tux life: */
+  //printf("pxx: %s, %d\n", __FUNCTION__, __LINE__);
 
   tux_life = new Surface(datadir + "/images/shared/tux-life.png",
                          USE_ALPHA);
@@ -187,12 +203,15 @@ void loadshared()
                     // This is also true with if (use_music)
                     Send a mail to me: neoneurone@users.sf.net, if you have another opinion. :)
   */
+  //printf("pxx: %s, %d\n", __FUNCTION__, __LINE__);
   for (i = 0; i < NUM_SOUNDS; i++)
     sounds[i] = load_sound(datadir + soundfilenames[i]);
 
+  //printf("pxx: %s, %d\n", __FUNCTION__, __LINE__);
   /* Herring song */
   herring_song = music_manager->load_music(datadir + "/music/SALCON.ogg");
   level_end_song = music_manager->load_music(datadir + "/music/leveldone.ogg");
+  //printf("pxx: %s, %d\n", __FUNCTION__, __LINE__);
 }
 
 

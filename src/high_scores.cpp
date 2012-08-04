@@ -122,7 +122,7 @@ void save_hs(int score)
           break;
         }
 
-      SDL_Delay(25);
+      //SDL_Delay(25);
     }
 
 

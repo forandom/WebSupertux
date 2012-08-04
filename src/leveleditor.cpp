@@ -357,10 +357,10 @@ int leveleditor(char* filename)
 
     ++global_frame_counter;
 
-    SDL_Delay(25);
+    //SDL_Delay(25);
     now_time = SDL_GetTicks();
-    if (now_time < last_time + FPS)
-      SDL_Delay(last_time + FPS - now_time);	/* delay some time */
+    //if (now_time < last_time + FPS)
+      //SDL_Delay(last_time + FPS - now_time);	/* delay some time */
 
     flipscreen();
   }
@@ -1053,7 +1053,7 @@ void le_change_object_properties(GameObject *pobj)
 
     mouse_cursor->draw();
     flipscreen();
-    SDL_Delay(25);
+    //SDL_Delay(25);
   }
 
   delete cap_screen;
@@ -1820,7 +1820,7 @@ void le_showhelp()
   while(done_ == 0)
   {
     done_ = wait_for_event(event);
-    SDL_Delay(50);
+    //SDL_Delay(50);
   }
 
   drawgradient(Color(0,0,0), Color(255,255,255));
@@ -1841,7 +1841,7 @@ void le_showhelp()
   while(done_ == 0)
   {
     done_ = wait_for_event(event);
-    SDL_Delay(50);
+    //SDL_Delay(50);
   }
 
   drawgradient(Color(0,0,0), Color(255,255,255));
@@ -1862,7 +1862,7 @@ void le_showhelp()
   while(done_ == 0)
   {
     done_ = wait_for_event(event);
-    SDL_Delay(50);
+    //SDL_Delay(50);
   }
 
   show_selections = true;

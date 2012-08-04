@@ -285,9 +285,13 @@ BadGuy::action_mriceblock(double frame_ratio)
 void
 BadGuy::check_horizontal_bump(bool checkcliff)
 {
+//if(kind==BAD_SNOWBALL)
+//printf("pxx: %s, %s, %d\n", __FILE__, __FUNCTION__, __LINE__);
     float halfheight = base.height / 2;
     if (dir == LEFT && issolid( base.x, (int) base.y + halfheight))
     {
+//if(kind==BAD_SNOWBALL)
+//printf("pxx: %s, %s, %d\n", __FILE__, __FUNCTION__, __LINE__);
         if (kind == BAD_MRICEBLOCK && mode == KICK)
             World::current()->trybreakbrick(base.x, base.y + halfheight, false, dir);
 
@@ -295,8 +299,12 @@ BadGuy::check_horizontal_bump(bool checkcliff)
         physic.set_velocity(-physic.get_velocity_x(), physic.get_velocity_y());
         return;
     }
+//if(kind==BAD_SNOWBALL)
+//printf("pxx: %s, %s, %d\n", __FILE__, __FUNCTION__, __LINE__);
     if (dir == RIGHT && issolid( base.x + base.width, (int)base.y + halfheight))
     {
+//if(kind==BAD_SNOWBALL)
+//printf("pxx: %s, %s, %d\n", __FILE__, __FUNCTION__, __LINE__);
         if (kind == BAD_MRICEBLOCK && mode == KICK)
             World::current()->trybreakbrick(base.x + base.width, (int) base.y + halfheight, false, dir);
          
@@ -304,26 +312,40 @@ BadGuy::check_horizontal_bump(bool checkcliff)
         physic.set_velocity(-physic.get_velocity_x(), physic.get_velocity_y());
         return;
     }
+//if(kind==BAD_SNOWBALL)
+//printf("pxx: %s, %s, %d\n", __FILE__, __FUNCTION__, __LINE__);
 
     // don't check for cliffs when we're falling
     if(!checkcliff)
         return;
+//if(kind==BAD_SNOWBALL)
+//printf("pxx: %s, %s, %d\n", __FILE__, __FUNCTION__, __LINE__);
     if(!issolid(base.x + base.width/2, base.y + base.height))
         return;
+//if(kind==BAD_SNOWBALL)
+//printf("pxx: %s, %s, %d\n", __FILE__, __FUNCTION__, __LINE__);
     
     if(dir == LEFT && !issolid(base.x, (int) base.y + base.height + halfheight))
     {
+//if(kind==BAD_SNOWBALL)
+//printf("pxx: %s, %s, %d\n", __FILE__, __FUNCTION__, __LINE__);
         dir = RIGHT;
         physic.set_velocity(-physic.get_velocity_x(), physic.get_velocity_y());
         return;
     }
+//if(kind==BAD_SNOWBALL)
+//printf("pxx: %s, %s, %d\n", __FILE__, __FUNCTION__, __LINE__);
     if(dir == RIGHT && !issolid(base.x + base.width,
                 (int) base.y + base.height + halfheight))
     {
+//if(kind==BAD_SNOWBALL)
+//printf("pxx: %s, %s, %d\n", __FILE__, __FUNCTION__, __LINE__);
         dir = LEFT;
         physic.set_velocity(-physic.get_velocity_x(), physic.get_velocity_y());
         return;
     }
+//if(kind==BAD_SNOWBALL)
+//printf("pxx: %s, %s, %d\n", __FILE__, __FUNCTION__, __LINE__);
 }
 
 void
@@ -658,12 +680,13 @@ BadGuy::action_snowball(double frame_ratio)
 {
   if (dying == DYING_NOT)
     check_horizontal_bump();
-
+//printf("pxx: %d, dying=%d, frame_ratio=%f, base.x=%f, base.y=%f, dir=%d, vx=%f, vy=%f\n", __LINE__, dying, frame_ratio, base.x, base.y, dir, physic.get_velocity_x(), physic.get_velocity_y());
   fall();
-
   physic.apply(frame_ratio, base.x, base.y);
+//printf("pxx: %d, dying=%d, frame_ratio=%f, base.x=%f, base.y=%f, dir=%d, vx=%f, vy=%f\n", __LINE__, dying, frame_ratio, base.x, base.y, dir, physic.get_velocity_x(), physic.get_velocity_y());
   if (dying != DYING_FALLING)
     collision_swept_object_map(&old_base,&base);
+//printf("pxx: %d, dying=%d, frame_ratio=%f, base.x=%f, base.y=%f, dir=%d, vx=%f, vy=%f\n", __LINE__, dying, frame_ratio, base.x, base.y, dir, physic.get_velocity_x(), physic.get_velocity_y());
 }
 
 void

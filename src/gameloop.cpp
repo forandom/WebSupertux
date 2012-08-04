@@ -95,6 +95,7 @@ GameSession::restart_level()
     {
 //printf("pxx: %s, %s, %d\n", __FILE__, __FUNCTION__, __LINE__);
       world = new World(subset);
+//printf("pxx: %s, %s, %d\n", __FILE__, __FUNCTION__, __LINE__);
     }
   else if (st_gl_mode == ST_GL_DEMO_GAME)
     {
@@ -102,9 +103,11 @@ GameSession::restart_level()
     }
   else
     {
+//printf("pxx: %s, %s, %d\n", __FILE__, __FUNCTION__, __LINE__);
       world = new World(subset, levelnb);
     }
 
+//printf("pxx: %s, %s, %d\n", __FILE__, __FUNCTION__, __LINE__);
   // Set Tux to the nearest reset point
   if (old_x_pos != -1)
     {
@@ -130,6 +133,7 @@ GameSession::restart_level()
           scroll_x = best_reset_point.x - screen->w/2;
         }
     }
+//printf("pxx: %s, %s, %d\n", __FILE__, __FUNCTION__, __LINE__);
     
 //  pxx
 //  if (st_gl_mode != ST_GL_DEMO_GAME)
@@ -141,6 +145,7 @@ GameSession::restart_level()
   time_left.init(true);
   start_timers();
   world->play_music(LEVEL_MUSIC);
+//printf("pxx: %s, %s, %d\n", __FILE__, __FUNCTION__, __LINE__);
 }
 
 GameSession::~GameSession()
@@ -199,6 +204,7 @@ GameSession::on_escape_press()
     {
       Menu::set_current(game_menu);
       st_pause_ticks_start();
+//printf("pxx: %s, %s, %d\n", __FILE__, __FUNCTION__, __LINE__);
     }
 }
 
@@ -207,6 +213,7 @@ GameSession::process_events()
 {
   if (end_sequence != NO_ENDSEQUENCE)
     {
+//printf("pxx: %s, %s, %d\n", __FILE__, __FUNCTION__, __LINE__);
       Player& tux = *world->get_tux();
          
       tux.input.fire  = UP;
@@ -302,10 +309,12 @@ GameSession::process_events()
             
                     if(tux.key_event(key,DOWN))
                       break;
+//printf("pxx: %s, %s, %d\n", __FILE__, __FUNCTION__, __LINE__);
 
                     switch(key)
                       {
                       case SDLK_ESCAPE:    /* Escape: Open/Close the menu: */
+//printf("pxx: %s, %s, %d\n", __FILE__, __FUNCTION__, __LINE__);
                         on_escape_press();
                         break;
                       default:
@@ -460,6 +469,7 @@ GameSession::process_events()
             }
         } /* while */
     }
+//printf("pxx: %s, %s, %d\n", __FILE__, __FUNCTION__, __LINE__);
 }
 
 void
@@ -551,8 +561,11 @@ GameSession::draw()
 ////  printf("pxx: %s, %d, img_bkgd=%p\n", __FUNCTION__, __LINE__, (void*)get_level()->img_bkgd);
   if(Menu::current())
     {
+  //printf("pxx: %s, %s, %d\n", __FILE__, __FUNCTION__, __LINE__);
       Menu::current()->draw();
+  //printf("pxx: %s, %s, %d\n", __FILE__, __FUNCTION__, __LINE__);
       mouse_cursor->draw();
+  //printf("pxx: %s, %s, %d\n", __FILE__, __FUNCTION__, __LINE__);
     }
 
 ////  printf("pxx: %s, %d, img_bkgd=%p\n", __FUNCTION__, __LINE__, (void*)get_level()->img_bkgd);
@@ -564,12 +577,15 @@ void
 GameSession::process_menu()
 {
   Menu* menu = Menu::current();
+  //printf("pxx: %s, %s, %d\n", __FILE__, __FUNCTION__, __LINE__);
   if(menu)
     {
+  //printf("pxx: %s, %s, %d\n", __FILE__, __FUNCTION__, __LINE__);
       menu->action();
 
       if(menu == game_menu)
         {
+  //printf("pxx: %s, %s, %d\n", __FILE__, __FUNCTION__, __LINE__);
           switch (game_menu->check())
             {
             case MNID_CONTINUE:
@@ -590,13 +606,14 @@ GameSession::process_menu()
           process_load_game_menu();
         }
     }
+  //printf("pxx: %s, %s, %d\n", __FILE__, __FUNCTION__, __LINE__);
 }
 
 void 
 GameSession::mainloop()
 {
   /* Calculate the movement-factor */
-  double frame_ratio = ((double)(update_time-last_update_time))/((double)FRAME_RATE);
+  //double frame_ratio = ((double)(update_time-last_update_time))/((double)FRAME_RATE);
 ////  printf("pxx: %s, %s, %d, GameSession::mainloop, this=%p\n", __FILE__, __FUNCTION__, __LINE__, (void*)this);
 ////  printf("pxx: %s, %d, img_bkgd=%p\n", __FUNCTION__, __LINE__, (void*)get_level()->img_bkgd);
 //printf("pxx: mainloop %d start\n", mainloop_cnt);
@@ -609,38 +626,47 @@ GameSession::mainloop()
 
   /* Handle events: */
   world->get_tux()->input.old_fire = world->get_tux()->input.fire;
+  //printf("pxx: %s, %s, %d\n", __FILE__, __FUNCTION__, __LINE__);
 
   process_events();
+  //printf("pxx: %s, %s, %d\n", __FILE__, __FUNCTION__, __LINE__);
 //
   process_menu();
+  //printf("pxx: %s, %s, %d\n", __FILE__, __FUNCTION__, __LINE__);
 
   // Update the world state and all objects in the world
   // Do that with a constante time-delta so that the game will run
   // determistic and not different on different machines
   if(!game_pause && !Menu::current())
     {
+  //printf("pxx: %s, %s, %d\n", __FILE__, __FUNCTION__, __LINE__);
       // Update the world
       check_end_conditions();
+  //printf("pxx: %s, %s, %d\n", __FILE__, __FUNCTION__, __LINE__);
       if (end_sequence == ENDSEQUENCE_RUNNING)
-	action(frame_ratio/2);
+	//action(frame_ratio/2);
+	action((((double)(update_time-last_update_time))/((double)FRAME_RATE))/2);
       else if(end_sequence == NO_ENDSEQUENCE)
-	action(frame_ratio);
+	//action(frame_ratio);
+	action(((double)(update_time-last_update_time))/((double)FRAME_RATE));
     }
   else
     {
+  //printf("pxx: %s, %s, %d\n", __FILE__, __FUNCTION__, __LINE__);
       ++pause_menu_frame;
-      SDL_Delay(50);
+      //SDL_Delay(50);
     }
 ////  printf("pxx: %s, %d, img_bkgd=%p\n", __FUNCTION__, __LINE__, (void*)get_level()->img_bkgd);
 ////  printf("pxx: tux.x = %f, tux.y = %f\n", world->get_tux()->base.x, world->get_tux()->base.y);
-////  printf("pxx: %s, %s, %d\n", __FILE__, __FUNCTION__, __LINE__);
+  //printf("pxx: %s, %s, %d\n", __FILE__, __FUNCTION__, __LINE__);
 ////  printf("pxx: %s, %d, img_bkgd=%p\n", __FUNCTION__, __LINE__, (void*)get_level()->img_bkgd);
   draw();
 ////  printf("pxx: %s, %d, img_bkgd=%p\n", __FUNCTION__, __LINE__, (void*)get_level()->img_bkgd);
-////  printf("pxx: %s, %s, %d\n", __FILE__, __FUNCTION__, __LINE__);
+  //printf("pxx: %s, %s, %d\n", __FILE__, __FUNCTION__, __LINE__);
 //  /* Time stops in pause mode */
   if(game_pause || Menu::current())
     {
+  //printf("pxx: %s, %s, %d\n", __FILE__, __FUNCTION__, __LINE__);
       //continue;
       return;
     }
@@ -654,7 +680,7 @@ GameSession::mainloop()
      the results in SDL mode aren't perfect (thought the 100 FPS are reached), even on an AMD2500+. */
   if(last_update_time >= update_time - 12) 
     {
-      SDL_Delay(10);
+      //SDL_Delay(10);
       update_time = st_get_ticks();
     }
 
@@ -693,6 +719,7 @@ GameSession::mainloop()
     }
   //printf("pxx: %s, %s, %d, datadir=%s\n", __FILE__, __FUNCTION__, __LINE__, datadir.c_str());
 ////  printf("pxx: %s, %s, %d, finished main loop\n", __FILE__, __FUNCTION__, __LINE__);
+  //printf("pxx: %s, %s, %d\n", __FILE__, __FUNCTION__, __LINE__);
 }
 
 GameSession::ExitStatus
@@ -715,7 +742,7 @@ GameSession::run()
   //printf("pxx: %s, %s, %d, datadir=%s\n", __FILE__, __FUNCTION__, __LINE__, datadir.c_str());
 
 ////  printf("pxx: %s, %d, img_bkgd=%p\n", __FUNCTION__, __LINE__, (void*)get_level()->img_bkgd);
-  mainloop();
+  //mainloop();
 //  while (exit_status == ES_NONE)
 //    {
 //      /* Calculate the movement-factor */
@@ -749,7 +776,7 @@ GameSession::run()
 //      else
 //        {
 //          ++pause_menu_frame;
-//          SDL_Delay(50);
+//          //SDL_Delay(50);
 //        }
 //
 //      draw();
@@ -769,7 +796,7 @@ GameSession::run()
 //         the results in SDL mode aren't perfect (thought the 100 FPS are reached), even on an AMD2500+. */
 //      if(last_update_time >= update_time - 12) 
 //        {
-//          SDL_Delay(10);
+//          //SDL_Delay(10);
 //          update_time = st_get_ticks();
 //        }
 //

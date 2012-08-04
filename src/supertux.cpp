@@ -34,26 +34,33 @@
 #include "texture.h"
 #include "tile.h"
 
+GameSession *session;
+
+void looponce()
+{
+  session->mainloop();
+}
+
 int main(int argc, char * argv[])
 {
-//  printf("pxx: %s, %d\n", __FUNCTION__, __LINE__);
+  //printf("pxx: %s, %d\n", __FUNCTION__, __LINE__);
   st_directory_setup();
-//  printf("pxx: %s, %d\n", __FUNCTION__, __LINE__);
+  //printf("pxx: %s, %d\n", __FUNCTION__, __LINE__);
   parseargs(argc, argv);
-//  printf("pxx: %s, %d\n", __FUNCTION__, __LINE__);
+  //printf("pxx: %s, %d\n", __FUNCTION__, __LINE__);
   
   st_audio_setup();
-//  printf("pxx: %s, %d\n", __FUNCTION__, __LINE__);
+  //printf("pxx: %s, %d\n", __FUNCTION__, __LINE__);
   st_video_setup();
-//  printf("pxx: %s, %d\n", __FUNCTION__, __LINE__);
+  //printf("pxx: %s, %d\n", __FUNCTION__, __LINE__);
   st_joystick_setup();
-//  printf("pxx: %s, %d\n", __FUNCTION__, __LINE__);
+  //printf("pxx: %s, %d\n", __FUNCTION__, __LINE__);
   st_general_setup();
-//  printf("pxx: %s, %d\n", __FUNCTION__, __LINE__);
+  //printf("pxx: %s, %d\n", __FUNCTION__, __LINE__);
   st_menu();
-//  printf("pxx: %s, %d\n", __FUNCTION__, __LINE__);
+  //printf("pxx: %s, %d\n", __FUNCTION__, __LINE__);
   loadshared();
-//  printf("pxx: %s, %d\n", __FUNCTION__, __LINE__);
+  //printf("pxx: %s, %d\n", __FUNCTION__, __LINE__);
 
   //pxx
   level_startup_file = "/home/emscripten/share/supertux/levels/world1/level1.stl"; 
@@ -66,9 +73,10 @@ int main(int argc, char * argv[])
 //  else if (level_startup_file)
 //    {
 //  printf("pxx: %s, %d\n", __FUNCTION__, __LINE__);
-      GameSession session(level_startup_file, 1, ST_GL_LOAD_LEVEL_FILE);
+      session = new GameSession(level_startup_file, 1, ST_GL_LOAD_LEVEL_FILE);
 //  printf("pxx: %s, %d\n", __FUNCTION__, __LINE__);
-      session.run();
+      session->run();
+      emscripten_set_main_loop(looponce, 100);
 //  printf("pxx: %s, %d\n", __FUNCTION__, __LINE__);
 //    }
 //  else

@@ -364,23 +364,31 @@ sdl_surface_from_file(const std::string& file, int use_alpha)
   SDL_Surface* sdl_surface;
   SDL_Surface* temp;
 
+  //printf("pxx: %s, %d\n", __FUNCTION__, __LINE__);
   temp = IMG_Load(file.c_str());
+  //printf("pxx: %s, %d\n", __FUNCTION__, __LINE__);
 
   if (temp == NULL)
     st_abort("Can't load", file);
 
+  //printf("pxx: %s, %d\n", __FUNCTION__, __LINE__);
   if(use_alpha == IGNORE_ALPHA && !use_gl)
     sdl_surface = SDL_DisplayFormat(temp);
   else
     sdl_surface = SDL_DisplayFormatAlpha(temp);
 
+  //printf("pxx: %s, %d\n", __FUNCTION__, __LINE__);
   if (sdl_surface == NULL)
     st_abort("Can't covert to display format", file);
 
+  //printf("pxx: %s, %d\n", __FUNCTION__, __LINE__);
   if (use_alpha == IGNORE_ALPHA && !use_gl)
     SDL_SetAlpha(sdl_surface, 0, 0);
+  //printf("pxx: %s, %d\n", __FUNCTION__, __LINE__);
 
+  //printf("pxx: %s, %d\n", __FUNCTION__, __LINE__);
   SDL_FreeSurface(temp);
+  //printf("pxx: %s, %d\n", __FUNCTION__, __LINE__);
 
   return sdl_surface;
 }

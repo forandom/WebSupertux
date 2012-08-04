@@ -119,7 +119,7 @@ int wait_for_event(SDL_Event& event,unsigned int min_delay, unsigned int max_del
                 }
             }
         }
-      SDL_Delay(10);
+      //SDL_Delay(10);
     }
 
   return 0;

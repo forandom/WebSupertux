@@ -151,6 +151,7 @@ World::activate_bad_guys()
        i != level->badguy_data.end();
        ++i)
     {
+      //printf("pxx: %s, %d, stay_on_platform %d\n", __FUNCTION__, __LINE__, i->stay_on_platform);
       add_bad_guy(i->x, i->y, i->kind, i->stay_on_platform);
     }
 }

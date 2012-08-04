@@ -27,6 +27,7 @@
 #include "text.h"
 #include "menu.h"
 #include "mousecursor.h"
+#include "emscripten.h"
 
 extern std::string datadir;
 

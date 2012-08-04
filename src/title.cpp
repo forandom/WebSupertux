@@ -366,7 +366,7 @@ void title_loop()
 
   /* Pause: */
   frame++;
-  SDL_Delay(25);
+  //SDL_Delay(25);
 
 }
 

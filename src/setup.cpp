@@ -313,10 +313,14 @@ void st_directory_setup(void)
   else
     home = ".";
 
+  //printf("pxx: home: %s\n", home);
+
   st_dir = (char *) malloc(sizeof(char) * (strlen(home) +
                                            strlen("/.supertux") + 1));
   strcpy(st_dir, home);
   strcat(st_dir, "/.supertux");
+
+  //printf("pxx: st_dir: %s\n", st_dir);
 
   /* Remove .supertux config-file from old SuperTux versions */
   if(faccessible(st_dir))
@@ -329,6 +333,8 @@ void st_directory_setup(void)
 
   strcpy(st_save_dir,st_dir);
   strcat(st_save_dir,"/save");
+
+  //printf("pxx: st_save_dir: %s\n", st_save_dir);
 
   /* Create them. In the case they exist they won't destroy anything. */
   mkdir(st_dir, 0755);

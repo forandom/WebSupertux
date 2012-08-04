@@ -42,6 +42,8 @@ bool rectcollision_offset(const base_type& one, const base_type& two, float off_
           one.y <= two.y + two.height + off_y - 1);
 }
 
+int pxx_x=0, pxx_y=0;
+
 bool collision_object_map(const base_type& base)
 {
   if(!World::current())
@@ -60,7 +62,11 @@ bool collision_object_map(const base_type& base)
     for(int y = starttiley; y*32 < max_y; ++y) {
       Tile* tile = tilemanager.get(level.get_tile_at(x, y));
       if(tile && tile->solid)
-        return true;
+	{
+	  pxx_x=x;
+	  pxx_y=y;
+	  return true;
+	}
     }
   }
 
@@ -147,6 +153,7 @@ void collision_swept_object_map(base_type* old, base_type* current)
         }
       h = 2;
       yd = 0;
+//printf("pxx: %s, %s, %d, xd=%f, old->x=%f, old->y=%f, current->x=%f, lpath=%f\n", __FILE__, __FUNCTION__, __LINE__, xd, old->x, old->y, current->x, lpath);
     }
   else
     {
@@ -180,6 +187,7 @@ void collision_swept_object_map(base_type* old, base_type* current)
 
       if(collision_object_map(*old))
         {
+//printf("pxx: %s, %s, %d, xd=%f, old->x=%f, old->y=%f, current->x=%f, current->y=%f, pxx_x=%d, pxx_y=%d, old->width=%f, old->height=%f, lpath=%f\n", __FILE__, __FUNCTION__, __LINE__, xd, old->x, old->y, current->x, current->y, pxx_x, pxx_y, old->width, old->height, lpath);
           switch(h)
             {
             case 1:
@@ -188,6 +196,7 @@ void collision_swept_object_map(base_type* old, base_type* current)
                 current->y -= yd;
               break;
             case 2:
+//printf("pxx: %s, %s, %d, xd=%f, old->x=%f, old->y=%f, current->x=%f, lpath=%f\n", __FILE__, __FUNCTION__, __LINE__, xd, old->x, old->y, current->x, lpath);
               current->x = old->x - xd;
               while(collision_object_map(*current))
                 current->x -= xd;
@@ -233,7 +242,10 @@ void collision_swept_object_map(base_type* old, base_type* current)
     }
 
   if((xd > 0 && current->x < orig_x) || (xd < 0 && current->x > orig_x))
+{
     current->x = orig_x;
+//printf("pxx: %s, %s, %d, xd=%f, old->x=%f, old->y=%f, current->x=%f, lpath=%f\n", __FILE__, __FUNCTION__, __LINE__, xd, old->x, old->y, current->x, lpath);
+}
   if((yd > 0 && current->y < orig_y) || (yd < 0 && current->y > orig_y))
     current->y = orig_y;
 
