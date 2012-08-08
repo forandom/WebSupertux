@@ -34,10 +34,11 @@
 #include "texture.h"
 #include "tile.h"
 
-GameSession *session;
+GameSession *session=NULL;
 
 void looponce()
 {
+  //printf("pxx: in looponce\n");
   session->mainloop();
 }
 
@@ -81,9 +82,8 @@ int main(int argc, char * argv[])
 //    }
 //  else
 //    {  
-      title();
-void extern title_loop(void);
-      emscripten_set_main_loop(title_loop, 100);
+  title();
+  emscripten_set_main_loop(title_loop, 100);
 //    }
   
 ////  printf("pxx: %s, %d\n", __FUNCTION__, __LINE__);

@@ -28,6 +28,8 @@
 #include "menu.h"
 #include "mousecursor.h"
 #include "emscripten.h"
+#include "worldmap.h"
+#include "gameloop.h"
 
 extern std::string datadir;
 
@@ -78,6 +80,13 @@ extern char* st_save_dir;
 
 extern float game_speed;
 extern SDL_Joystick * js;
+
+extern WorldMapNS::WorldMap *worldmap;
+extern void worldmap_loop(void);
+enum LoopRetFrom { LRF_NONE, LRF_worldmap, LRF_session};
+extern LoopRetFrom loopRetFrom;
+extern GameSession::ExitStatus lrf_status;
+
 
 int wait_for_event(SDL_Event& event,unsigned int min_delay = 0, unsigned int max_delay = 0, bool empty_events = false);
 

@@ -1,0 +1,1 @@
+emconfigure ./configure --disable-opengl --disable-sdltest --prefix=/home/emscripten &> myconfig.log

@@ -20,6 +20,7 @@
 //  02111-1307, USA.
 
 void title(void);
+void title_loop(void);
 
 // EOF //
 

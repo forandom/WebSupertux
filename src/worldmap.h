@@ -160,6 +160,10 @@ private:
 
   TileManager* tile_manager;
 
+//pxx
+  unsigned int last_update_time;
+  unsigned int update_time;
+
 public:
   struct Level
   {
@@ -227,6 +231,9 @@ public:
 
   /** Busy loop */
   void display();
+
+  //pxx
+  void loop();
 
   void load_map();
   

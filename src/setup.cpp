@@ -516,25 +516,31 @@ bool process_load_game_menu()
         }
 
       fadeout();
-      WorldMapNS::WorldMap worldmap;
+
+      if (!worldmap)
+	{
+	  worldmap = new WorldMapNS::WorldMap();
+	  //TODO: Define the circumstances under which BonusIsland is chosen
+	  //printf("pxx: %s, %s, %d\n", __FILE__, __FUNCTION__, __LINE__);
+	  worldmap->set_map_file("world1.stwm");
+	  //printf("pxx: %s, %s, %d\n", __FILE__, __FUNCTION__, __LINE__);
+	  worldmap->load_map();
+	  //printf("pxx: %s, %s, %d\n", __FILE__, __FUNCTION__, __LINE__);
+	}
       
-      //TODO: Define the circumstances under which BonusIsland is chosen
-      //printf("pxx: %s, %s, %d\n", __FILE__, __FUNCTION__, __LINE__);
-      worldmap.set_map_file("world1.stwm");
-      //printf("pxx: %s, %s, %d\n", __FILE__, __FUNCTION__, __LINE__);
-      worldmap.load_map();
-      //printf("pxx: %s, %s, %d\n", __FILE__, __FUNCTION__, __LINE__);
-     
       // Load the game or at least set the savegame_file variable
-      worldmap.loadgame(slotfile);
+      worldmap->loadgame(slotfile);
       //printf("pxx: %s, %s, %d\n", __FILE__, __FUNCTION__, __LINE__);
 
-      worldmap.display();
+      worldmap->display();
+
+      //printf("pxx: %s, %s, %d\n", __FILE__, __FUNCTION__, __LINE__);
+      emscripten_set_main_loop(worldmap_loop, 100);
       //printf("pxx: %s, %s, %d\n", __FILE__, __FUNCTION__, __LINE__);
       
-      Menu::set_current(main_menu);
+      //Menu::set_current(main_menu);
 
-      st_pause_ticks_stop();
+      //st_pause_ticks_stop();
       return true;
     }
   else

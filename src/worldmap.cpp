@@ -30,6 +30,7 @@
 #include "setup.h"
 #include "worldmap.h"
 #include "resources.h"
+#include "title.h"
 
 #define DISPLAY_MAP_MESSAGE_TIME 2800
 
@@ -712,6 +713,13 @@ WorldMap::path_ok(Direction direction, Point old_pos, Point* new_pos)
     }
 }
 
+GameSession *wm_session;
+
+void wm_session_loop()
+{
+	wm_session->mainloop();
+}
+
 void
 WorldMap::update(float delta)
 {
@@ -724,88 +732,97 @@ WorldMap::update(float delta)
               level->y == tux->get_tile_pos().y)
             {
               std::cout << "Enter the current level: " << level->name << std::endl;;
-              GameSession session(datadir +  "/levels/" + level->name,
-                                  1, ST_GL_LOAD_LEVEL_FILE);
+	      //emscripten_pause_main_loop();
+//              GameSession session(datadir +  "/levels/" + level->name,
+//                                  1, ST_GL_LOAD_LEVEL_FILE);
+	      delete wm_session;
+	      wm_session = new GameSession(datadir +  "/levels/" + level->name,
+					     1, ST_GL_LOAD_LEVEL_FILE);
+	      wm_session->run();
 
-              switch (session.run())
-                {
-                case GameSession::ES_LEVEL_FINISHED:
-                  {
-                    bool old_level_state = level->solved;
-                    level->solved = true;
+  //printf("pxx: %s, %s, %d\n", __FILE__, __FUNCTION__, __LINE__);
+	      emscripten_set_main_loop(wm_session_loop, 100);
+  //printf("pxx: %s, %s, %d\n", __FILE__, __FUNCTION__, __LINE__);
 
-                    if (session.get_world()->get_tux()->got_coffee)
-                      player_status.bonus = PlayerStatus::FLOWER_BONUS;
-                    else if (session.get_world()->get_tux()->size == BIG)
-                      player_status.bonus = PlayerStatus::GROWUP_BONUS;
-                    else
-                      player_status.bonus = PlayerStatus::NO_BONUS;
-
-                    if (old_level_state != level->solved && level->auto_path)
-                      { // Try to detect the next direction to which we should walk
-                        // FIXME: Mostly a hack
-                        Direction dir = D_NONE;
-                    
-                        Tile* tile = at(tux->get_tile_pos());
-
-                        if (tile->north && tux->back_direction != D_NORTH)
-                          dir = D_NORTH;
-                        else if (tile->south && tux->back_direction != D_SOUTH)
-                          dir = D_SOUTH;
-                        else if (tile->east && tux->back_direction != D_EAST)
-                          dir = D_EAST;
-                        else if (tile->west && tux->back_direction != D_WEST)
-                          dir = D_WEST;
-
-                        if (dir != D_NONE)
-                          {
-                            tux->set_direction(dir);
-                            //tux->update(delta);
-                          }
-
-                        std::cout << "Walk to dir: " << dir << std::endl;
-                      }
-
-                    if (!level->extro_filename.empty())
-                      { 
-                        MusicRef theme =
-                          music_manager->load_music(datadir + "/music/theme.ogg");
-                        MusicRef credits = music_manager->load_music(datadir + "/music/credits.ogg");
-                        music_manager->play_music(theme);
-                        // Display final credits and go back to the main menu
-                        display_text_file(level->extro_filename,
-                                          "/images/background/extro.jpg", SCROLL_SPEED_MESSAGE);
-			music_manager->play_music(credits,0);
-			display_text_file("CREDITS",
-                                          "/images/background/oiltux.jpg", SCROLL_SPEED_CREDITS);
-                        music_manager->play_music(theme);
-                        quit = true;
-                      }
-                  }
-
-                  break;
-                case GameSession::ES_LEVEL_ABORT:
-                  // Reseting the player_status might be a worthy
-                  // consideration, but I don't think we need it
-                  // 'cause only the bad players will use it to
-                  // 'cheat' a few items and that isn't necesarry a
-                  // bad thing (ie. better they continue that way,
-                  // then stop playing the game all together since it
-                  // is to hard)
-                  break;
-                case GameSession::ES_GAME_OVER:
-                  quit = true;
-                  player_status.reset();
-                  break;
-                case GameSession::ES_NONE:
-                  // Should never be reached 
-                  break;
-                }
-
-              music_manager->play_music(song);
-              Menu::set_current(0);
-              if (!savegame_file.empty())
-                savegame(savegame_file);
+//              switch (session.run())
+//                {
+//                case GameSession::ES_LEVEL_FINISHED:
+//                  {
+//                    bool old_level_state = level->solved;
+//                    level->solved = true;
+//
+//                    if (session.get_world()->get_tux()->got_coffee)
+//                      player_status.bonus = PlayerStatus::FLOWER_BONUS;
+//                    else if (session.get_world()->get_tux()->size == BIG)
+//                      player_status.bonus = PlayerStatus::GROWUP_BONUS;
+//                    else
+//                      player_status.bonus = PlayerStatus::NO_BONUS;
+//
+//                    if (old_level_state != level->solved && level->auto_path)
+//                      { // Try to detect the next direction to which we should walk
+//                        // FIXME: Mostly a hack
+//                        Direction dir = D_NONE;
+//                    
+//                        Tile* tile = at(tux->get_tile_pos());
+//
+//                        if (tile->north && tux->back_direction != D_NORTH)
+//                          dir = D_NORTH;
+//                        else if (tile->south && tux->back_direction != D_SOUTH)
+//                          dir = D_SOUTH;
+//                        else if (tile->east && tux->back_direction != D_EAST)
+//                          dir = D_EAST;
+//                        else if (tile->west && tux->back_direction != D_WEST)
+//                          dir = D_WEST;
+//
+//                        if (dir != D_NONE)
+//                          {
+//                            tux->set_direction(dir);
+//                            //tux->update(delta);
+//                          }
+//
+//                        std::cout << "Walk to dir: " << dir << std::endl;
+//                      }
+//
+//                    if (!level->extro_filename.empty())
+//                      { 
+//                        MusicRef theme =
+//                          music_manager->load_music(datadir + "/music/theme.ogg");
+//                        MusicRef credits = music_manager->load_music(datadir + "/music/credits.ogg");
+//                        music_manager->play_music(theme);
+//                        // Display final credits and go back to the main menu
+//                        display_text_file(level->extro_filename,
+//                                          "/images/background/extro.jpg", SCROLL_SPEED_MESSAGE);
+//			music_manager->play_music(credits,0);
+//			display_text_file("CREDITS",
+//                                          "/images/background/oiltux.jpg", SCROLL_SPEED_CREDITS);
+//                        music_manager->play_music(theme);
+//                        quit = true;
+//                      }
+//                  }
+//
+//                  break;
+//                case GameSession::ES_LEVEL_ABORT:
+//                  // Reseting the player_status might be a worthy
+//                  // consideration, but I don't think we need it
+//                  // 'cause only the bad players will use it to
+//                  // 'cheat' a few items and that isn't necesarry a
+//                  // bad thing (ie. better they continue that way,
+//                  // then stop playing the game all together since it
+//                  // is to hard)
+//                  break;
+//                case GameSession::ES_GAME_OVER:
+//                  quit = true;
+//                  player_status.reset();
+//                  break;
+//                case GameSession::ES_NONE:
+//                  // Should never be reached 
+//                  break;
+//                }
+//
+//              music_manager->play_music(song);
+//              Menu::set_current(0);
+//              if (!savegame_file.empty())
+//                savegame(savegame_file);
               return;
             }
         }
@@ -969,6 +986,157 @@ WorldMap::draw_status()
 }
 
 void
+WorldMap::loop()
+{
+  if (loopRetFrom == LRF_session)
+    {
+  printf("pxx: %s, %s, %d\n", __FILE__, __FUNCTION__, __LINE__);
+      Level *level = at_level();
+      switch (lrf_status)
+	{
+	case GameSession::ES_LEVEL_FINISHED:
+	    {
+  printf("pxx: %s, %s, %d\n", __FILE__, __FUNCTION__, __LINE__);
+	      bool old_level_state = level->solved;
+	      level->solved = true;
+
+	      if (wm_session->get_world()->get_tux()->got_coffee)
+		player_status.bonus = PlayerStatus::FLOWER_BONUS;
+	      else if (wm_session->get_world()->get_tux()->size == BIG)
+		player_status.bonus = PlayerStatus::GROWUP_BONUS;
+	      else
+		player_status.bonus = PlayerStatus::NO_BONUS;
+
+	      if (old_level_state != level->solved && level->auto_path)
+		{ // Try to detect the next direction to which we should walk
+		  // FIXME: Mostly a hack
+  printf("pxx: %s, %s, %d\n", __FILE__, __FUNCTION__, __LINE__);
+		  Direction dir = D_NONE;
+
+		  Tile* tile = at(tux->get_tile_pos());
+
+		  if (tile->north && tux->back_direction != D_NORTH)
+		    dir = D_NORTH;
+		  else if (tile->south && tux->back_direction != D_SOUTH)
+		    dir = D_SOUTH;
+		  else if (tile->east && tux->back_direction != D_EAST)
+		    dir = D_EAST;
+		  else if (tile->west && tux->back_direction != D_WEST)
+		    dir = D_WEST;
+
+		  if (dir != D_NONE)
+		    {
+		      tux->set_direction(dir);
+		      //tux->update(delta);
+		    }
+
+		  std::cout << "Walk to dir: " << dir << std::endl;
+		}
+
+	      if (!level->extro_filename.empty())
+		{ 
+  printf("pxx: %s, %s, %d\n", __FILE__, __FUNCTION__, __LINE__);
+		  MusicRef theme =
+		    music_manager->load_music(datadir + "/music/theme.ogg");
+		  MusicRef credits = music_manager->load_music(datadir + "/music/credits.ogg");
+		  music_manager->play_music(theme);
+		  // Display final credits and go back to the main menu
+		  display_text_file(level->extro_filename,
+				    "/images/background/extro.jpg", SCROLL_SPEED_MESSAGE);
+		  music_manager->play_music(credits,0);
+		  display_text_file("CREDITS",
+				    "/images/background/oiltux.jpg", SCROLL_SPEED_CREDITS);
+		  music_manager->play_music(theme);
+		  quit = true;
+		}
+	    }
+
+	  break;
+	case GameSession::ES_LEVEL_ABORT:
+	  // Reseting the player_status might be a worthy
+	  // consideration, but I don't think we need it
+	  // 'cause only the bad players will use it to
+	  // 'cheat' a few items and that isn't necesarry a
+	  // bad thing (ie. better they continue that way,
+	  // then stop playing the game all together since it
+	  // is to hard)
+	  break;
+	case GameSession::ES_GAME_OVER:
+	  quit = true;
+	  player_status.reset();
+	  break;
+	case GameSession::ES_NONE:
+	  // Should never be reached 
+	  break;
+	}
+
+      song = music_manager->load_music(datadir +  "/music/" + music);
+      music_manager->play_music(song);
+
+      Menu::set_current(0);
+      if (!savegame_file.empty())
+	savegame(savegame_file);
+
+      lrf_status = GameSession::ES_NONE;
+      loopRetFrom = LRF_NONE;
+      if (quit)
+	{
+	  title();
+	  emscripten_set_main_loop(title_loop, 100);
+	}
+    }
+
+  //printf("pxx: %s, %s, %d\n", __FILE__, __FUNCTION__, __LINE__);
+  float delta = ((float)(update_time-last_update_time))/100.0;
+
+  delta *= 1.3f;
+
+  if (delta > 10.0f)
+    delta = .3f;
+
+  last_update_time = update_time;
+  update_time      = st_get_ticks();
+  //printf("pxx: %s, %s, %d\n", __FILE__, __FUNCTION__, __LINE__);
+
+  Point tux_pos = tux->get_pos();
+  if (1)
+    {
+      offset.x = -tux_pos.x + screen->w/2;
+      offset.y = -tux_pos.y + screen->h/2;
+
+      if (offset.x > 0) offset.x = 0;
+      if (offset.y > 0) offset.y = 0;
+
+      if (offset.x < screen->w - width*32) offset.x = screen->w - width*32;
+      if (offset.y < screen->h - height*32) offset.y = screen->h - height*32;
+    } 
+
+  //printf("pxx: %s, %s, %d, before draw\n", __FILE__, __FUNCTION__, __LINE__);
+  draw(offset);
+  //printf("pxx: %s, %s, %d, after draw\n", __FILE__, __FUNCTION__, __LINE__);
+  get_input();
+  //printf("pxx: %s, %s, %d\n", __FILE__, __FUNCTION__, __LINE__);
+  update(delta);
+  //printf("pxx: %s, %s, %d\n", __FILE__, __FUNCTION__, __LINE__);
+
+  if(Menu::current())
+    {
+      Menu::current()->draw();
+      mouse_cursor->draw();
+    }
+  //printf("pxx: %s, %s, %d\n", __FILE__, __FUNCTION__, __LINE__);
+  flipscreen();
+
+  //SDL_Delay(20);
+  //printf("pxx: %s, %s, %d\n", __FILE__, __FUNCTION__, __LINE__);
+  if (quit)
+    {
+      title();
+      emscripten_set_main_loop(title_loop, 100);
+    }
+}
+
+void
 WorldMap::display()
 {
   Menu::set_current(0);
@@ -978,49 +1146,49 @@ WorldMap::display()
   song = music_manager->load_music(datadir +  "/music/" + music);
   music_manager->play_music(song);
 
-  unsigned int last_update_time;
-  unsigned int update_time;
+//  unsigned int last_update_time;
+//  unsigned int update_time;
 
   last_update_time = update_time = st_get_ticks();
 
-  while(!quit)
-    {
-      float delta = ((float)(update_time-last_update_time))/100.0;
-
-      delta *= 1.3f;
-
-      if (delta > 10.0f)
-        delta = .3f;
-      
-      last_update_time = update_time;
-      update_time      = st_get_ticks();
-
-      Point tux_pos = tux->get_pos();
-      if (1)
-        {
-          offset.x = -tux_pos.x + screen->w/2;
-          offset.y = -tux_pos.y + screen->h/2;
-
-          if (offset.x > 0) offset.x = 0;
-          if (offset.y > 0) offset.y = 0;
-
-          if (offset.x < screen->w - width*32) offset.x = screen->w - width*32;
-          if (offset.y < screen->h - height*32) offset.y = screen->h - height*32;
-        } 
-
-      draw(offset);
-      get_input();
-      update(delta);
-
-      if(Menu::current())
-        {
-          Menu::current()->draw();
-          mouse_cursor->draw();
-        }
-      flipscreen();
-
-      //SDL_Delay(20);
-    }
+//  while(!quit)
+//    {
+//      float delta = ((float)(update_time-last_update_time))/100.0;
+//
+//      delta *= 1.3f;
+//
+//      if (delta > 10.0f)
+//        delta = .3f;
+//      
+//      last_update_time = update_time;
+//      update_time      = st_get_ticks();
+//
+//      Point tux_pos = tux->get_pos();
+//      if (1)
+//        {
+//          offset.x = -tux_pos.x + screen->w/2;
+//          offset.y = -tux_pos.y + screen->h/2;
+//
+//          if (offset.x > 0) offset.x = 0;
+//          if (offset.y > 0) offset.y = 0;
+//
+//          if (offset.x < screen->w - width*32) offset.x = screen->w - width*32;
+//          if (offset.y < screen->h - height*32) offset.y = screen->h - height*32;
+//        } 
+//
+//      draw(offset);
+//      get_input();
+//      update(delta);
+//
+//      if(Menu::current())
+//        {
+//          Menu::current()->draw();
+//          mouse_cursor->draw();
+//        }
+//      flipscreen();
+//
+//      //SDL_Delay(20);
+//    }
 }
 
 void

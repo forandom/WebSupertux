@@ -343,11 +343,11 @@ void title_loop()
 	    }
 	  else if (process_load_game_menu())
 	    {
-	      // FIXME: shouldn't be needed if GameSession doesn't relay on global variables
-	      // reset tux
-	      scroll_x = 0;
-	      //titletux.level_begin();
-	      update_time = st_get_ticks();
+//	      // FIXME: shouldn't be needed if GameSession doesn't relay on global variables
+//	      // reset tux
+//	      scroll_x = 0;
+//	      //titletux.level_begin();
+//	      update_time = st_get_ticks();
 	    }
 	}
       else if(menu == contrib_menu)

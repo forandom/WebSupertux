@@ -54,6 +54,7 @@
 #include "particlesystem.h"
 #include "resources.h"
 #include "music_manager.h"
+#include "title.h"
 
 GameSession* GameSession::current_ = 0;
 
@@ -484,6 +485,7 @@ GameSession::check_end_conditions()
   // fallback in case the other endpositions don't trigger
   if (!end_sequence && tux->base.x >= endpos)
     {
+  printf("pxx: %s, %s, %d\n", __FILE__, __FUNCTION__, __LINE__);
       end_sequence = ENDSEQUENCE_WAITING;
       last_x_pos = -1;
       music_manager->play_music(level_end_song, 0);
@@ -492,15 +494,18 @@ GameSession::check_end_conditions()
     }
   else if(end_sequence && !endsequence_timer.check())
     {
+  printf("pxx: %s, %s, %d\n", __FILE__, __FUNCTION__, __LINE__);
       exit_status = ES_LEVEL_FINISHED;
       return;
     }
   else if(end_sequence == ENDSEQUENCE_RUNNING && endtile && endtile->data >= 1)
     {
+  printf("pxx: %s, %s, %d\n", __FILE__, __FUNCTION__, __LINE__);
       end_sequence = ENDSEQUENCE_WAITING;
     }
   else if(!end_sequence && endtile && endtile->data == 0)
     {
+  printf("pxx: %s, %s, %d\n", __FILE__, __FUNCTION__, __LINE__);
       end_sequence = ENDSEQUENCE_RUNNING;
       last_x_pos = -1;
       music_manager->play_music(level_end_song, 0);
@@ -509,10 +514,12 @@ GameSession::check_end_conditions()
     }
   else if (!end_sequence && tux->is_dead())
     {
+  printf("pxx: %s, %s, %d\n", __FILE__, __FUNCTION__, __LINE__);
       player_status.bonus = PlayerStatus::NO_BONUS;
 
       if (player_status.lives < 0)
         { // No more lives!?
+  printf("pxx: %s, %s, %d\n", __FILE__, __FUNCTION__, __LINE__);
           if(st_gl_mode != ST_GL_TEST)
             drawendscreen();
           
@@ -520,6 +527,7 @@ GameSession::check_end_conditions()
         }
       else
         { // Still has lives, so reset Tux to the levelstart
+  printf("pxx: %s, %s, %d\n", __FILE__, __FUNCTION__, __LINE__);
           restart_level();
         }
 
@@ -692,16 +700,19 @@ GameSession::mainloop()
   /* Handle music: */
   if(world->get_tux()->invincible_timer.check() && !end_sequence)
     {
+  printf("pxx: %s, %s, %d\n", __FILE__, __FUNCTION__, __LINE__);
       world->play_music(HERRING_MUSIC);
     }
   /* are we low on time ? */
   else if (time_left.get_left() < TIME_WARNING && !end_sequence)
     {
+  printf("pxx: %s, %s, %d\n", __FILE__, __FUNCTION__, __LINE__);
       world->play_music(HURRYUP_MUSIC);
     }
   /* or just normal music? */
   else if(world->get_music_type() != LEVEL_MUSIC && !end_sequence)
     {
+  printf("pxx: %s, %s, %d\n", __FILE__, __FUNCTION__, __LINE__);
       world->play_music(LEVEL_MUSIC);
     }
 
@@ -717,6 +728,26 @@ GameSession::mainloop()
 	  fps_cnt = 0;
 	}
     }
+
+  //exit_status = ES_LEVEL_FINISHED;
+
+  if (exit_status != ES_NONE)
+    {
+//      if (exit_status == ES_GAME_OVER)
+//	{
+//	  title();
+//	  emscripten_set_main_loop(title_loop, 100);
+//	}
+//      else
+	//{
+	  loopRetFrom = LRF_session;
+	  lrf_status = exit_status;
+	  if (exit_status != ES_GAME_OVER)
+	    worldmap->display();
+	  emscripten_set_main_loop(worldmap_loop, 100);
+	  printf("pxx: %s, %s, %d, %d ********************************return from mainloop to worldmap_loop****************************************************\n", __FILE__, __FUNCTION__, __LINE__, exit_status);
+	//}
+    }
   //printf("pxx: %s, %s, %d, datadir=%s\n", __FILE__, __FUNCTION__, __LINE__, datadir.c_str());
 ////  printf("pxx: %s, %s, %d, finished main loop\n", __FILE__, __FUNCTION__, __LINE__);
   //printf("pxx: %s, %s, %d\n", __FILE__, __FUNCTION__, __LINE__);
@@ -725,6 +756,7 @@ GameSession::mainloop()
 GameSession::ExitStatus
 GameSession::run()
 {
+//printf("pxx: %s, %s, %d\n", __FILE__, __FUNCTION__, __LINE__);
 ////  printf("pxx: %s, %s, %d, GameSession::run this=%p\n", __FILE__, __FUNCTION__, __LINE__, (void*)this);
   Menu::set_current(0);
   current_ = this;
