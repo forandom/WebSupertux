@@ -118,7 +118,8 @@ text.o: text.cpp \
   /home/xingxingpan/work/emscripten/latest/emscripten/system/include/zconf.h \
   /home/xingxingpan/work/emscripten/latest/emscripten/system/include/libc/unistd.h \
   /home/xingxingpan/work/emscripten/latest/emscripten/system/include/libc/sys/unistd.h \
-  world.h special.h player.h particlesystem.h gameobjs.h
+  world.h special.h player.h particlesystem.h gameobjs.h title.h \
+  resources.h
 
 /home/xingxingpan/work/emscripten/latest/emscripten/system/include/libc/stdlib.h:
 
@@ -397,3 +398,7 @@ player.h:
 particlesystem.h:
 
 gameobjs.h:
+
+title.h:
+
+resources.h:

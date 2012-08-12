@@ -510,6 +510,8 @@ bool process_load_game_menu()
       char slotfile[1024];
       snprintf(slotfile, 1024, "%s/slot%d.stsg", st_save_dir, slot);
 
+      emscripten_pause_main_loop();
+
       if (access(slotfile, F_OK) != 0)
         {
           //draw_intro();
@@ -538,6 +540,7 @@ bool process_load_game_menu()
       emscripten_set_main_loop(worldmap_loop, 100);
       //printf("pxx: %s, %s, %d\n", __FILE__, __FUNCTION__, __LINE__);
       
+      emscripten_resume_main_loop();
       //Menu::set_current(main_menu);
 
       //st_pause_ticks_stop();

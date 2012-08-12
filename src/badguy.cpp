@@ -919,8 +919,10 @@ BadGuy::squish(Player* player)
     set_sprite(img_flyingsnowball_squished,img_flyingsnowball_squished);
     return;
   } else if(kind == BAD_SNOWBALL) {
+printf("pxx: x=%f, y=%f, w=%f, h=%f\n", base.x, base.y, base.width, base.height);
     squish_me(player);
     set_sprite(img_snowball_squished_left, img_snowball_squished_right);
+printf("pxx: x=%f, y=%f, w=%f, h=%f\n", base.x, base.y, base.width, base.height);
     return;
   }
 }

@@ -145,19 +145,26 @@ void check_contrib_menu()
       // Loading fade
       fadeout();
 
-      WorldMapNS::WorldMap worldmap;
-      worldmap.loadmap(worldmap_list.item[index - contrib_subsets.size()]);
+      emscripten_pause_main_loop();
+
+      delete worldmap;
+      worldmap = new WorldMapNS::WorldMap();
+      worldmap->loadmap(worldmap_list.item[index - contrib_subsets.size()]);
 //      worldmap.set_levels_as_solved();
-      std::string savegame = worldmap_list.item[index - contrib_subsets.size()];
+      static std::string savegame = worldmap_list.item[index - contrib_subsets.size()];
       // remove .stwm...
       savegame = savegame.substr(0, savegame.size()-5);
       savegame = std::string(st_save_dir) + "/" + savegame + ".stsg";
       std::cout << "SaveGameName: " << savegame << "\n";
-      worldmap.loadgame(savegame.c_str());
+      worldmap->loadgame(savegame.c_str());
 
-      worldmap.display();
+      worldmap->display();
 
-      Menu::set_current(main_menu);
+      emscripten_set_main_loop(worldmap_loop, 100);
+
+      emscripten_resume_main_loop();
+
+      //Menu::set_current(main_menu);
       }
 }
 
@@ -303,13 +310,13 @@ void title_loop()
 	    case MNID_CREDITS:
 	      music_manager = new MusicManager();
 	      menu_song  = music_manager->load_music(datadir + "/music/credits.ogg");
-	      music_manager->halt_music();
+	      //music_manager->halt_music();
 	      music_manager->play_music(menu_song,0);
 	      display_text_file("CREDITS", bkg_title, SCROLL_SPEED_CREDITS);
-	      music_manager->halt_music();
-	      menu_song = music_manager->load_music(datadir + "/music/theme.ogg");
-	      music_manager->play_music(menu_song);
-	      Menu::set_current(main_menu);
+//	      music_manager->halt_music();
+//	      menu_song = music_manager->load_music(datadir + "/music/theme.ogg");
+//	      music_manager->play_music(menu_song);
+//	      Menu::set_current(main_menu);
 	      break;
 	    case MNID_QUITMAINMENU:
 	      Menu::set_current(0);
@@ -382,6 +389,10 @@ void title(void)
   walking = true;
 
   st_pause_ticks_init();
+
+  //music_manager->halt_music();
+  //MusicRef song = music_manager->load_music(datadir + "/music/theme.ogg");
+  //music_manager->play_music(song);
 
   title_session = new GameSession(datadir + "/levels/misc/menu.stl", 0, ST_GL_DEMO_GAME);
 

@@ -489,8 +489,8 @@ WorldMap::load_map()
                       reader.read_bool("apply-action-left", &level.apply_action_west);
                       reader.read_bool("apply-action-right", &level.apply_action_east);
 
-                      if(!level.name.empty())
-                        get_level_title(&level);   // get level's title
+//                      if(!level.name.empty())
+//                        get_level_title(&level);   // get level's title
 
                       levels.push_back(level);
                     }
@@ -910,19 +910,18 @@ WorldMap::draw(const Point& offset)
   for(Levels::iterator i = levels.begin(); i != levels.end(); ++i)
     {
       if(i->name.empty()) {
-      	if ((i->teleport_dest_x != -1) && !i->invisible_teleporter) {
-				leveldot_teleporter->draw(i->x*32 + offset.x, 
-                             i->y*32 + offset.y);
-			}
-			else continue;
-		}
-
+	  if ((i->teleport_dest_x != -1) && !i->invisible_teleporter) {
+	      leveldot_teleporter->draw(i->x*32 + offset.x, 
+					i->y*32 + offset.y);
+	  }
+	  else continue;
+      }
       else if (i->solved)
-        leveldot_green->draw(i->x*32 + offset.x, 
-                             i->y*32 + offset.y);
+	leveldot_green->draw(i->x*32 + offset.x, 
+			     i->y*32 + offset.y);
       else
-        leveldot_red->draw(i->x*32 + offset.x, 
-                           i->y*32 + offset.y);        
+	leveldot_red->draw(i->x*32 + offset.x, 
+			   i->y*32 + offset.y);        
     }
 
   tux->draw(offset);
@@ -954,35 +953,35 @@ WorldMap::draw_status()
         tux_life->draw(565+(18*i),0);
     }
 
-  if (!tux->is_moving())
-    {
-      for(Levels::iterator i = levels.begin(); i != levels.end(); ++i)
-        {
-          if (i->x == tux->get_tile_pos().x && 
-              i->y == tux->get_tile_pos().y)
-            {
-              if(!i->name.empty())
-                {
-              white_text->draw_align(i->title.c_str(), screen->w/2, screen->h,  A_HMIDDLE, A_BOTTOM);
-                }
-				  else if (i->teleport_dest_x != -1) {
-				  	if(!i->teleport_message.empty())
-               	 gold_text->draw_align(i->teleport_message.c_str(), screen->w/2, screen->h,  A_HMIDDLE, A_BOTTOM);
-				  }
-
-              /* Display a message in the map, if any as been selected */
-              if(!i->display_map_message.empty() && !i->passive_message)
-                gold_text->draw_align(i->display_map_message.c_str(),
-                     screen->w/2, screen->h - 30,A_HMIDDLE, A_BOTTOM);
-              break;
-            }
-        }
-    }
+//  if (!tux->is_moving())
+//    {
+//      for(Levels::iterator i = levels.begin(); i != levels.end(); ++i)
+//	{
+//	  if (i->x == tux->get_tile_pos().x && 
+//	      i->y == tux->get_tile_pos().y)
+//	    {
+//	      if(!i->name.empty())
+//		{
+//		  white_text->draw_align(i->title.c_str(), screen->w/2, screen->h,  A_HMIDDLE, A_BOTTOM);
+//		}
+//	      else if (i->teleport_dest_x != -1) {
+//		  if(!i->teleport_message.empty())
+//		    gold_text->draw_align(i->teleport_message.c_str(), screen->w/2, screen->h,  A_HMIDDLE, A_BOTTOM);
+//	      }
+//
+//	      /* Display a message in the map, if any as been selected */
+//	      if(!i->display_map_message.empty() && !i->passive_message)
+//		gold_text->draw_align(i->display_map_message.c_str(),
+//				      screen->w/2, screen->h - 30,A_HMIDDLE, A_BOTTOM);
+//	      break;
+//	    }
+//	}
+//    }
 
   /* Display a passive message in the map, if needed */
   if(passive_message_timer.check())
     gold_text->draw_align(passive_message.c_str(),
-                          screen->w/2, screen->h - 30,A_HMIDDLE, A_BOTTOM);
+			  screen->w/2, screen->h - 30,A_HMIDDLE, A_BOTTOM);
 }
 
 void
@@ -990,13 +989,13 @@ WorldMap::loop()
 {
   if (loopRetFrom == LRF_session)
     {
-  printf("pxx: %s, %s, %d\n", __FILE__, __FUNCTION__, __LINE__);
+  //printf("pxx: %s, %s, %d\n", __FILE__, __FUNCTION__, __LINE__);
       Level *level = at_level();
       switch (lrf_status)
 	{
 	case GameSession::ES_LEVEL_FINISHED:
 	    {
-  printf("pxx: %s, %s, %d\n", __FILE__, __FUNCTION__, __LINE__);
+  //printf("pxx: %s, %s, %d\n", __FILE__, __FUNCTION__, __LINE__);
 	      bool old_level_state = level->solved;
 	      level->solved = true;
 
@@ -1010,7 +1009,7 @@ WorldMap::loop()
 	      if (old_level_state != level->solved && level->auto_path)
 		{ // Try to detect the next direction to which we should walk
 		  // FIXME: Mostly a hack
-  printf("pxx: %s, %s, %d\n", __FILE__, __FUNCTION__, __LINE__);
+  //printf("pxx: %s, %s, %d\n", __FILE__, __FUNCTION__, __LINE__);
 		  Direction dir = D_NONE;
 
 		  Tile* tile = at(tux->get_tile_pos());
@@ -1035,18 +1034,19 @@ WorldMap::loop()
 
 	      if (!level->extro_filename.empty())
 		{ 
-  printf("pxx: %s, %s, %d\n", __FILE__, __FUNCTION__, __LINE__);
-		  MusicRef theme =
-		    music_manager->load_music(datadir + "/music/theme.ogg");
+  //printf("pxx: %s, %s, %d\n", __FILE__, __FUNCTION__, __LINE__);
+		  music_manager->halt_music();
+		  //MusicRef theme =
+		    //music_manager->load_music(datadir + "/music/theme.ogg");
 		  MusicRef credits = music_manager->load_music(datadir + "/music/credits.ogg");
-		  music_manager->play_music(theme);
+		  //music_manager->play_music(theme);
 		  // Display final credits and go back to the main menu
-		  display_text_file(level->extro_filename,
-				    "/images/background/extro.jpg", SCROLL_SPEED_MESSAGE);
+		  //display_text_file(level->extro_filename,
+				    //"/images/background/extro.jpg", SCROLL_SPEED_MESSAGE);
 		  music_manager->play_music(credits,0);
 		  display_text_file("CREDITS",
 				    "/images/background/oiltux.jpg", SCROLL_SPEED_CREDITS);
-		  music_manager->play_music(theme);
+		  //music_manager->play_music(theme);
 		  quit = true;
 		}
 	    }
@@ -1083,6 +1083,7 @@ WorldMap::loop()
 	{
 	  title();
 	  emscripten_set_main_loop(title_loop, 100);
+	  return;
 	}
     }
 
@@ -1133,6 +1134,7 @@ WorldMap::loop()
     {
       title();
       emscripten_set_main_loop(title_loop, 100);
+      return;
     }
 }
 

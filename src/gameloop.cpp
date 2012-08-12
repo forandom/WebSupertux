@@ -306,7 +306,7 @@ GameSession::process_events()
                 case SDL_KEYDOWN:     /* A keypress! */
                   {
                     SDLKey key = event.key.keysym.sym;
-//printf("pxx: %s, %s, %d\n", __FILE__, __FUNCTION__, __LINE__);
+//printf("pxx: %s, %s, %d, %d, %d\n", __FILE__, __FUNCTION__, __LINE__, key, SDLK_LCTRL);
             
                     if(tux.key_event(key,DOWN))
                       break;
@@ -485,7 +485,7 @@ GameSession::check_end_conditions()
   // fallback in case the other endpositions don't trigger
   if (!end_sequence && tux->base.x >= endpos)
     {
-  printf("pxx: %s, %s, %d\n", __FILE__, __FUNCTION__, __LINE__);
+  //printf("pxx: %s, %s, %d\n", __FILE__, __FUNCTION__, __LINE__);
       end_sequence = ENDSEQUENCE_WAITING;
       last_x_pos = -1;
       music_manager->play_music(level_end_song, 0);
@@ -494,18 +494,18 @@ GameSession::check_end_conditions()
     }
   else if(end_sequence && !endsequence_timer.check())
     {
-  printf("pxx: %s, %s, %d\n", __FILE__, __FUNCTION__, __LINE__);
+  //printf("pxx: %s, %s, %d\n", __FILE__, __FUNCTION__, __LINE__);
       exit_status = ES_LEVEL_FINISHED;
       return;
     }
   else if(end_sequence == ENDSEQUENCE_RUNNING && endtile && endtile->data >= 1)
     {
-  printf("pxx: %s, %s, %d\n", __FILE__, __FUNCTION__, __LINE__);
+  //printf("pxx: %s, %s, %d\n", __FILE__, __FUNCTION__, __LINE__);
       end_sequence = ENDSEQUENCE_WAITING;
     }
   else if(!end_sequence && endtile && endtile->data == 0)
     {
-  printf("pxx: %s, %s, %d\n", __FILE__, __FUNCTION__, __LINE__);
+  //printf("pxx: %s, %s, %d\n", __FILE__, __FUNCTION__, __LINE__);
       end_sequence = ENDSEQUENCE_RUNNING;
       last_x_pos = -1;
       music_manager->play_music(level_end_song, 0);
@@ -514,20 +514,20 @@ GameSession::check_end_conditions()
     }
   else if (!end_sequence && tux->is_dead())
     {
-  printf("pxx: %s, %s, %d\n", __FILE__, __FUNCTION__, __LINE__);
+  //printf("pxx: %s, %s, %d\n", __FILE__, __FUNCTION__, __LINE__);
       player_status.bonus = PlayerStatus::NO_BONUS;
 
       if (player_status.lives < 0)
         { // No more lives!?
-  printf("pxx: %s, %s, %d\n", __FILE__, __FUNCTION__, __LINE__);
-          if(st_gl_mode != ST_GL_TEST)
-            drawendscreen();
+  //printf("pxx: %s, %s, %d\n", __FILE__, __FUNCTION__, __LINE__);
+//          if(st_gl_mode != ST_GL_TEST)
+//            drawendscreen();
           
           exit_status = ES_GAME_OVER;
         }
       else
         { // Still has lives, so reset Tux to the levelstart
-  printf("pxx: %s, %s, %d\n", __FILE__, __FUNCTION__, __LINE__);
+  //printf("pxx: %s, %s, %d\n", __FILE__, __FUNCTION__, __LINE__);
           restart_level();
         }
 
@@ -621,11 +621,12 @@ void
 GameSession::mainloop()
 {
   /* Calculate the movement-factor */
-  //double frame_ratio = ((double)(update_time-last_update_time))/((double)FRAME_RATE);
+  double frame_ratio = ((double)(update_time-last_update_time))/((double)FRAME_RATE);
 ////  printf("pxx: %s, %s, %d, GameSession::mainloop, this=%p\n", __FILE__, __FUNCTION__, __LINE__, (void*)this);
 ////  printf("pxx: %s, %d, img_bkgd=%p\n", __FUNCTION__, __LINE__, (void*)get_level()->img_bkgd);
 //printf("pxx: mainloop %d start\n", mainloop_cnt);
   //printf("pxx: %s, %s, %d, datadir=%s\n", __FILE__, __FUNCTION__, __LINE__, datadir.c_str());
+  //printf("pxx: %s, %s, %d\n", __FILE__, __FUNCTION__, __LINE__);
   if(!frame_timer.check())
     {
       frame_timer.start(25);
@@ -652,11 +653,11 @@ GameSession::mainloop()
       check_end_conditions();
   //printf("pxx: %s, %s, %d\n", __FILE__, __FUNCTION__, __LINE__);
       if (end_sequence == ENDSEQUENCE_RUNNING)
-	//action(frame_ratio/2);
-	action((((double)(update_time-last_update_time))/((double)FRAME_RATE))/2);
+	action(frame_ratio/2);
+	//action((((double)(update_time-last_update_time))/((double)FRAME_RATE))/2);
       else if(end_sequence == NO_ENDSEQUENCE)
-	//action(frame_ratio);
-	action(((double)(update_time-last_update_time))/((double)FRAME_RATE));
+	action(frame_ratio);
+	//action(((double)(update_time-last_update_time))/((double)FRAME_RATE));
     }
   else
     {
@@ -700,19 +701,19 @@ GameSession::mainloop()
   /* Handle music: */
   if(world->get_tux()->invincible_timer.check() && !end_sequence)
     {
-  printf("pxx: %s, %s, %d\n", __FILE__, __FUNCTION__, __LINE__);
+  //printf("pxx: %s, %s, %d\n", __FILE__, __FUNCTION__, __LINE__);
       world->play_music(HERRING_MUSIC);
     }
   /* are we low on time ? */
   else if (time_left.get_left() < TIME_WARNING && !end_sequence)
     {
-  printf("pxx: %s, %s, %d\n", __FILE__, __FUNCTION__, __LINE__);
+  //printf("pxx: %s, %s, %d\n", __FILE__, __FUNCTION__, __LINE__);
       world->play_music(HURRYUP_MUSIC);
     }
   /* or just normal music? */
   else if(world->get_music_type() != LEVEL_MUSIC && !end_sequence)
     {
-  printf("pxx: %s, %s, %d\n", __FILE__, __FUNCTION__, __LINE__);
+  //printf("pxx: %s, %s, %d\n", __FILE__, __FUNCTION__, __LINE__);
       world->play_music(LEVEL_MUSIC);
     }
 
@@ -733,20 +734,25 @@ GameSession::mainloop()
 
   if (exit_status != ES_NONE)
     {
-//      if (exit_status == ES_GAME_OVER)
-//	{
-//	  title();
-//	  emscripten_set_main_loop(title_loop, 100);
-//	}
-//      else
-	//{
+      emscripten_pause_main_loop();
+      if (exit_status == ES_GAME_OVER)
+	{
+	  player_status.reset();
+	  title();
+	  emscripten_set_main_loop(title_loop, 100);
+	  emscripten_resume_main_loop();
+	  //printf("pxx: %s, %s, %d, %d ********************************return from mainloop to worldmap_loop****************************************************\n", __FILE__, __FUNCTION__, __LINE__, exit_status);
+	}
+      else
+	{
+	  emscripten_pause_main_loop();
 	  loopRetFrom = LRF_session;
 	  lrf_status = exit_status;
-	  if (exit_status != ES_GAME_OVER)
-	    worldmap->display();
+	  worldmap->display();
 	  emscripten_set_main_loop(worldmap_loop, 100);
-	  printf("pxx: %s, %s, %d, %d ********************************return from mainloop to worldmap_loop****************************************************\n", __FILE__, __FUNCTION__, __LINE__, exit_status);
-	//}
+	  //printf("pxx: %s, %s, %d, %d ********************************return from mainloop to worldmap_loop****************************************************\n", __FILE__, __FUNCTION__, __LINE__, exit_status);
+	}
+      emscripten_resume_main_loop();
     }
   //printf("pxx: %s, %s, %d, datadir=%s\n", __FILE__, __FUNCTION__, __LINE__, datadir.c_str());
 ////  printf("pxx: %s, %s, %d, finished main loop\n", __FILE__, __FUNCTION__, __LINE__);

@@ -24,6 +24,8 @@
 #include "defines.h"
 #include "screen.h"
 #include "text.h"
+#include "title.h"
+#include "resources.h"
 
 Text::Text(const std::string& file, int kind_, int w_, int h_)
 {
@@ -230,142 +232,247 @@ Text::erasecenteredtext(const  char * text, int y, Surface * ptexture, int updat
 #define SCROLL      60
 #define ITEMS_SPACE 4
 
+static int display_text_done;
+static int display_text_length;
+static int display_text_surface_allocated;
+static Uint32 display_text_lastticks;
+static float display_text_speed;
+static float display_text_scroll;
+static Surface* display_text_surface;
+static string_list_type display_text_names;
+
 void display_text_file(const std::string& file, const std::string& surface, float scroll_speed)
 {
   Surface* sur = new Surface(datadir + surface, IGNORE_ALPHA);
+  display_text_surface_allocated = 1;
   display_text_file(file, sur, scroll_speed);
-  delete sur;
+  //delete sur;
+}
+
+void display_text_loop()
+{
+  /* in case of input, exit */
+  SDL_Event event;
+  while(SDL_PollEvent(&event))
+    switch(event.type)
+      {
+      case SDL_KEYDOWN:
+	switch(event.key.keysym.sym)
+	  {
+	  case SDLK_UP:
+	    display_text_speed -= SPEED_INC;
+	    break;
+	  case SDLK_DOWN:
+	    display_text_speed += SPEED_INC;
+	    break;
+	  case SDLK_SPACE:
+	  case SDLK_RETURN:
+	    if(display_text_speed >= 0)
+	      display_text_scroll += SCROLL;
+	    break;
+	  case SDLK_ESCAPE:
+	    display_text_done = 1;
+	    break;
+	  default:
+	    break;
+	  }
+	break;
+      case SDL_QUIT:
+	display_text_done = 1;
+	break;
+      default:
+	break;
+      }
+
+  if(display_text_speed > MAX_VEL)
+    display_text_speed = MAX_VEL;
+  else if(display_text_speed < -MAX_VEL)
+    display_text_speed = -MAX_VEL;
+
+  /* draw the credits */
+  display_text_surface->draw_bg();
+
+  int y = 0;
+  for(int i = 0; i < display_text_length; i++)
+    {
+      switch(display_text_names.item[i][0])
+	{
+	case ' ':
+	  white_small_text->drawf(display_text_names.item[i]+1, 0, screen->h+y-int(display_text_scroll),
+				  A_HMIDDLE, A_TOP, 1);
+	  y += white_small_text->h+ITEMS_SPACE;
+	  break;
+	case '	':
+	  white_text->drawf(display_text_names.item[i]+1, 0, screen->h+y-int(display_text_scroll),
+			    A_HMIDDLE, A_TOP, 1);
+	  y += white_text->h+ITEMS_SPACE;
+	  break;
+	case '-':
+	  white_big_text->drawf(display_text_names.item[i]+1, 0, screen->h+y-int(display_text_scroll),
+				A_HMIDDLE, A_TOP, 3);
+	  y += white_big_text->h+ITEMS_SPACE;
+	  break;
+	default:
+	  blue_text->drawf(display_text_names.item[i], 0, screen->h+y-int(display_text_scroll),
+			   A_HMIDDLE, A_TOP, 1);
+	  y += blue_text->h+ITEMS_SPACE;
+	  break;
+	}
+    }
+
+  flipscreen();
+
+  if(screen->h+y-display_text_scroll < 0 && 20+screen->h+y-display_text_scroll < 0)
+    display_text_done = 1;
+
+  Uint32 ticks = SDL_GetTicks();
+  display_text_scroll += display_text_speed * (ticks - display_text_lastticks);
+  display_text_lastticks = ticks;
+  if(display_text_scroll < 0)
+    display_text_scroll = 0;
+
+  //pxx
+  //SDL_Delay(10);
+  if (display_text_done)
+    {
+      SDL_EnableKeyRepeat(0, 0);    // disables key repeating
+      Menu::set_current(main_menu);
+      music_manager->halt_music();
+      if (display_text_surface_allocated)
+	{
+	  display_text_surface_allocated = 0;
+	  delete display_text_surface;
+	}
+      title();
+      emscripten_set_main_loop(title_loop, 100);
+    }
 }
 
 void display_text_file(const std::string& file, Surface* surface, float scroll_speed)
 {
-  int done;
-  float scroll;
-  float speed;
-  int y;
-  int length;
   FILE* fi;
   char temp[1024];
-  string_list_type names;
   char filename[1024];
-  string_list_init(&names);
+  string_list_free(&display_text_names);
+  string_list_init(&display_text_names);
   sprintf(filename,"%s/%s", datadir.c_str(), file.c_str());
   if((fi = fopen(filename,"r")) != NULL)
     {
       while(fgets(temp, sizeof(temp), fi) != NULL)
         {
           temp[strlen(temp)-1]='\0';
-          string_list_add_item(&names,temp);
+          string_list_add_item(&display_text_names,temp);
         }
       fclose(fi);
     }
   else
     {
-      string_list_add_item(&names,"File was not found!");
-      string_list_add_item(&names,filename);
-      string_list_add_item(&names,"Shame on the guy, who");
-      string_list_add_item(&names,"forgot to include it");
-      string_list_add_item(&names,"in your SuperTux distribution.");
+      string_list_add_item(&display_text_names,"File was not found!");
+      string_list_add_item(&display_text_names,filename);
+      string_list_add_item(&display_text_names,"Shame on the guy, who");
+      string_list_add_item(&display_text_names,"forgot to include it");
+      string_list_add_item(&display_text_names,"in your SuperTux distribution.");
     }
 
 
-  scroll = 0;
-  speed = scroll_speed / 50;
-  done = 0;
-
-  length = names.num_items;
+  display_text_scroll = 0;
+  display_text_speed = scroll_speed / 50;
+  display_text_done = 0;
+  display_text_length = display_text_names.num_items;
+  display_text_surface = surface;
 
   SDL_EnableKeyRepeat(SDL_DEFAULT_REPEAT_DELAY, SDL_DEFAULT_REPEAT_INTERVAL);
 
-  Uint32 lastticks = SDL_GetTicks();
-  while(done == 0)
-    {
-      /* in case of input, exit */
-      SDL_Event event;
-      while(SDL_PollEvent(&event))
-        switch(event.type)
-          {
-          case SDL_KEYDOWN:
-            switch(event.key.keysym.sym)
-              {
-              case SDLK_UP:
-                speed -= SPEED_INC;
-                break;
-              case SDLK_DOWN:
-                speed += SPEED_INC;
-                break;
-              case SDLK_SPACE:
-              case SDLK_RETURN:
-                if(speed >= 0)
-                  scroll += SCROLL;
-                break;
-              case SDLK_ESCAPE:
-                done = 1;
-                break;
-              default:
-                break;
-              }
-            break;
-          case SDL_QUIT:
-            done = 1;
-            break;
-          default:
-            break;
-          }
-
-      if(speed > MAX_VEL)
-        speed = MAX_VEL;
-      else if(speed < -MAX_VEL)
-        speed = -MAX_VEL;
-
-      /* draw the credits */
-      surface->draw_bg();
-
-      y = 0;
-      for(int i = 0; i < length; i++)
-        {
-        switch(names.item[i][0])
-          {
-          case ' ':
-            white_small_text->drawf(names.item[i]+1, 0, screen->h+y-int(scroll),
-                A_HMIDDLE, A_TOP, 1);
-            y += white_small_text->h+ITEMS_SPACE;
-            break;
-          case '	':
-            white_text->drawf(names.item[i]+1, 0, screen->h+y-int(scroll),
-                A_HMIDDLE, A_TOP, 1);
-            y += white_text->h+ITEMS_SPACE;
-            break;
-          case '-':
-            white_big_text->drawf(names.item[i]+1, 0, screen->h+y-int(scroll),
-                A_HMIDDLE, A_TOP, 3);
-            y += white_big_text->h+ITEMS_SPACE;
-            break;
-          default:
-            blue_text->drawf(names.item[i], 0, screen->h+y-int(scroll),
-                A_HMIDDLE, A_TOP, 1);
-            y += blue_text->h+ITEMS_SPACE;
-            break;
-          }
-        }
-
-      flipscreen();
-
-      if(screen->h+y-scroll < 0 && 20+screen->h+y-scroll < 0)
-        done = 1;
-
-      Uint32 ticks = SDL_GetTicks();
-      scroll += speed * (ticks - lastticks);
-      lastticks = ticks;
-      if(scroll < 0)
-        scroll = 0;
-
-      //pxx
-      //SDL_Delay(10);
-    }
-  string_list_free(&names);
-
-  SDL_EnableKeyRepeat(0, 0);    // disables key repeating
-  Menu::set_current(main_menu);
+  display_text_lastticks = SDL_GetTicks();
+  emscripten_set_main_loop(display_text_loop, 100);
+//  while(done == 0)
+//    {
+//      /* in case of input, exit */
+//      SDL_Event event;
+//      while(SDL_PollEvent(&event))
+//        switch(event.type)
+//          {
+//          case SDL_KEYDOWN:
+//            switch(event.key.keysym.sym)
+//              {
+//              case SDLK_UP:
+//                speed -= SPEED_INC;
+//                break;
+//              case SDLK_DOWN:
+//                speed += SPEED_INC;
+//                break;
+//              case SDLK_SPACE:
+//              case SDLK_RETURN:
+//                if(speed >= 0)
+//                  scroll += SCROLL;
+//                break;
+//              case SDLK_ESCAPE:
+//                done = 1;
+//                break;
+//              default:
+//                break;
+//              }
+//            break;
+//          case SDL_QUIT:
+//            done = 1;
+//            break;
+//          default:
+//            break;
+//          }
+//
+//      if(speed > MAX_VEL)
+//        speed = MAX_VEL;
+//      else if(speed < -MAX_VEL)
+//        speed = -MAX_VEL;
+//
+//      /* draw the credits */
+//      surface->draw_bg();
+//
+//      y = 0;
+//      for(int i = 0; i < length; i++)
+//        {
+//        switch(names.item[i][0])
+//          {
+//          case ' ':
+//            white_small_text->drawf(names.item[i]+1, 0, screen->h+y-int(scroll),
+//                A_HMIDDLE, A_TOP, 1);
+//            y += white_small_text->h+ITEMS_SPACE;
+//            break;
+//          case '	':
+//            white_text->drawf(names.item[i]+1, 0, screen->h+y-int(scroll),
+//                A_HMIDDLE, A_TOP, 1);
+//            y += white_text->h+ITEMS_SPACE;
+//            break;
+//          case '-':
+//            white_big_text->drawf(names.item[i]+1, 0, screen->h+y-int(scroll),
+//                A_HMIDDLE, A_TOP, 3);
+//            y += white_big_text->h+ITEMS_SPACE;
+//            break;
+//          default:
+//            blue_text->drawf(names.item[i], 0, screen->h+y-int(scroll),
+//                A_HMIDDLE, A_TOP, 1);
+//            y += blue_text->h+ITEMS_SPACE;
+//            break;
+//          }
+//        }
+//
+//      flipscreen();
+//
+//      if(screen->h+y-scroll < 0 && 20+screen->h+y-scroll < 0)
+//        done = 1;
+//
+//      Uint32 ticks = SDL_GetTicks();
+//      scroll += speed * (ticks - lastticks);
+//      lastticks = ticks;
+//      if(scroll < 0)
+//        scroll = 0;
+//
+//      //pxx
+//      //SDL_Delay(10);
+//    }
+//  string_list_free(&names);
+//
+//  SDL_EnableKeyRepeat(0, 0);    // disables key repeating
+//  Menu::set_current(main_menu);
 }
 

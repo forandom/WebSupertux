@@ -90,7 +90,7 @@ MusicManager::play_music(const MusicRef& musicref, int loops)
   if(musicref.music == 0 || current_music == musicref.music)
     return;
 
-//pxx
+  //pxx
   halt_music();
 
   if(current_music)
