@@ -1,0 +1,1788 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+ABS	screen.cpp	42;"	d	file:
+ACLOCAL	Makefile	/^ACLOCAL = ${SHELL} \/home\/xingxingpan\/work\/emscripten\/WebSupertux\/missing --run aclocal-1.7$/;"	m
+ACLOCAL_M4	Makefile	/^ACLOCAL_M4 = $(top_srcdir)\/aclocal.m4$/;"	m
+AMDEP_FALSE	Makefile	/^AMDEP_FALSE = #$/;"	m
+AMDEP_TRUE	Makefile	/^AMDEP_TRUE = $/;"	m
+AMTAR	Makefile	/^AMTAR = ${SHELL} \/home\/xingxingpan\/work\/emscripten\/WebSupertux\/missing --run tar$/;"	m
+AUTOCONF	Makefile	/^AUTOCONF = ${SHELL} \/home\/xingxingpan\/work\/emscripten\/WebSupertux\/missing --run autoconf$/;"	m
+AUTOHEADER	Makefile	/^AUTOHEADER = ${SHELL} \/home\/xingxingpan\/work\/emscripten\/WebSupertux\/missing --run autoheader$/;"	m
+AUTOMAKE	Makefile	/^AUTOMAKE = ${SHELL} \/home\/xingxingpan\/work\/emscripten\/WebSupertux\/missing --run automake-1.7$/;"	m
+AUTOSCROLL_DEAD_INTERVAL	player.cpp	30;"	d	file:
+AWK	Makefile	/^AWK = gawk$/;"	m
+A_BOTTOM	text.h	/^   A_BOTTOM,$/;"	e	enum:TextVAlign
+A_HMIDDLE	text.h	/^   A_HMIDDLE,$/;"	e	enum:TextHAlign
+A_LEFT	text.h	/^   A_LEFT,$/;"	e	enum:TextHAlign
+A_RIGHT	text.h	/^   A_RIGHT,$/;"	e	enum:TextHAlign
+A_TOP	text.h	/^   A_TOP,$/;"	e	enum:TextVAlign
+A_VMIDDLE	text.h	/^   A_VMIDDLE,$/;"	e	enum:TextVAlign
+BADGUY_WALK_SPEED	badguy.cpp	67;"	d	file:
+BAD_BOMB	badguy.h	/^  BAD_BOMB,$/;"	e	enum:BadGuyKind
+BAD_BOUNCINGSNOWBALL	badguy.h	/^  BAD_BOUNCINGSNOWBALL,$/;"	e	enum:BadGuyKind
+BAD_FISH	badguy.h	/^  BAD_FISH,$/;"	e	enum:BadGuyKind
+BAD_FLAME	badguy.h	/^  BAD_FLAME,$/;"	e	enum:BadGuyKind
+BAD_FLYINGSNOWBALL	badguy.h	/^  BAD_FLYINGSNOWBALL,$/;"	e	enum:BadGuyKind
+BAD_JUMPY	badguy.h	/^  BAD_JUMPY,$/;"	e	enum:BadGuyKind
+BAD_MRBOMB	badguy.h	/^  BAD_MRBOMB,$/;"	e	enum:BadGuyKind
+BAD_MRICEBLOCK	badguy.h	/^  BAD_MRICEBLOCK,$/;"	e	enum:BadGuyKind
+BAD_SNOWBALL	badguy.h	/^  BAD_SNOWBALL,$/;"	e	enum:BadGuyKind
+BAD_SPIKY	badguy.h	/^  BAD_SPIKY,$/;"	e	enum:BadGuyKind
+BAD_STALACTITE	badguy.h	/^  BAD_STALACTITE,$/;"	e	enum:BadGuyKind
+BIG	defines.h	54;"	d
+BITN	bitmask.h	85;"	d
+BITW	bitmask.h	82;"	d
+BITW_LEN	bitmask.h	83;"	d
+BITW_MASK	bitmask.h	84;"	d
+BOMB_EXPLODE	badguy.h	/^    BOMB_EXPLODE,$/;"	e	enum:BadGuy::BadGuyMode
+BOMB_TICKING	badguy.h	/^    BOMB_TICKING,$/;"	e	enum:BadGuy::BadGuyMode
+BOTH_WAYS	worldmap.h	/^  BOTH_WAYS,$/;"	e	enum:WorldMapNS::__anon13
+BOUNCE	gameobjs.h	32;"	d
+BOUNCY_BRICK_MAX_OFFSET	gameobjs.h	46;"	d
+BOUNCY_BRICK_SPEED	gameobjs.h	47;"	d
+BULLET_STARTING_YM	special.cpp	42;"	d	file:
+BULLET_XM	special.cpp	43;"	d	file:
+BUTTON_CLICKED	button.h	/^  BUTTON_CLICKED,$/;"	e	enum:ButtonState
+BUTTON_DEACTIVE	button.h	/^  BUTTON_DEACTIVE$/;"	e	enum:ButtonState
+BUTTON_HOVER	button.h	/^  BUTTON_HOVER,$/;"	e	enum:ButtonState
+BUTTON_NONE	button.h	/^  BUTTON_NONE = -1,$/;"	e	enum:ButtonState
+BUTTON_PRESSED	button.h	/^  BUTTON_PRESSED,$/;"	e	enum:ButtonState
+BUTTON_WHEELDOWN	button.h	/^  BUTTON_WHEELDOWN,$/;"	e	enum:ButtonState
+BUTTON_WHEELUP	button.h	/^  BUTTON_WHEELUP,$/;"	e	enum:ButtonState
+BadGuy	badguy.cpp	/^BadGuy::BadGuy(float x, float y, BadGuyKind kind_, bool stay_on_platform_)$/;"	f	class:BadGuy
+BadGuy	badguy.h	/^class BadGuy : public GameObject$/;"	c
+BadGuyData	badguy.h	/^  BadGuyData()$/;"	f	struct:BadGuyData
+BadGuyData	badguy.h	/^  BadGuyData(BadGuy* pbadguy) : kind(pbadguy->kind), x((int)pbadguy->base.x), y((int)pbadguy->base.y), stay_on_platform(pbadguy->stay_on_platform)  {};$/;"	f	struct:BadGuyData
+BadGuyData	badguy.h	/^  BadGuyData(BadGuyKind kind_, int x_, int y_, bool stay_on_platform_) $/;"	f	struct:BadGuyData
+BadGuyData	badguy.h	/^struct BadGuyData$/;"	s
+BadGuyKind	badguy.h	/^enum BadGuyKind {$/;"	g
+BadGuyMode	badguy.h	/^  enum BadGuyMode {$/;"	g	class:BadGuy
+BadGuys	world.h	/^  typedef std::list<BadGuy*> BadGuys;$/;"	t	class:World
+BonusType	scene.h	/^  enum BonusType { NO_BONUS, GROWUP_BONUS, FLOWER_BONUS };$/;"	g	struct:PlayerStatus
+BouncyBrick	gameobjs.h	/^class BouncyBrick : public GameObject$/;"	c
+BouncyDistro	gameobjs.h	/^class BouncyDistro : public GameObject$/;"	c
+BrokenBrick	gameobjs.h	/^class BrokenBrick : public GameObject$/;"	c
+Bullet	special.h	/^class Bullet : public GameObject$/;"	c
+Button	button.cpp	/^Button::Button(std::string icon_file, std::string ninfo, SDLKey nshortcut, int x, int y, int mw, int mh)$/;"	f	class:Button
+Button	button.h	/^class Button$/;"	c
+ButtonPanel	button.cpp	/^ButtonPanel::ButtonPanel(int x, int y, int w, int h)$/;"	f	class:ButtonPanel
+ButtonPanel	button.h	/^class ButtonPanel$/;"	c
+ButtonPanelMap	leveleditor.cpp	/^typedef std::map<std::string, ButtonPanel*> ButtonPanelMap;$/;"	t	file:
+ButtonState	button.h	/^enum ButtonState {$/;"	g
+CC	Makefile	/^CC = \/home\/xingxingpan\/work\/emscripten\/latest\/emscripten\/emcc$/;"	m
+CCDEPMODE	Makefile	/^CCDEPMODE = depmode=gcc3$/;"	m
+CCLD	Makefile	/^CCLD = $(CC)$/;"	m
+CFLAGS	Makefile	/^CFLAGS =  -D_GNU_SOURCE=1 -D_REENTRANT$/;"	m
+CHANGE_DIR_SCROLL_SPEED	world.cpp	320;"	d	file:
+COLLISION_BUMP	collision.h	/^    COLLISION_BUMP,$/;"	e	enum:CollisionType
+COLLISION_NORMAL	collision.h	/^    COLLISION_NORMAL,$/;"	e	enum:CollisionType
+COLLISION_SQUISH	collision.h	/^    COLLISION_SQUISH$/;"	e	enum:CollisionType
+COMPILE	Makefile	/^COMPILE = $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) \\$/;"	m
+CONFIG_CLEAN_FILES	Makefile	/^CONFIG_CLEAN_FILES =$/;"	m
+CO_BADGUY	collision.h	/^  CO_BADGUY,$/;"	e	enum:__anon1
+CO_BULLET	collision.h	/^  CO_BULLET,$/;"	e	enum:__anon1
+CO_PLAYER	collision.h	/^  CO_PLAYER$/;"	e	enum:__anon1
+CPP	Makefile	/^CPP = \/home\/xingxingpan\/work\/emscripten\/latest\/emscripten\/emcc -E$/;"	m
+CPPFLAGS	Makefile	/^CPPFLAGS = $/;"	m
+CTAGS	Makefile	/^CTAGS = ctags$/;"	m
+CTAGSFLAGS	Makefile	/^CTAGSFLAGS =$/;"	m
+CXX	Makefile	/^CXX = \/home\/xingxingpan\/work\/emscripten\/latest\/emscripten\/em++$/;"	m
+CXXCOMPILE	Makefile	/^CXXCOMPILE = $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) \\$/;"	m
+CXXDEPMODE	Makefile	/^CXXDEPMODE = depmode=gcc3$/;"	m
+CXXFLAGS	Makefile	/^CXXFLAGS = -g -O2 -D_GNU_SOURCE=1 -D_REENTRANT -DNOOPENGL -DDATA_PREFIX='"${prefix}\/share\/supertux"'$/;"	m
+CXXLD	Makefile	/^CXXLD = $(CXX)$/;"	m
+CXXLINK	Makefile	/^CXXLINK = $(CXXLD) $(AM_CXXFLAGS) $(CXXFLAGS) $(AM_LDFLAGS) $(LDFLAGS) \\$/;"	m
+CYGPATH_W	Makefile	/^CYGPATH_W = echo$/;"	m
+CaptureScreen	texture.cpp	/^Surface* Surface::CaptureScreen()$/;"	f	class:Surface
+CloudParticle	particlesystem.h	/^    class CloudParticle : public Particle$/;"	c	class:CloudParticleSystem
+CloudParticleSystem	particlesystem.cpp	/^CloudParticleSystem::CloudParticleSystem()$/;"	f	class:CloudParticleSystem
+CloudParticleSystem	particlesystem.h	/^class CloudParticleSystem : public ParticleSystem$/;"	c
+CollisionType	collision.h	/^enum CollisionType {$/;"	g
+Color	screen.h	/^  Color() $/;"	f	struct:Color
+Color	screen.h	/^  Color(int red_, int green_, int blue_)$/;"	f	struct:Color
+Color	screen.h	/^struct Color$/;"	s
+ConstructorType	texture.h	/^  enum ConstructorType { LOAD, LOAD_PART, SURFACE };$/;"	g	class:SurfaceData
+DATA_PREFIX	setup.cpp	61;"	d	file:
+DATA_PREFIX	setup.cpp	62;"	d	file:
+DEBUG_MSG	defines.h	100;"	d
+DEBUG_MSG	defines.h	104;"	d
+DEFAULT_INCLUDES	Makefile	/^DEFAULT_INCLUDES =  -I. -I$(srcdir)$/;"	m
+DEFS	Makefile	/^DEFS = -DPACKAGE_NAME=\\"SuperTux\\" -DPACKAGE_TARNAME=\\"supertux\\" -DPACKAGE_VERSION=\\"0.1.3\\" -DPACKAGE_STRING=\\"SuperTux\\ 0.1.3\\" -DPACKAGE_BUGREPORT=\\"\\" -DPACKAGE=\\"supertux\\" -DVERSION=\\"0.1.3\\" -DHAVE_DIRENT_H=1 -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_UNISTD_H=1 -DHAVE_LIBSDL_MIXER=1 -DHAVE_LIBSDL_IMAGE=1 -DHAVE_LIBZ=1 -DHAVE_MKDIR=1 -DHAVE_STRDUP=1 -DHAVE_STRSTR=1 $/;"	m
+DEPDIR	Makefile	/^DEPDIR = .deps$/;"	m
+DEP_FILES	Makefile	/^DEP_FILES = .\/$(DEPDIR)\/badguy.Po .\/$(DEPDIR)\/bitmask.Po \\$/;"	m
+DISPLAY_MAP_MESSAGE_TIME	worldmap.cpp	34;"	d	file:
+DISTFILES	Makefile	/^DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)$/;"	m
+DISTROS_LIFEUP	player.h	41;"	d
+DIST_COMMON	Makefile	/^DIST_COMMON = $(srcdir)\/Makefile.in Makefile.am$/;"	m
+DIST_SOURCES	Makefile	/^DIST_SOURCES = $(supertux_SOURCES)$/;"	m
+DOWN	defines.h	40;"	d
+DYING_FALLING	defines.h	/^  DYING_FALLING = 2$/;"	e	enum:DyingType
+DYING_NOT	defines.h	/^  DYING_NOT = 0,$/;"	e	enum:DyingType
+DYING_SQUISHED	defines.h	/^  DYING_SQUISHED = 1,$/;"	e	enum:DyingType
+D_EAST	worldmap.h	/^enum Direction { D_NONE, D_WEST, D_EAST, D_NORTH, D_SOUTH };$/;"	e	enum:WorldMapNS::Direction
+D_NONE	worldmap.h	/^enum Direction { D_NONE, D_WEST, D_EAST, D_NORTH, D_SOUTH };$/;"	e	enum:WorldMapNS::Direction
+D_NORTH	worldmap.h	/^enum Direction { D_NONE, D_WEST, D_EAST, D_NORTH, D_SOUTH };$/;"	e	enum:WorldMapNS::Direction
+D_SOUTH	worldmap.h	/^enum Direction { D_NONE, D_WEST, D_EAST, D_NORTH, D_SOUTH };$/;"	e	enum:WorldMapNS::Direction
+D_WEST	worldmap.h	/^enum Direction { D_NONE, D_WEST, D_EAST, D_NORTH, D_SOUTH };$/;"	e	enum:WorldMapNS::Direction
+Direction	defines.h	/^enum Direction { LEFT = 0, RIGHT = 1 };$/;"	g
+Direction	worldmap.h	/^enum Direction { D_NONE, D_WEST, D_EAST, D_NORTH, D_SOUTH };$/;"	g	namespace:WorldMapNS
+DyingType	defines.h	/^enum DyingType {$/;"	g
+EAST_WEST_WAY	worldmap.h	/^  EAST_WEST_WAY,$/;"	e	enum:WorldMapNS::__anon13
+ECHO_C	Makefile	/^ECHO_C = $/;"	m
+ECHO_N	Makefile	/^ECHO_N = -n$/;"	m
+ECHO_T	Makefile	/^ECHO_T = $/;"	m
+EGREP	Makefile	/^EGREP = grep -E$/;"	m
+ENDSEQUENCE_RUNNING	gameloop.h	/^    ENDSEQUENCE_RUNNING, \/\/ tux is running right$/;"	e	enum:GameSession::EndSequenceState
+ENDSEQUENCE_WAITING	gameloop.h	/^    ENDSEQUENCE_WAITING  \/\/ waiting for the end of the music$/;"	e	enum:GameSession::EndSequenceState
+ES_GAME_OVER	gameloop.h	/^  enum ExitStatus { ES_NONE, ES_LEVEL_FINISHED, ES_GAME_OVER, ES_LEVEL_ABORT };$/;"	e	enum:GameSession::ExitStatus
+ES_LEVEL_ABORT	gameloop.h	/^  enum ExitStatus { ES_NONE, ES_LEVEL_FINISHED, ES_GAME_OVER, ES_LEVEL_ABORT };$/;"	e	enum:GameSession::ExitStatus
+ES_LEVEL_FINISHED	gameloop.h	/^  enum ExitStatus { ES_NONE, ES_LEVEL_FINISHED, ES_GAME_OVER, ES_LEVEL_ABORT };$/;"	e	enum:GameSession::ExitStatus
+ES_NONE	gameloop.h	/^  enum ExitStatus { ES_NONE, ES_LEVEL_FINISHED, ES_GAME_OVER, ES_LEVEL_ABORT };$/;"	e	enum:GameSession::ExitStatus
+ETAGS	Makefile	/^ETAGS = etags$/;"	m
+ETAGSFLAGS	Makefile	/^ETAGSFLAGS =$/;"	m
+EXEEXT	Makefile	/^EXEEXT = $/;"	m
+EndSequenceState	gameloop.h	/^  enum EndSequenceState {$/;"	g	class:GameSession
+ExitStatus	gameloop.h	/^  enum ExitStatus { ES_NONE, ES_LEVEL_FINISHED, ES_GAME_OVER, ES_LEVEL_ABORT };$/;"	g	class:GameSession
+FISH_WAIT	badguy.h	/^    FISH_WAIT,$/;"	e	enum:BadGuy::BadGuyMode
+FLAT	badguy.h	/^    FLAT,$/;"	e	enum:BadGuy::BadGuyMode
+FLICK_CURSOR_TIME	menu.cpp	42;"	d	file:
+FLOWER_BONUS	scene.h	/^  enum BonusType { NO_BONUS, GROWUP_BONUS, FLOWER_BONUS };$/;"	e	enum:PlayerStatus::BonusType
+FLY_DOWN	badguy.h	/^    FLY_DOWN$/;"	e	enum:BadGuy::BadGuyMode
+FLY_UP	badguy.h	/^    FLY_UP,$/;"	e	enum:BadGuy::BadGuyMode
+FPS	defines.h	33;"	d
+FRAME_RATE	scene.h	26;"	d
+FloatingScore	gameobjs.h	/^class FloatingScore : public GameObject$/;"	c
+GL_CFLAGS	Makefile	/^GL_CFLAGS = $/;"	m
+GL_LIBS	Makefile	/^GL_LIBS = $/;"	m
+GROWUP_BONUS	scene.h	/^  enum BonusType { NO_BONUS, GROWUP_BONUS, FLOWER_BONUS };$/;"	e	enum:PlayerStatus::BonusType
+GROWUP_SPEED	special.cpp	40;"	d	file:
+GameMenuIDs	menu.h	/^enum GameMenuIDs {$/;"	g
+GameObject	type.h	/^  GameObject() {};$/;"	f	class:GameObject
+GameObject	type.h	/^class GameObject$/;"	c
+GameSession	gameloop.cpp	/^GameSession::GameSession(const std::string& subset_, int levelnb_, int mode)$/;"	f	class:GameSession
+GameSession	gameloop.h	/^class GameSession$/;"	c
+HEADER_MUSIC_MANAGER_H	music_manager.h	21;"	d
+HEADER_MUSIC_RESOURCE_H	musicref.h	20;"	d
+HEADER_SPRITE_HXX	sprite.h	21;"	d
+HEADER_SPRITE_MANAGER_HXX	sprite_manager.h	21;"	d
+HELD	badguy.h	/^    HELD,$/;"	e	enum:BadGuy::BadGuyMode
+HERRING_MUSIC	sound.h	/^  HERRING_MUSIC$/;"	e	enum:Music_Type
+HURRYUP_MUSIC	sound.h	/^  HURRYUP_MUSIC,$/;"	e	enum:Music_Type
+HurtMode	player.h	/^  enum HurtMode { KILL, SHRINK };$/;"	g	class:Player
+IGNORE_ALPHA	screen.h	32;"	d
+INLINE	bitmask.h	72;"	d
+INLINE	bitmask.h	75;"	d
+INLINE	bitmask.h	77;"	d
+INSTALL	Makefile	/^INSTALL = \/usr\/bin\/install -c$/;"	m
+INSTALL_DATA	Makefile	/^INSTALL_DATA = ${INSTALL} -m 644$/;"	m
+INSTALL_HEADER	Makefile	/^INSTALL_HEADER = $(INSTALL_DATA)$/;"	m
+INSTALL_PROGRAM	Makefile	/^INSTALL_PROGRAM = ${INSTALL}$/;"	m
+INSTALL_SCRIPT	Makefile	/^INSTALL_SCRIPT = ${INSTALL}$/;"	m
+INSTALL_STRIP_PROGRAM	Makefile	/^INSTALL_STRIP_PROGRAM = ${SHELL} $(install_sh) -c -s$/;"	m
+ITEMS_SPACE	text.cpp	231;"	d	file:
+Init	leveleditor.cpp	/^  void Init() { tile = 0; obj = NULL; is_tile = true; };$/;"	f	struct:TileOrObject
+IsObject	leveleditor.cpp	/^  bool IsObject() { return !is_tile; };$/;"	f	struct:TileOrObject
+IsTile	leveleditor.cpp	/^  bool IsTile() { return is_tile; };$/;"	f	struct:TileOrObject
+JUMPY_JUMP	badguy.h	/^    JUMPY_JUMP,$/;"	e	enum:BadGuy::BadGuyMode
+JUMP_SPEED	defines.h	66;"	d
+JoystickKeymap	globals.cpp	/^JoystickKeymap::JoystickKeymap()$/;"	f	class:JoystickKeymap
+JoystickKeymap	globals.h	/^struct JoystickKeymap$/;"	s
+KEY_CURSOR_FASTSPEED	leveleditor.cpp	50;"	d	file:
+KEY_CURSOR_SPEED	leveleditor.cpp	49;"	d	file:
+KICK	badguy.h	/^    KICK,$/;"	e	enum:BadGuy::BadGuyMode
+KICKING_TIME	defines.h	90;"	d
+KILL	player.h	/^  enum HurtMode { KILL, SHRINK };$/;"	e	enum:Player::HurtMode
+KILL_BOUNCE_YM	defines.h	77;"	d
+LDFLAGS	Makefile	/^LDFLAGS = $/;"	m
+LEFT	defines.h	/^enum Direction { LEFT = 0, RIGHT = 1 };$/;"	e	enum:Direction
+LEVEL_MUSIC	sound.h	/^  LEVEL_MUSIC,$/;"	e	enum:Music_Type
+LEVEL_NAME_MAX	level.h	54;"	d
+LEVEL_WIDTH	defines.h	86;"	d
+LIBOBJS	Makefile	/^LIBOBJS = $/;"	m
+LIBS	Makefile	/^LIBS = -lz -lSDL_image -lSDL_mixer  -lSDL$/;"	m
+LINK	Makefile	/^LINK = $(CCLD) $(AM_CFLAGS) $(CFLAGS) $(AM_LDFLAGS) $(LDFLAGS) -o $@$/;"	m
+LISP_PATTERN_ANY	lispreader.h	49;"	d
+LISP_PATTERN_BOOLEAN	lispreader.h	54;"	d
+LISP_PATTERN_INTEGER	lispreader.h	52;"	d
+LISP_PATTERN_LIST	lispreader.h	55;"	d
+LISP_PATTERN_OR	lispreader.h	56;"	d
+LISP_PATTERN_REAL	lispreader.h	53;"	d
+LISP_PATTERN_STRING	lispreader.h	51;"	d
+LISP_PATTERN_SYMBOL	lispreader.h	50;"	d
+LISP_STREAM_ANY	lispreader.h	34;"	d
+LISP_STREAM_FILE	lispreader.h	32;"	d
+LISP_STREAM_STRING	lispreader.h	33;"	d
+LISP_TYPE_BOOLEAN	lispreader.h	46;"	d
+LISP_TYPE_CONS	lispreader.h	44;"	d
+LISP_TYPE_EOF	lispreader.h	38;"	d
+LISP_TYPE_INTEGER	lispreader.h	41;"	d
+LISP_TYPE_INTERNAL	lispreader.h	36;"	d
+LISP_TYPE_NIL	lispreader.h	39;"	d
+LISP_TYPE_PARSE_ERROR	lispreader.h	37;"	d
+LISP_TYPE_PATTERN_CONS	lispreader.h	45;"	d
+LISP_TYPE_PATTERN_VAR	lispreader.h	47;"	d
+LISP_TYPE_REAL	lispreader.h	43;"	d
+LISP_TYPE_STRING	lispreader.h	42;"	d
+LISP_TYPE_SYMBOL	lispreader.h	40;"	d
+LOAD	texture.h	/^  enum ConstructorType { LOAD, LOAD_PART, SURFACE };$/;"	e	enum:SurfaceData::ConstructorType
+LOAD_PART	texture.h	/^  enum ConstructorType { LOAD, LOAD_PART, SURFACE };$/;"	e	enum:SurfaceData::ConstructorType
+LRF_NONE	globals.h	/^enum LoopRetFrom { LRF_NONE, LRF_worldmap, LRF_session};$/;"	e	enum:LoopRetFrom
+LRF_session	globals.h	/^enum LoopRetFrom { LRF_NONE, LRF_worldmap, LRF_session};$/;"	e	enum:LoopRetFrom
+LRF_worldmap	globals.h	/^enum LoopRetFrom { LRF_NONE, LRF_worldmap, LRF_session};$/;"	e	enum:LoopRetFrom
+LTLIBOBJS	Makefile	/^LTLIBOBJS = $/;"	m
+Level	level.cpp	/^Level::Level()$/;"	f	class:Level
+Level	level.cpp	/^Level::Level(const std::string& filename)$/;"	f	class:Level
+Level	level.cpp	/^Level::Level(const std::string& subset, int level)$/;"	f	class:Level
+Level	level.h	/^class Level $/;"	c
+Level	worldmap.h	/^  struct Level$/;"	s	class:WorldMapNS::WorldMap
+LevelEditorMainMenuIDs	menu.h	/^enum LevelEditorMainMenuIDs {$/;"	g
+LevelEditorSettingsMenuIDs	menu.h	/^enum LevelEditorSettingsMenuIDs {$/;"	g
+LevelEditorSubsetNewIDs	menu.h	/^enum LevelEditorSubsetNewIDs {$/;"	g
+LevelEditorSubsetSettingsIDs	menu.h	/^enum LevelEditorSubsetSettingsIDs {$/;"	g
+LevelSubset	level.cpp	/^LevelSubset::LevelSubset()$/;"	f	class:LevelSubset
+LevelSubset	level.h	/^class LevelSubset$/;"	c
+Levels	worldmap.h	/^  typedef std::vector<Level> Levels;$/;"	t	class:WorldMapNS::WorldMap
+LispReader	lispreader.cpp	/^LispReader::LispReader (lisp_object_t* l)$/;"	f	class:LispReader
+LispReader	lispreader.h	/^class LispReader$/;"	c
+LispWriter	lispreader.cpp	/^LispWriter::LispWriter (const char* name)$/;"	f	class:LispWriter
+LispWriter	lispreader.h	/^class LispWriter$/;"	c
+LoopRetFrom	globals.h	/^enum LoopRetFrom { LRF_NONE, LRF_worldmap, LRF_session};$/;"	g
+MAKEINFO	Makefile	/^MAKEINFO = ${SHELL} \/home\/xingxingpan\/work\/emscripten\/WebSupertux\/missing --run makeinfo$/;"	m
+MAX_BULLETS	defines.h	72;"	d
+MAX_JUMP_TIME	defines.h	61;"	d
+MAX_LIVES	defines.h	62;"	d
+MAX_RUN_XM	defines.h	59;"	d
+MAX_TOKEN_LENGTH	lispreader.cpp	47;"	d	file:
+MAX_VEL	text.cpp	228;"	d	file:
+MAX_WALK_XM	defines.h	58;"	d
+MAX_YM	defines.h	60;"	d
+MC_CLICK	mousecursor.h	/^  MC_CLICK,$/;"	e	enum:__anon10
+MC_FRAME_PERIOD	mousecursor.h	27;"	d
+MC_LINK	mousecursor.h	/^  MC_LINK$/;"	e	enum:__anon10
+MC_NORMAL	mousecursor.h	/^  MC_NORMAL,$/;"	e	enum:__anon10
+MC_STATES_NB	mousecursor.h	29;"	d
+MENU_ACTION_DOWN	menu.h	/^    MENU_ACTION_DOWN,$/;"	e	enum:Menu::MenuAction
+MENU_ACTION_HIT	menu.h	/^    MENU_ACTION_HIT,$/;"	e	enum:Menu::MenuAction
+MENU_ACTION_INPUT	menu.h	/^    MENU_ACTION_INPUT,$/;"	e	enum:Menu::MenuAction
+MENU_ACTION_LEFT	menu.h	/^    MENU_ACTION_LEFT,$/;"	e	enum:Menu::MenuAction
+MENU_ACTION_NONE	menu.h	/^    MENU_ACTION_NONE = -1,$/;"	e	enum:Menu::MenuAction
+MENU_ACTION_REMOVE	menu.h	/^    MENU_ACTION_REMOVE$/;"	e	enum:Menu::MenuAction
+MENU_ACTION_RIGHT	menu.h	/^    MENU_ACTION_RIGHT,$/;"	e	enum:Menu::MenuAction
+MENU_ACTION_UP	menu.h	/^    MENU_ACTION_UP,$/;"	e	enum:Menu::MenuAction
+MIN	bitmask.cpp	30;"	d	file:
+MNID_ABORTLEVEL	menu.h	/^  MNID_ABORTLEVEL$/;"	e	enum:GameMenuIDs
+MNID_APPLY	menu.h	/^  MNID_APPLY$/;"	e	enum:LevelEditorSettingsMenuIDs
+MNID_AUTHOR	menu.h	/^  MNID_AUTHOR,$/;"	e	enum:LevelEditorSettingsMenuIDs
+MNID_BGIMG	menu.h	/^  MNID_BGIMG,$/;"	e	enum:LevelEditorSettingsMenuIDs
+MNID_BGSPEED	menu.h	/^  MNID_BGSPEED,$/;"	e	enum:LevelEditorSettingsMenuIDs
+MNID_BottomBlue	menu.h	/^  MNID_BottomBlue,$/;"	e	enum:LevelEditorSettingsMenuIDs
+MNID_BottomGreen	menu.h	/^  MNID_BottomGreen,$/;"	e	enum:LevelEditorSettingsMenuIDs
+MNID_BottomRed	menu.h	/^  MNID_BottomRed,$/;"	e	enum:LevelEditorSettingsMenuIDs
+MNID_CONTINUE	menu.h	/^  MNID_CONTINUE,$/;"	e	enum:GameMenuIDs
+MNID_CONTRIB	menu.h	/^  MNID_CONTRIB,$/;"	e	enum:MainMenuIDs
+MNID_CREATESUBSET	menu.h	/^ MNID_CREATESUBSET$/;"	e	enum:LevelEditorSubsetNewIDs
+MNID_CREDITS	menu.h	/^  MNID_CREDITS,$/;"	e	enum:MainMenuIDs
+MNID_FULLSCREEN	menu.h	/^  MNID_FULLSCREEN,$/;"	e	enum:OptionsMenuIDs
+MNID_GRAVITY	menu.h	/^  MNID_GRAVITY,$/;"	e	enum:LevelEditorSettingsMenuIDs
+MNID_LENGTH	menu.h	/^  MNID_LENGTH,$/;"	e	enum:LevelEditorSettingsMenuIDs
+MNID_LEVELEDITOR	menu.h	/^  MNID_LEVELEDITOR,$/;"	e	enum:MainMenuIDs
+MNID_MUSIC	menu.h	/^  MNID_MUSIC,$/;"	e	enum:OptionsMenuIDs
+MNID_NAME	menu.h	/^  MNID_NAME,$/;"	e	enum:LevelEditorSettingsMenuIDs
+MNID_OPENGL	menu.h	/^  MNID_OPENGL,$/;"	e	enum:OptionsMenuIDs
+MNID_OPTIONMENU	menu.h	/^  MNID_OPTIONMENU,$/;"	e	enum:MainMenuIDs
+MNID_PARTICLE	menu.h	/^  MNID_PARTICLE,$/;"	e	enum:LevelEditorSettingsMenuIDs
+MNID_QUITLEVELEDITOR	menu.h	/^  MNID_QUITLEVELEDITOR$/;"	e	enum:LevelEditorMainMenuIDs
+MNID_QUITMAINMENU	menu.h	/^  MNID_QUITMAINMENU$/;"	e	enum:MainMenuIDs
+MNID_QUITWORLDMAP	menu.h	/^  MNID_QUITWORLDMAP$/;"	e	enum:WorldMapMenuIDs
+MNID_RETURNLEVELEDITOR	menu.h	/^  MNID_RETURNLEVELEDITOR,$/;"	e	enum:LevelEditorMainMenuIDs
+MNID_RETURNWORLDMAP	menu.h	/^  MNID_RETURNWORLDMAP,$/;"	e	enum:WorldMapMenuIDs
+MNID_SHOWFPS	menu.h	/^  MNID_SHOWFPS$/;"	e	enum:OptionsMenuIDs
+MNID_SONG	menu.h	/^  MNID_SONG,$/;"	e	enum:LevelEditorSettingsMenuIDs
+MNID_SOUND	menu.h	/^  MNID_SOUND,$/;"	e	enum:OptionsMenuIDs
+MNID_STARTGAME	menu.h	/^  MNID_STARTGAME,$/;"	e	enum:MainMenuIDs
+MNID_SUBSETDESCRIPTION	menu.h	/^  MNID_SUBSETDESCRIPTION,$/;"	e	enum:LevelEditorSubsetSettingsIDs
+MNID_SUBSETNAME	menu.h	/^ MNID_SUBSETNAME,$/;"	e	enum:LevelEditorSubsetNewIDs
+MNID_SUBSETSAVECHANGES	menu.h	/^  MNID_SUBSETSAVECHANGES$/;"	e	enum:LevelEditorSubsetSettingsIDs
+MNID_SUBSETSETTINGS	menu.h	/^  MNID_SUBSETSETTINGS,$/;"	e	enum:LevelEditorMainMenuIDs
+MNID_SUBSETTITLE	menu.h	/^  MNID_SUBSETTITLE,$/;"	e	enum:LevelEditorSubsetSettingsIDs
+MNID_TIME	menu.h	/^  MNID_TIME,$/;"	e	enum:LevelEditorSettingsMenuIDs
+MNID_TopBlue	menu.h	/^  MNID_TopBlue,$/;"	e	enum:LevelEditorSettingsMenuIDs
+MNID_TopGreen	menu.h	/^  MNID_TopGreen,$/;"	e	enum:LevelEditorSettingsMenuIDs
+MNID_TopRed	menu.h	/^  MNID_TopRed,$/;"	e	enum:LevelEditorSettingsMenuIDs
+MN_ACTION	menu.h	/^  MN_ACTION,$/;"	e	enum:MenuItemKind
+MN_BACK	menu.h	/^  MN_BACK,$/;"	e	enum:MenuItemKind
+MN_CONTROLFIELD	menu.h	/^  MN_CONTROLFIELD,$/;"	e	enum:MenuItemKind
+MN_DEACTIVE	menu.h	/^  MN_DEACTIVE,$/;"	e	enum:MenuItemKind
+MN_GOTO	menu.h	/^  MN_GOTO,$/;"	e	enum:MenuItemKind
+MN_HL	menu.h	/^  MN_HL, \/* horizontal line *\/$/;"	e	enum:MenuItemKind
+MN_LABEL	menu.h	/^  MN_LABEL,$/;"	e	enum:MenuItemKind
+MN_NUMFIELD	menu.h	/^  MN_NUMFIELD,$/;"	e	enum:MenuItemKind
+MN_STRINGSELECT	menu.h	/^  MN_STRINGSELECT,$/;"	e	enum:MenuItemKind
+MN_TEXTFIELD	menu.h	/^  MN_TEXTFIELD,$/;"	e	enum:MenuItemKind
+MN_TOGGLE	menu.h	/^  MN_TOGGLE,$/;"	e	enum:MenuItemKind
+MOUSE_LEFT_MARGIN	leveleditor.cpp	55;"	d	file:
+MOUSE_POS_SPEED	leveleditor.cpp	59;"	d	file:
+MOUSE_RIGHT_MARGIN	leveleditor.cpp	56;"	d	file:
+MainMenuIDs	menu.h	/^enum MainMenuIDs {$/;"	g
+Menu	menu.cpp	/^Menu::Menu()$/;"	f	class:Menu
+Menu	menu.h	/^class Menu$/;"	c
+MenuAction	menu.h	/^  enum MenuAction {$/;"	g	class:Menu
+MenuItem	menu.h	/^class MenuItem$/;"	c
+MenuItemKind	menu.h	/^enum MenuItemKind {$/;"	g
+MouseCursor	mousecursor.cpp	/^MouseCursor::MouseCursor(std::string cursor_file, int frames) : mid_x(0), mid_y(0)$/;"	f	class:MouseCursor
+MouseCursor	mousecursor.h	/^class MouseCursor$/;"	c
+MusicManager	music_manager.cpp	/^MusicManager::MusicManager()$/;"	f	class:MusicManager
+MusicManager	music_manager.h	/^class MusicManager$/;"	c
+MusicRef	musicref.cpp	/^MusicRef::MusicRef()$/;"	f	class:MusicRef
+MusicRef	musicref.cpp	/^MusicRef::MusicRef(MusicManager::MusicResource* newmusic)$/;"	f	class:MusicRef
+MusicRef	musicref.cpp	/^MusicRef::MusicRef(const MusicRef& other)$/;"	f	class:MusicRef
+MusicRef	musicref.h	/^class MusicRef$/;"	c
+MusicResource	music_manager.h	/^  class MusicResource$/;"	c	class:MusicManager
+Music_Type	sound.h	/^enum Music_Type {$/;"	g
+NORMAL	badguy.h	/^    NORMAL=0,$/;"	e	enum:BadGuy::BadGuyMode
+NORMAL_INSTALL	Makefile	/^NORMAL_INSTALL = :$/;"	m
+NORMAL_UNINSTALL	Makefile	/^NORMAL_UNINSTALL = :$/;"	m
+NORTH_SOUTH_WAY	worldmap.h	/^  NORTH_SOUTH_WAY,$/;"	e	enum:WorldMapNS::__anon13
+NO_BONUS	scene.h	/^  enum BonusType { NO_BONUS, GROWUP_BONUS, FLOWER_BONUS };$/;"	e	enum:PlayerStatus::BonusType
+NO_BOUNCE	gameobjs.h	31;"	d
+NO_ENDSEQUENCE	gameloop.h	/^    NO_ENDSEQUENCE,$/;"	e	enum:GameSession::EndSequenceState
+NO_MUSIC	sound.h	/^  NO_MUSIC,$/;"	e	enum:Music_Type
+NO_UPDATE	screen.h	29;"	d
+NUM_BadGuyKinds	badguy.h	/^  NUM_BadGuyKinds$/;"	e	enum:BadGuyKind
+NUM_SOUNDS	sound.h	/^  NUM_SOUNDS$/;"	e	enum:__anon11
+OBJEXT	Makefile	/^OBJEXT = o$/;"	m
+OFFSCREEN_DISTANCE	defines.h	84;"	d
+Object	leveleditor.cpp	/^  void Object(GameObject* pobj) { obj = pobj; is_tile = false; }$/;"	f	struct:TileOrObject
+OptionsMenuIDs	menu.h	/^enum OptionsMenuIDs {$/;"	g
+PACKAGE	Makefile	/^PACKAGE = supertux$/;"	m
+PACKAGE_BUGREPORT	Makefile	/^PACKAGE_BUGREPORT = $/;"	m
+PACKAGE_NAME	Makefile	/^PACKAGE_NAME = SuperTux$/;"	m
+PACKAGE_STRING	Makefile	/^PACKAGE_STRING = SuperTux 0.1.3$/;"	m
+PACKAGE_TARNAME	Makefile	/^PACKAGE_TARNAME = supertux$/;"	m
+PACKAGE_VERSION	Makefile	/^PACKAGE_VERSION = 0.1.3$/;"	m
+PAGE_CURSOR_SPEED	leveleditor.cpp	53;"	d	file:
+PATH_SEPARATOR	Makefile	/^PATH_SEPARATOR = :$/;"	m
+POST_INSTALL	Makefile	/^POST_INSTALL = :$/;"	m
+POST_UNINSTALL	Makefile	/^POST_UNINSTALL = :$/;"	m
+PRE_INSTALL	Makefile	/^PRE_INSTALL = :$/;"	m
+PRE_UNINSTALL	Makefile	/^PRE_UNINSTALL = :$/;"	m
+PROGRAMS	Makefile	/^PROGRAMS = $(bin_PROGRAMS)$/;"	m
+PTHREAD_CC	Makefile	/^PTHREAD_CC = $/;"	m
+PTHREAD_CFLAGS	Makefile	/^PTHREAD_CFLAGS = $/;"	m
+PTHREAD_LIBS	Makefile	/^PTHREAD_LIBS = $/;"	m
+Particle	particlesystem.h	/^    class Particle$/;"	c	class:ParticleSystem
+ParticleSystem	particlesystem.cpp	/^ParticleSystem::ParticleSystem()$/;"	f	class:ParticleSystem
+ParticleSystem	particlesystem.h	/^class ParticleSystem$/;"	c
+ParticleSystems	world.h	/^  typedef std::vector<ParticleSystem*> ParticleSystems;$/;"	t	class:World
+Physic	physic.cpp	/^Physic::Physic()$/;"	f	class:Physic
+Physic	physic.h	/^class Physic$/;"	c
+Player	player.h	/^class Player : public GameObject$/;"	c
+PlayerKeymap	player.cpp	/^PlayerKeymap::PlayerKeymap()$/;"	f	class:PlayerKeymap
+PlayerKeymap	player.h	/^struct PlayerKeymap$/;"	s
+PlayerSprite	player.h	/^struct PlayerSprite$/;"	s
+PlayerStatus	scene.cpp	/^PlayerStatus::PlayerStatus()$/;"	f	class:PlayerStatus
+PlayerStatus	scene.h	/^struct PlayerStatus$/;"	s
+Point	worldmap.h	/^  Point() : x(0), y(0) {}$/;"	f	struct:WorldMapNS::Point
+Point	worldmap.h	/^  Point(const Point& pos)$/;"	f	struct:WorldMapNS::Point
+Point	worldmap.h	/^  Point(int x_, int y_)$/;"	f	struct:WorldMapNS::Point
+Point	worldmap.h	/^struct Point$/;"	s	namespace:WorldMapNS
+RIGHT	defines.h	/^enum Direction { LEFT = 0, RIGHT = 1 };$/;"	e	enum:Direction
+RUN_ACCELERATION_X	defines.h	76;"	d
+RUN_SPEED	defines.h	65;"	d
+ResetPoint	level.h	/^struct ResetPoint$/;"	s
+SCORE_BRICK	player.h	45;"	d
+SCORE_DISTRO	player.h	46;"	d
+SCREEN_H	setup.cpp	68;"	d	file:
+SCREEN_W	setup.cpp	67;"	d	file:
+SCROLL	text.cpp	230;"	d	file:
+SCROLL_SPEED_CREDITS	defines.h	94;"	d
+SCROLL_SPEED_MESSAGE	defines.h	95;"	d
+SDL_CFLAGS	Makefile	/^SDL_CFLAGS = -D_GNU_SOURCE=1 -D_REENTRANT$/;"	m
+SDL_CONFIG	Makefile	/^SDL_CONFIG = \/home\/emscripten\/bin\/sdl-config$/;"	m
+SDL_LIBS	Makefile	/^SDL_LIBS = -lSDL$/;"	m
+SELECT_CLR	leveleditor.cpp	63;"	d	file:
+SELECT_W	leveleditor.cpp	62;"	d	file:
+SET_MAKE	Makefile	/^SET_MAKE = $/;"	m
+SGN	screen.cpp	41;"	d	file:
+SHELL	Makefile	/^SHELL = \/bin\/bash$/;"	m
+SHRINK	player.h	/^  enum HurtMode { KILL, SHRINK };$/;"	e	enum:Player::HurtMode
+SKID_TIME	defines.h	80;"	d
+SKID_XM	defines.h	79;"	d
+SMALL	defines.h	53;"	d
+SM_CURSOR	leveleditor.h	/^  SM_CURSOR,$/;"	e	enum:__anon2
+SM_NONE	leveleditor.h	/^  SM_NONE$/;"	e	enum:__anon2
+SM_SQUARE	leveleditor.h	/^  SM_SQUARE,$/;"	e	enum:__anon2
+SND_BIGJUMP	sound.h	/^  SND_BIGJUMP,$/;"	e	enum:__anon11
+SND_BRICK	sound.h	/^  SND_BRICK,$/;"	e	enum:__anon11
+SND_BUMP_UPGRADE	sound.h	/^  SND_BUMP_UPGRADE,$/;"	e	enum:__anon11
+SND_COFFEE	sound.h	/^  SND_COFFEE,$/;"	e	enum:__anon11
+SND_DISTRO	sound.h	/^  SND_DISTRO,$/;"	e	enum:__anon11
+SND_EXCELLENT	sound.h	/^  SND_EXCELLENT,$/;"	e	enum:__anon11
+SND_EXPLODE	sound.h	/^  SND_EXPLODE,$/;"	e	enum:__anon11
+SND_FALL	sound.h	/^  SND_FALL,$/;"	e	enum:__anon11
+SND_HERRING	sound.h	/^  SND_HERRING,$/;"	e	enum:__anon11
+SND_HURT	sound.h	/^  SND_HURT,$/;"	e	enum:__anon11
+SND_JUMP	sound.h	/^  SND_JUMP,$/;"	e	enum:__anon11
+SND_KICK	sound.h	/^  SND_KICK,$/;"	e	enum:__anon11
+SND_LIFEUP	sound.h	/^  SND_LIFEUP,$/;"	e	enum:__anon11
+SND_RICOCHET	sound.h	/^  SND_RICOCHET,$/;"	e	enum:__anon11
+SND_SHOOT	sound.h	/^  SND_SHOOT,$/;"	e	enum:__anon11
+SND_SKID	sound.h	/^  SND_SKID,$/;"	e	enum:__anon11
+SND_SQUISH	sound.h	/^  SND_SQUISH,$/;"	e	enum:__anon11
+SND_STOMP	sound.h	/^  SND_STOMP,$/;"	e	enum:__anon11
+SND_TELEPORT	sound.h	/^  SND_TELEPORT,$/;"	e	enum:__anon11
+SND_UPGRADE	sound.h	/^  SND_UPGRADE,$/;"	e	enum:__anon11
+SOUND_CENTER_SPEAKER	sound.h	/^  SOUND_CENTER_SPEAKER = -1$/;"	e	enum:Sound_Speaker
+SOUND_LEFT_SPEAKER	sound.h	/^  SOUND_LEFT_SPEAKER = 0,$/;"	e	enum:Sound_Speaker
+SOUND_RESERVED_CHANNELS	sound.h	/^  SOUND_RESERVED_CHANNELS = 2, \/\/ 2 channels reserved for left\/right speaker$/;"	e	enum:Sound_Speaker
+SOUND_RIGHT_SPEAKER	sound.h	/^  SOUND_RIGHT_SPEAKER = 1,$/;"	e	enum:Sound_Speaker
+SOURCES	Makefile	/^SOURCES = $(supertux_SOURCES)$/;"	m
+SOUTH_NORTH_WAY	worldmap.h	/^  SOUTH_NORTH_WAY,$/;"	e	enum:WorldMapNS::__anon13
+SPEED_INC	text.cpp	229;"	d	file:
+STALACTITE_FALL	badguy.h	/^    STALACTITE_FALL,$/;"	e	enum:BadGuy::BadGuyMode
+STALACTITE_SHAKING	badguy.h	/^    STALACTITE_SHAKING,$/;"	e	enum:BadGuy::BadGuyMode
+START_LIVES	defines.h	70;"	d
+STRIP	Makefile	/^STRIP = $/;"	m
+ST_GL_DEMO_GAME	gameloop.h	36;"	d
+ST_GL_LOAD_GAME	gameloop.h	34;"	d
+ST_GL_LOAD_LEVEL_FILE	gameloop.h	35;"	d
+ST_GL_PLAY	gameloop.h	32;"	d
+ST_GL_TEST	gameloop.h	33;"	d
+SUPERTUX_BADGUY_H	badguy.h	24;"	d
+SUPERTUX_BITMASK_H	bitmask.h	65;"	d
+SUPERTUX_BUTTON_H	button.h	22;"	d
+SUPERTUX_COLLISION_H	collision.h	22;"	d
+SUPERTUX_CONFIGFILE_H	configfile.h	21;"	d
+SUPERTUX_DEFINES_H	defines.h	24;"	d
+SUPERTUX_GAMELOOP_H	gameloop.h	23;"	d
+SUPERTUX_GAMEOBJS_H	gameobjs.h	23;"	d
+SUPERTUX_GLOBALS_H	globals.h	23;"	d
+SUPERTUX_HIGH_SCORES_H	high_scores.h	22;"	d
+SUPERTUX_LEVELEDITOR_H	leveleditor.h	24;"	d
+SUPERTUX_LEVEL_H	level.h	22;"	d
+SUPERTUX_MENU_H	menu.h	21;"	d
+SUPERTUX_MOUSECURSOR_H	mousecursor.h	21;"	d
+SUPERTUX_PARTICLESYSTEM_H	particlesystem.h	21;"	d
+SUPERTUX_PHYSIC_H	physic.h	22;"	d
+SUPERTUX_PLAYER_H	player.h	21;"	d
+SUPERTUX_RESOURCES_H	resources.h	21;"	d
+SUPERTUX_SCENE_H	scene.h	21;"	d
+SUPERTUX_SCREEN_H	screen.h	21;"	d
+SUPERTUX_SETUP_H	setup.h	21;"	d
+SUPERTUX_SOUND_H	sound.h	22;"	d
+SUPERTUX_SPECIAL_H	special.h	21;"	d
+SUPERTUX_TEXTURE_H	texture.h	22;"	d
+SUPERTUX_TEXT_H	text.h	22;"	d
+SUPERTUX_TIMER_H	timer.h	22;"	d
+SUPERTUX_TYPE_H	type.h	22;"	d
+SUPERTUX_WORLDMAP_H	worldmap.h	21;"	d
+SUPERTUX_WORLD_H	world.h	23;"	d
+SURFACE	texture.h	/^  enum ConstructorType { LOAD, LOAD_PART, SURFACE };$/;"	e	enum:SurfaceData::ConstructorType
+SnowParticle	particlesystem.h	/^    class SnowParticle : public Particle$/;"	c	class:SnowParticleSystem
+SnowParticleSystem	particlesystem.cpp	/^SnowParticleSystem::SnowParticleSystem()$/;"	f	class:SnowParticleSystem
+SnowParticleSystem	particlesystem.h	/^class SnowParticleSystem : public ParticleSystem$/;"	c
+Sound_Speaker	sound.h	/^enum Sound_Speaker {$/;"	g
+Sprite	sprite.cpp	/^Sprite::Sprite(lisp_object_t* cur)$/;"	f	class:Sprite
+Sprite	sprite.h	/^class Sprite$/;"	c
+SpriteManager	sprite_manager.cpp	/^SpriteManager::SpriteManager(const std::string& filename)$/;"	f	class:SpriteManager
+SpriteManager	sprite_manager.h	/^class SpriteManager$/;"	c
+Sprites	sprite_manager.h	/^  typedef std::map<std::string, Sprite*> Sprites;$/;"	t	class:SpriteManager
+Surface	texture.cpp	/^Surface::Surface(SDL_Surface* surf, int use_alpha)$/;"	f	class:Surface
+Surface	texture.cpp	/^Surface::Surface(const std::string& file, int use_alpha)$/;"	f	class:Surface
+Surface	texture.cpp	/^Surface::Surface(const std::string& file, int x, int y, int w, int h, int use_alpha)$/;"	f	class:Surface
+Surface	texture.h	/^class Surface$/;"	c
+SurfaceData	texture.cpp	/^SurfaceData::SurfaceData(SDL_Surface* temp, int use_alpha_)$/;"	f	class:SurfaceData
+SurfaceData	texture.cpp	/^SurfaceData::SurfaceData(const std::string& file_, int use_alpha_)$/;"	f	class:SurfaceData
+SurfaceData	texture.cpp	/^SurfaceData::SurfaceData(const std::string& file_, int x_, int y_, int w_, int h_, int use_alpha_)$/;"	f	class:SurfaceData
+SurfaceData	texture.h	/^class SurfaceData $/;"	c
+SurfaceImpl	texture.cpp	/^SurfaceImpl::SurfaceImpl()$/;"	f	class:SurfaceImpl
+SurfaceImpl	texture.h	/^class SurfaceImpl$/;"	c
+SurfaceOpenGL	texture.cpp	/^SurfaceOpenGL::SurfaceOpenGL(SDL_Surface* surf, int use_alpha)$/;"	f	class:SurfaceOpenGL
+SurfaceOpenGL	texture.cpp	/^SurfaceOpenGL::SurfaceOpenGL(const std::string& file, int use_alpha)$/;"	f	class:SurfaceOpenGL
+SurfaceOpenGL	texture.cpp	/^SurfaceOpenGL::SurfaceOpenGL(const std::string& file, int x, int y, int w, int h, int use_alpha)$/;"	f	class:SurfaceOpenGL
+SurfaceOpenGL	texture.h	/^class SurfaceOpenGL : public SurfaceImpl$/;"	c
+SurfaceSDL	texture.cpp	/^SurfaceSDL::SurfaceSDL(SDL_Surface* surf, int use_alpha)$/;"	f	class:SurfaceSDL
+SurfaceSDL	texture.cpp	/^SurfaceSDL::SurfaceSDL(const std::string& file, int use_alpha)$/;"	f	class:SurfaceSDL
+SurfaceSDL	texture.cpp	/^SurfaceSDL::SurfaceSDL(const std::string& file, int x, int y, int w, int h,  int use_alpha)$/;"	f	class:SurfaceSDL
+SurfaceSDL	texture.h	/^class SurfaceSDL : public SurfaceImpl$/;"	c
+Surfaces	texture.h	/^  typedef std::list<Surface*> Surfaces;$/;"	t	class:Surface
+TEXT_NUM	text.h	/^   TEXT_NUM$/;"	e	enum:__anon12
+TEXT_TEXT	text.h	/^   TEXT_TEXT,$/;"	e	enum:__anon12
+TILE_H	tile.h	22;"	d
+TIME_WARNING	player.h	37;"	d
+TM_BG	level.h	/^ TM_BG,$/;"	e	enum:TileMapType
+TM_FG	level.h	/^ TM_FG$/;"	e	enum:TileMapType
+TM_IA	level.h	/^ TM_IA,$/;"	e	enum:TileMapType
+TOKEN_CLOSE_PAREN	lispreader.cpp	36;"	d	file:
+TOKEN_DOT	lispreader.cpp	42;"	d	file:
+TOKEN_EOF	lispreader.cpp	34;"	d	file:
+TOKEN_ERROR	lispreader.cpp	33;"	d	file:
+TOKEN_FALSE	lispreader.cpp	44;"	d	file:
+TOKEN_INTEGER	lispreader.cpp	39;"	d	file:
+TOKEN_OPEN_PAREN	lispreader.cpp	35;"	d	file:
+TOKEN_PATTERN_OPEN_PAREN	lispreader.cpp	41;"	d	file:
+TOKEN_REAL	lispreader.cpp	40;"	d	file:
+TOKEN_STRING	lispreader.cpp	38;"	d	file:
+TOKEN_SYMBOL	lispreader.cpp	37;"	d	file:
+TOKEN_TRUE	lispreader.cpp	43;"	d	file:
+TUX_INVINCIBLE_TIME	player.h	35;"	d
+TUX_INVINCIBLE_TIME_WARNING	player.h	36;"	d
+TUX_SAFE_TIME	player.h	34;"	d
+Text	text.cpp	/^Text::Text(const std::string& file, int kind_, int w_, int h_)$/;"	f	class:Text
+Text	text.h	/^class Text$/;"	c
+TextHAlign	text.h	/^enum TextHAlign {$/;"	g
+TextVAlign	text.h	/^enum TextVAlign {$/;"	g
+Tile	leveleditor.cpp	/^  void Tile(unsigned int set_to) { tile = set_to; is_tile = true; }$/;"	f	struct:TileOrObject
+Tile	tile.cpp	/^Tile::Tile()$/;"	f	class:Tile
+Tile	tile.h	/^class Tile$/;"	c
+Tile	worldmap.cpp	/^Tile::Tile()$/;"	f	class:WorldMapNS::Tile
+Tile	worldmap.h	/^class Tile$/;"	c	namespace:WorldMapNS
+TileGroup	tile.h	/^struct TileGroup$/;"	s
+TileManager	tile.cpp	/^TileManager::TileManager()$/;"	f	class:TileManager
+TileManager	tile.h	/^class TileManager$/;"	c
+TileManager	worldmap.cpp	/^TileManager::TileManager()$/;"	f	class:WorldMapNS::TileManager
+TileManager	worldmap.h	/^class TileManager$/;"	c	namespace:WorldMapNS
+TileMapType	level.h	/^enum TileMapType {$/;"	g
+TileOrObject	leveleditor.cpp	/^  TileOrObject() : tile(0), obj(NULL) { is_tile = true; };$/;"	f	struct:TileOrObject
+TileOrObject	leveleditor.cpp	/^struct TileOrObject$/;"	s	file:
+Tiles	worldmap.h	/^  typedef std::vector<Tile*> Tiles;$/;"	t	class:WorldMapNS::TileManager
+Timer	timer.cpp	/^Timer::Timer()$/;"	f	class:Timer
+Timer	timer.h	/^class Timer$/;"	c
+Tux	worldmap.cpp	/^Tux::Tux(WorldMap* worldmap_)$/;"	f	class:WorldMapNS::Tux
+Tux	worldmap.h	/^class Tux$/;"	c	namespace:WorldMapNS
+UP	defines.h	39;"	d
+UPDATE	screen.h	30;"	d
+UPGRADE_1UP	special.h	/^  UPGRADE_1UP$/;"	e	enum:UpgradeKind
+UPGRADE_GROWUP	special.h	/^  UPGRADE_GROWUP,$/;"	e	enum:UpgradeKind
+UPGRADE_HERRING	special.h	/^  UPGRADE_HERRING,$/;"	e	enum:UpgradeKind
+UPGRADE_ICEFLOWER	special.h	/^  UPGRADE_ICEFLOWER,$/;"	e	enum:UpgradeKind
+USE_ALPHA	screen.h	31;"	d
+Upgrade	special.h	/^class Upgrade : public GameObject$/;"	c
+UpgradeKind	special.h	/^enum UpgradeKind {$/;"	g
+VERSION	Makefile	/^VERSION = 0.1.3$/;"	m
+VERSION	defines.h	28;"	d
+WALK_ACCELERATION_X	defines.h	75;"	d
+WALK_SPEED	defines.h	64;"	d
+WEST_EAST_WAY	worldmap.h	/^  WEST_EAST_WAY$/;"	e	enum:WorldMapNS::__anon13
+World	world.cpp	/^World::World(const std::string& filename)$/;"	f	class:World
+World	world.cpp	/^World::World(const std::string& subset, int level_nr)$/;"	f	class:World
+World	world.h	/^  World() {};$/;"	f	class:World
+World	world.h	/^class World$/;"	c
+WorldMap	worldmap.cpp	/^WorldMap::WorldMap()$/;"	f	class:WorldMapNS::WorldMap
+WorldMap	worldmap.h	/^class WorldMap$/;"	c	namespace:WorldMapNS
+WorldMapMenuIDs	menu.h	/^enum WorldMapMenuIDs {$/;"	g
+WorldMapNS	worldmap.cpp	/^namespace WorldMapNS {$/;"	n	file:
+WorldMapNS	worldmap.h	/^namespace WorldMapNS {$/;"	n
+X_SPACE	world.cpp	318;"	d	file:
+YM_FOR_JUMP	defines.h	74;"	d
+__LISPREADER_H__	lispreader.h	25;"	d
+_compile_pattern	lispreader.cpp	/^_compile_pattern (lisp_object_t **obj, int *index)$/;"	f	file:
+_lisp_object_t	lispreader.h	/^struct _lisp_object_t$/;"	s
+_match_pattern	lispreader.cpp	/^_match_pattern (lisp_object_t *pattern, lisp_object_t *obj, lisp_object_t **vars)$/;"	f	file:
+_match_pattern_var	lispreader.cpp	/^_match_pattern_var (lisp_object_t *pattern, lisp_object_t *obj, lisp_object_t **vars)$/;"	f	file:
+_next_char	lispreader.cpp	/^_next_char (lisp_stream_t *stream)$/;"	f	file:
+_scan	lispreader.cpp	/^_scan (lisp_stream_t *stream)$/;"	f	file:
+_token_append	lispreader.cpp	/^_token_append (char c)$/;"	f	file:
+_token_clear	lispreader.cpp	/^_token_clear (void)$/;"	f	file:
+_unget_char	lispreader.cpp	/^_unget_char (char c, lisp_stream_t *stream)$/;"	f	file:
+a_button	globals.h	/^  int a_button;$/;"	m	struct:JoystickKeymap
+ac_ct_CC	Makefile	/^ac_ct_CC = \/home\/xingxingpan\/work\/emscripten\/latest\/emscripten\/emcc$/;"	m
+ac_ct_CXX	Makefile	/^ac_ct_CXX = $/;"	m
+ac_ct_STRIP	Makefile	/^ac_ct_STRIP = $/;"	m
+action	badguy.cpp	/^BadGuy::action(double frame_ratio)$/;"	f	class:BadGuy
+action	gameloop.cpp	/^GameSession::action(double frame_ratio)$/;"	f	class:GameSession
+action	gameobjs.cpp	/^BouncyBrick::action(double frame_ratio)$/;"	f	class:BouncyBrick
+action	gameobjs.cpp	/^BouncyDistro::action(double frame_ratio)$/;"	f	class:BouncyDistro
+action	gameobjs.cpp	/^BrokenBrick::action(double frame_ratio)$/;"	f	class:BrokenBrick
+action	gameobjs.cpp	/^FloatingScore::action(double frame_ratio)$/;"	f	class:FloatingScore
+action	menu.cpp	/^Menu::action()$/;"	f	class:Menu
+action	player.cpp	/^Player::action(double frame_ratio)$/;"	f	class:Player
+action	special.cpp	/^Bullet::action(double frame_ratio)$/;"	f	class:Bullet
+action	special.cpp	/^Upgrade::action(double frame_ratio)$/;"	f	class:Upgrade
+action	world.cpp	/^World::action(double frame_ratio)$/;"	f	class:World
+action_bomb	badguy.cpp	/^BadGuy::action_bomb(double frame_ratio)$/;"	f	class:BadGuy
+action_bouncingsnowball	badguy.cpp	/^BadGuy::action_bouncingsnowball(double frame_ratio)$/;"	f	class:BadGuy
+action_fish	badguy.cpp	/^BadGuy::action_fish(double frame_ratio)$/;"	f	class:BadGuy
+action_flame	badguy.cpp	/^BadGuy::action_flame(double frame_ratio)$/;"	f	class:BadGuy
+action_flyingsnowball	badguy.cpp	/^BadGuy::action_flyingsnowball(double frame_ratio)$/;"	f	class:BadGuy
+action_jumpy	badguy.cpp	/^BadGuy::action_jumpy(double frame_ratio)$/;"	f	class:BadGuy
+action_mrbomb	badguy.cpp	/^BadGuy::action_mrbomb(double frame_ratio)$/;"	f	class:BadGuy
+action_mriceblock	badguy.cpp	/^BadGuy::action_mriceblock(double frame_ratio)$/;"	f	class:BadGuy
+action_snowball	badguy.cpp	/^BadGuy::action_snowball(double frame_ratio)$/;"	f	class:BadGuy
+action_spiky	badguy.cpp	/^BadGuy::action_spiky(double frame_ratio)$/;"	f	class:BadGuy
+action_stalactite	badguy.cpp	/^BadGuy::action_stalactite(double frame_ratio)$/;"	f	class:BadGuy
+activate_bad_guys	world.cpp	/^World::activate_bad_guys()$/;"	f	class:World
+activate_particle_systems	world.cpp	/^World::activate_particle_systems()$/;"	f	class:World
+active_item	menu.h	/^  int active_item;$/;"	m	class:Menu
+active_item	type.h	/^  int active_item;$/;"	m	struct:string_list_type
+active_tm	leveleditor.cpp	/^TileMapType active_tm;$/;"	v
+acx_pthread_config	Makefile	/^acx_pthread_config = $/;"	m
+add_bad_guy	world.cpp	/^World::add_bad_guy(float x, float y, BadGuyKind kind, bool stay_on_platform)$/;"	f	class:World
+add_bouncy_brick	world.cpp	/^World::add_bouncy_brick(float x, float y)$/;"	f	class:World
+add_bouncy_distro	world.cpp	/^World::add_bouncy_distro(float x, float y)$/;"	f	class:World
+add_broken_brick	world.cpp	/^World::add_broken_brick(Tile* tile, float x, float y)$/;"	f	class:World
+add_broken_brick_piece	world.cpp	/^World::add_broken_brick_piece(Tile* tile, float x, float y, float xm, float ym)$/;"	f	class:World
+add_bullet	world.cpp	/^World::add_bullet(float x, float y, float xm, Direction dir)$/;"	f	class:World
+add_icon	button.cpp	/^void Button::add_icon(std::string icon_file, int mw, int mh)$/;"	f	class:Button
+add_score	world.cpp	/^World::add_score(float x, float y, int s)$/;"	f	class:World
+add_upgrade	world.cpp	/^World::add_upgrade(float x, float y, Direction dir, UpgradeKind kind)$/;"	f	class:World
+additem	button.cpp	/^void ButtonPanel::additem(Button* pbutton, int tag)$/;"	f	class:ButtonPanel
+additem	menu.cpp	/^Menu::additem(MenuItem* pmenu_item)$/;"	f	class:Menu
+additem	menu.cpp	/^Menu::additem(MenuItemKind kind_, const std::string& text_, int toggle_, Menu* menu_, int id, int* int_p)$/;"	f	class:Menu
+am__cd	Makefile	/^am__cd = CDPATH="$${ZSH_VERSION+.}$(PATH_SEPARATOR)" && cd$/;"	m
+am__depfiles_maybe	Makefile	/^am__depfiles_maybe = depfiles$/;"	m
+am__fastdepCC_FALSE	Makefile	/^am__fastdepCC_FALSE = #$/;"	m
+am__fastdepCC_TRUE	Makefile	/^am__fastdepCC_TRUE = $/;"	m
+am__fastdepCXX_FALSE	Makefile	/^am__fastdepCXX_FALSE = #$/;"	m
+am__fastdepCXX_TRUE	Makefile	/^am__fastdepCXX_TRUE = $/;"	m
+am__include	Makefile	/^am__include = include$/;"	m
+am__leading_dot	Makefile	/^am__leading_dot = .$/;"	m
+am__quote	Makefile	/^am__quote = $/;"	m
+am_supertux_OBJECTS	Makefile	/^am_supertux_OBJECTS = badguy.$(OBJEXT) bitmask.$(OBJEXT) \\$/;"	m
+anim_speed	tile.h	/^  int anim_speed;$/;"	m	class:Tile
+animation_offset	badguy.h	/^  int animation_offset;$/;"	m	class:BadGuy
+any	lispreader.h	/^        any;$/;"	m	union:__anon3::__anon4	typeref:struct:__anon3::__anon4::__anon6
+append	lispreader.cpp	/^LispWriter::append (lisp_object_t* obj)$/;"	f	class:LispWriter
+apply	physic.cpp	/^Physic::apply(float frame_ratio, float &x, float &y)$/;"	f	class:Physic
+apply_action_east	worldmap.h	/^    bool apply_action_east;$/;"	m	struct:WorldMapNS::WorldMap::Level
+apply_action_north	worldmap.h	/^    bool apply_action_north;$/;"	m	struct:WorldMapNS::WorldMap::Level
+apply_action_south	worldmap.h	/^    bool apply_action_south;$/;"	m	struct:WorldMapNS::WorldMap::Level
+apply_action_west	worldmap.h	/^    bool apply_action_west;$/;"	m	struct:WorldMapNS::WorldMap::Level
+apply_bonuses	world.cpp	/^World::apply_bonuses()$/;"	f	class:World
+apply_level_settings_menu	leveleditor.cpp	/^void apply_level_settings_menu()$/;"	f
+arrange_left	menu.h	/^  int arrange_left;$/;"	m	class:Menu
+arrow_left	menu.cpp	/^Surface* arrow_left;$/;"	v
+arrow_right	menu.cpp	/^Surface* arrow_right;$/;"	v
+at	worldmap.cpp	/^WorldMap::at(Point p)$/;"	f	class:WorldMapNS::WorldMap
+at_level	worldmap.cpp	/^WorldMap::at_level()$/;"	f	class:WorldMapNS::WorldMap
+audio_device	sound.cpp	/^bool audio_device = true; \/* != 0: available and initialized *\/$/;"	v
+author	level.h	/^  std::string author;$/;"	m	class:Level
+auto_path	worldmap.h	/^    bool auto_path;$/;"	m	struct:WorldMapNS::WorldMap::Level
+auto_walk	worldmap.h	/^  bool auto_walk;$/;"	m	class:WorldMapNS::Tile
+ax	physic.h	/^    float ax, ay;$/;"	m	class:Physic
+ay	physic.h	/^    float ax, ay;$/;"	m	class:Physic
+b_button	globals.h	/^  int b_button;$/;"	m	struct:JoystickKeymap
+back	menu.cpp	/^Surface* back;$/;"	v
+back_direction	worldmap.h	/^  Direction back_direction;$/;"	m	class:WorldMapNS::Tux
+back_scrolling	level.h	/^  bool back_scrolling;$/;"	m	class:Level
+bad_guys	world.h	/^  BadGuys bad_guys;$/;"	m	class:World
+bad_guys_to_add	world.h	/^  BadGuys bad_guys_to_add;$/;"	m	class:World
+badguy_data	level.h	/^  std::vector<BadGuyData> badguy_data;$/;"	m	class:Level
+badguykind_from_string	badguy.cpp	/^BadGuyKind  badguykind_from_string(const std::string& str)$/;"	f
+badguykind_to_string	badguy.cpp	/^std::string badguykind_to_string(BadGuyKind kind)$/;"	f
+base	special.h	/^  base_type base;$/;"	m	class:Bullet
+base	type.h	/^  base_type base;$/;"	m	class:GameObject
+base_type	type.h	/^struct base_type$/;"	s
+bg_tiles	level.h	/^  std::vector<unsigned int> bg_tiles[15]; \/* Tiles in the background *\/$/;"	m	class:Level
+bh	button.h	/^  int bw, bh;$/;"	m	class:ButtonPanel
+binPROGRAMS_INSTALL	Makefile	/^binPROGRAMS_INSTALL = $(INSTALL_PROGRAM)$/;"	m
+bin_PROGRAMS	Makefile	/^bin_PROGRAMS = supertux$(EXEEXT)$/;"	m
+bin_PROGRAMS	Makefile	/^bin_PROGRAMS = supertux$/;"	m
+bindir	Makefile	/^bindir = ${exec_prefix}\/bin$/;"	m
+bitcount	bitmask.cpp	/^static INLINE int bitcount(unsigned long n)$/;"	f	file:
+bitmask	bitmask.h	/^struct bitmask$/;"	s
+bitmask_clearbit	bitmask.h	/^static INLINE void bitmask_clearbit(bitmask *m,int x,int y)$/;"	f
+bitmask_create	bitmask.cpp	/^bitmask *bitmask_create(int w, int h)$/;"	f
+bitmask_create_SDL	bitmask.cpp	/^bitmask *bitmask_create_SDL(SDL_Surface* surf)$/;"	f
+bitmask_draw	bitmask.cpp	/^void bitmask_draw(bitmask *a,bitmask *b,int xoffset, int yoffset)$/;"	f
+bitmask_free	bitmask.cpp	/^void bitmask_free(bitmask *m)$/;"	f
+bitmask_getbit	bitmask.h	/^static INLINE int bitmask_getbit(const bitmask *m,int x,int y) $/;"	f
+bitmask_overlap	bitmask.cpp	/^int bitmask_overlap(const bitmask *a,const bitmask *b,int xoffset, int yoffset)$/;"	f
+bitmask_overlap_area	bitmask.cpp	/^int bitmask_overlap_area(const bitmask *a,const bitmask *b,int xoffset, int yoffset)$/;"	f
+bitmask_overlap_pos	bitmask.cpp	/^int bitmask_overlap_pos(const bitmask *a,const bitmask *b,int xoffset, int yoffset, int *x, int *y)$/;"	f
+bitmask_setbit	bitmask.h	/^static INLINE void bitmask_setbit(bitmask *m,int x,int y)$/;"	f
+bits	bitmask.h	/^  BITW *bits;$/;"	m	struct:bitmask
+bkg_title	title.cpp	/^static Surface* bkg_title;$/;"	v	file:
+bkgd_bottom	level.h	/^  Color bkgd_bottom;$/;"	m	class:Level
+bkgd_image	level.h	/^  std::string bkgd_image;$/;"	m	class:Level
+bkgd_speed	level.h	/^  int bkgd_speed;$/;"	m	class:Level
+bkgd_top	level.h	/^  Color bkgd_top;$/;"	m	class:Level
+black_text	globals.cpp	/^Text* black_text;$/;"	v
+blue	screen.h	/^  int red, green, blue;$/;"	m	struct:Color
+blue_text	globals.cpp	/^Text* blue_text;$/;"	v
+bonus	scene.h	/^  BonusType bonus;$/;"	m	struct:PlayerStatus
+bonus_to_string	scene.cpp	/^std::string bonus_to_string(PlayerStatus::BonusType b)$/;"	f
+bouncy_bricks	world.h	/^  std::vector<BouncyBrick*>  bouncy_bricks;$/;"	m	class:World
+bouncy_distros	world.h	/^  std::vector<BouncyDistro*> bouncy_distros;$/;"	m	class:World
+brick	tile.h	/^  bool brick;$/;"	m	class:Tile
+broken_bricks	world.h	/^  std::vector<BrokenBrick*>  broken_bricks;$/;"	m	class:World
+buf	lispreader.h	/^            char *buf;$/;"	m	struct:__anon3::__anon4::__anon5
+build	Makefile	/^build = i686-pc-linux-gnu$/;"	m
+build_alias	Makefile	/^build_alias = $/;"	m
+build_cpu	Makefile	/^build_cpu = i686$/;"	m
+build_os	Makefile	/^build_os = linux-gnu$/;"	m
+build_vendor	Makefile	/^build_vendor = pc$/;"	m
+bullets	world.h	/^  std::vector<Bullet> bullets;$/;"	m	class:World
+bump	badguy.cpp	/^BadGuy::bump()$/;"	f	class:BadGuy
+bump	special.cpp	/^Upgrade::bump(Player* )$/;"	f	class:Upgrade
+bumpbrick	gameloop.cpp	/^void bumpbrick(float x, float y)$/;"	f
+bw	button.h	/^  int bw, bh;$/;"	m	class:ButtonPanel
+can_jump	player.h	/^  bool can_jump;$/;"	m	class:Player
+car	lispreader.h	/^            struct _lisp_object_t *car;$/;"	m	struct:_lisp_object_t::__anon7::__anon8	typeref:struct:_lisp_object_t::__anon7::__anon8::_lisp_object_t
+cdr	lispreader.h	/^            struct _lisp_object_t *cdr;$/;"	m	struct:_lisp_object_t::__anon7::__anon8	typeref:struct:_lisp_object_t::__anon7::__anon8::_lisp_object_t
+change	level.cpp	/^Level::change(float x, float y, int tm, unsigned int c)$/;"	f	class:Level
+change_input	menu.cpp	/^MenuItem::change_input(const  char *text_)$/;"	f	class:MenuItem
+change_size	level.cpp	/^Level::change_size (int new_width)$/;"	f	class:Level
+change_text	menu.cpp	/^MenuItem::change_text(const  char *text_)$/;"	f	class:MenuItem
+chars	text.h	/^  Surface* chars;$/;"	m	class:Text
+check	menu.cpp	/^Menu::check()$/;"	f	class:Menu
+check	timer.cpp	/^Timer::check()$/;"	f	class:Timer
+check_bounds	player.cpp	/^Player::check_bounds(bool back_scrolling, bool hor_autoscroll)$/;"	f	class:Player
+check_contrib_menu	title.cpp	/^void check_contrib_menu()$/;"	f
+check_contrib_subset_menu	title.cpp	/^void check_contrib_subset_menu()$/;"	f
+check_end_conditions	gameloop.cpp	/^GameSession::check_end_conditions()$/;"	f	class:GameSession
+check_horizontal_bump	badguy.cpp	/^BadGuy::check_horizontal_bump(bool checkcliff)$/;"	f	class:BadGuy
+checkbox	menu.cpp	/^Surface* checkbox;$/;"	v
+checkbox_checked	menu.cpp	/^Surface* checkbox_checked;$/;"	v
+cleanup	level.cpp	/^Level::cleanup()$/;"	f	class:Level
+clear	menu.cpp	/^Menu::clear()$/;"	f	class:Menu
+clearscreen	screen.cpp	/^void clearscreen(int r, int g, int b)$/;"	f
+close_audio	sound.cpp	/^void close_audio( void )$/;"	f
+close_paren_marker	lispreader.cpp	/^static lisp_object_t close_paren_marker = { LISP_TYPE_PARSE_ERROR , {{0,0}}  };$/;"	v	file:
+cloudimage	particlesystem.h	/^    Surface* cloudimage;$/;"	m	class:CloudParticleSystem
+collision	badguy.cpp	/^BadGuy::collision(void *p_c_object, int c_object, CollisionType type)$/;"	f	class:BadGuy
+collision	player.cpp	/^Player::collision(void* p_c_object, int c_object)$/;"	f	class:Player
+collision	special.cpp	/^Bullet::collision(int c_object)$/;"	f	class:Bullet
+collision	special.cpp	/^Upgrade::collision(void* p_c_object, int c_object, CollisionType type)$/;"	f	class:Upgrade
+collision_func	collision.cpp	/^void* collision_func(const base_type& base, tiletestfunction function)$/;"	f
+collision_goal	collision.cpp	/^Tile* collision_goal(const base_type& base)$/;"	f
+collision_handler	world.cpp	/^World::collision_handler()$/;"	f	class:World
+collision_object_map	collision.cpp	/^bool collision_object_map(const base_type& base)$/;"	f
+collision_swept_object_map	collision.cpp	/^void collision_swept_object_map(base_type* old, base_type* current)$/;"	f
+config_filename	configfile.cpp	/^const char * config_filename = "\/config";$/;"	v
+config_filename	configfile.cpp	/^const char * config_filename = "\/st_config.dat";$/;"	v
+confirm_dialog	menu.cpp	/^bool confirm_dialog(std::string text)$/;"	f
+cons	lispreader.h	/^        cons;$/;"	m	union:_lisp_object_t::__anon7	typeref:struct:_lisp_object_t::__anon7::__anon8
+contrib_menu	menu.cpp	/^Menu* contrib_menu   = 0;$/;"	v
+contrib_subset_menu	menu.cpp	/^Menu* contrib_subset_menu   = 0;$/;"	v
+contrib_subsets	title.cpp	/^static std::vector<LevelSubset*> contrib_subsets;$/;"	v	file:
+counting_distros	world.h	/^  bool counting_distros;$/;"	m	class:World
+create	level.cpp	/^void LevelSubset::create(const std::string& subset_name)$/;"	f	class:LevelSubset
+create	menu.cpp	/^MenuItem::create(MenuItemKind kind_, const char *text_, int init_toggle_, Menu* target_menu_, int id, int* int_p_)$/;"	f	class:MenuItem
+create	texture.cpp	/^SurfaceData::create()$/;"	f	class:SurfaceData
+create_SurfaceOpenGL	texture.cpp	/^SurfaceData::create_SurfaceOpenGL()$/;"	f	class:SurfaceData
+create_SurfaceSDL	texture.cpp	/^SurfaceData::create_SurfaceSDL()$/;"	f	class:SurfaceData
+create_gl	texture.cpp	/^SurfaceOpenGL::create_gl(SDL_Surface * surf, GLuint * tex)$/;"	f	class:SurfaceOpenGL
+create_lisp	lispreader.cpp	/^LispWriter::create_lisp ()$/;"	f	class:LispWriter
+cur_frame	mousecursor.h	/^    int cur_frame, tot_frames;$/;"	m	class:MouseCursor
+cur_objects	leveleditor.cpp	/^static std::string cur_objects;$/;"	v	file:
+cur_state	mousecursor.h	/^    int cur_state;$/;"	m	class:MouseCursor
+cur_tilegroup	leveleditor.cpp	/^static std::string cur_tilegroup;$/;"	v	file:
+current	gameloop.h	/^  static GameSession* current() { return current_; }$/;"	f	class:GameSession
+current	menu.h	/^  static Menu* current() { return current_; }$/;"	f	class:Menu
+current	mousecursor.h	/^    static MouseCursor* current() { return current_; };$/;"	f	class:MouseCursor
+current	world.h	/^  static World* current() { return current_; }$/;"	f	class:World
+current_	gameloop.cpp	/^GameSession* GameSession::current_ = 0;$/;"	m	class:GameSession	file:
+current_	gameloop.h	/^  static GameSession* current_;$/;"	m	class:GameSession
+current_	menu.cpp	/^Menu* Menu::current_ = 0;$/;"	m	class:Menu	file:
+current_	menu.h	/^  static Menu* current_;$/;"	m	class:Menu
+current_	mousecursor.cpp	/^MouseCursor* MouseCursor::current_ = 0;$/;"	m	class:MouseCursor	file:
+current_	mousecursor.h	/^    static MouseCursor* current_;    $/;"	m	class:MouseCursor
+current_	world.cpp	/^World* World::current_ = 0;$/;"	m	class:World	file:
+current_	world.h	/^  static World* current_;$/;"	m	class:World
+current_contrib_subset	title.cpp	/^static std::string current_contrib_subset;$/;"	v	file:
+current_music	music_manager.h	/^  MusicResource* current_music;$/;"	m	class:MusicManager
+current_tileset	tile.h	/^  std::string current_tileset;$/;"	m	class:TileManager
+currentmusic	world.h	/^  int currentmusic;$/;"	m	class:World
+cursor	mousecursor.h	/^    Surface* cursor;$/;"	m	class:MouseCursor
+cursor_x	leveleditor.cpp	/^static int pos_x, cursor_x, cursor_y, fire;$/;"	v	file:
+cursor_y	leveleditor.cpp	/^static int pos_x, cursor_x, cursor_y, fire;$/;"	v	file:
+data	lispreader.h	/^            void *data;$/;"	m	struct:__anon3::__anon4::__anon6
+data	texture.h	/^  SurfaceData data;$/;"	m	class:Surface
+data	tile.h	/^  int data;$/;"	m	class:Tile
+datadir	Makefile	/^datadir = ${prefix}\/share$/;"	m
+datadir	globals.cpp	/^std::string datadir;$/;"	v
+dead_zone	globals.h	/^  int dead_zone;$/;"	m	struct:JoystickKeymap
+debug_check	texture.cpp	/^Surface::debug_check()$/;"	f	class:Surface
+debug_fps	gameloop.h	/^  int debug_fps;$/;"	m	class:GameSession
+debug_mode	globals.cpp	/^bool debug_mode;$/;"	v
+defaults	configfile.cpp	/^static void defaults ()$/;"	f	file:
+delete_character	menu.h	/^  int delete_character;$/;"	m	class:Menu
+depcomp	Makefile	/^depcomp = $(SHELL) $(top_srcdir)\/depcomp$/;"	m
+description	level.h	/^    std::string description;$/;"	m	class:LevelSubset
+destroy_instance	tile.h	/^  static void destroy_instance() { delete instance_; instance_ = 0; }$/;"	f	class:TileManager
+dfiles	setup.cpp	/^string_list_type dfiles(const char *rel_path, const  char* glob, const  char* exception_str)$/;"	f
+dir	badguy.h	/^  Direction dir;$/;"	m	class:BadGuy
+dir	player.h	/^  Direction dir;$/;"	m	class:Player
+dir	special.h	/^  Direction  dir;$/;"	m	class:Upgrade
+direction	worldmap.h	/^  Direction direction;$/;"	m	class:WorldMapNS::Tux
+direction_to_string	worldmap.cpp	/^direction_to_string(Direction direction)$/;"	f	namespace:WorldMapNS
+display	worldmap.cpp	/^WorldMap::display()$/;"	f	class:WorldMapNS::WorldMap
+display_level_info	leveleditor.cpp	/^static Timer display_level_info;$/;"	v	file:
+display_map_message	worldmap.h	/^    std::string display_map_message;$/;"	m	struct:WorldMapNS::WorldMap::Level
+display_text_file	text.cpp	/^void display_text_file(const std::string& file, Surface* surface, float scroll_speed)$/;"	f
+display_text_file	text.cpp	/^void display_text_file(const std::string& file, const std::string& surface, float scroll_speed)$/;"	f
+distdir	Makefile	/^distdir = $(top_distdir)\/$(PACKAGE)-$(VERSION)$/;"	m
+distro	tile.h	/^  bool distro;$/;"	m	class:Tile
+distro_counter	world.h	/^  int distro_counter;$/;"	m	class:World
+distros	scene.h	/^  int  distros;$/;"	m	struct:PlayerStatus
+done	leveleditor.cpp	/^static int done;$/;"	v	file:
+dot_marker	lispreader.cpp	/^static lisp_object_t dot_marker = { LISP_TYPE_PARSE_ERROR , {{0,0}} };$/;"	v	file:
+down	player.h	/^  int down;$/;"	m	struct:player_input_type
+draw	badguy.cpp	/^BadGuy::draw()$/;"	f	class:BadGuy
+draw	button.cpp	/^void Button::draw()$/;"	f	class:Button
+draw	button.cpp	/^void ButtonPanel::draw()$/;"	f	class:ButtonPanel
+draw	gameloop.cpp	/^GameSession::draw()$/;"	f	class:GameSession
+draw	gameobjs.cpp	/^BouncyBrick::draw()$/;"	f	class:BouncyBrick
+draw	gameobjs.cpp	/^BouncyDistro::draw()$/;"	f	class:BouncyDistro
+draw	gameobjs.cpp	/^BrokenBrick::draw()$/;"	f	class:BrokenBrick
+draw	gameobjs.cpp	/^FloatingScore::draw()$/;"	f	class:FloatingScore
+draw	menu.cpp	/^Menu::draw()$/;"	f	class:Menu
+draw	mousecursor.cpp	/^void MouseCursor::draw()$/;"	f	class:MouseCursor
+draw	particlesystem.cpp	/^void ParticleSystem::draw(float scrollx, float scrolly, int layer)$/;"	f	class:ParticleSystem
+draw	player.cpp	/^Player::draw()$/;"	f	class:Player
+draw	special.cpp	/^Bullet::draw()$/;"	f	class:Bullet
+draw	special.cpp	/^Upgrade::draw()$/;"	f	class:Upgrade
+draw	sprite.cpp	/^Sprite::draw(float x, float y)$/;"	f	class:Sprite
+draw	text.cpp	/^Text::draw(const  char* text, int x, int y, int shadowsize, int update)$/;"	f	class:Text
+draw	texture.cpp	/^Surface::draw(float x, float y, Uint8 alpha, bool update)$/;"	f	class:Surface
+draw	texture.cpp	/^SurfaceOpenGL::draw(float x, float y, Uint8 alpha, bool update)$/;"	f	class:SurfaceOpenGL
+draw	texture.cpp	/^SurfaceSDL::draw(float x, float y, Uint8 alpha, bool update)$/;"	f	class:SurfaceSDL
+draw	tile.cpp	/^Tile::draw(float x, float y, unsigned int c, Uint8 alpha)$/;"	f	class:Tile
+draw	world.cpp	/^World::draw()$/;"	f	class:World
+draw	worldmap.cpp	/^Tux::draw(const Point& offset)$/;"	f	class:WorldMapNS::Tux
+draw	worldmap.cpp	/^WorldMap::draw(const Point& offset)$/;"	f	class:WorldMapNS::WorldMap
+draw_align	text.cpp	/^Text::draw_align(const char* text, int x, int y,$/;"	f	class:Text
+draw_background	title.cpp	/^void draw_background()$/;"	f
+draw_bg	texture.cpp	/^Surface::draw_bg(Uint8 alpha, bool update)$/;"	f	class:Surface
+draw_bg	texture.cpp	/^SurfaceOpenGL::draw_bg(Uint8 alpha, bool update)$/;"	f	class:SurfaceOpenGL
+draw_bg	texture.cpp	/^SurfaceSDL::draw_bg(Uint8 alpha, bool update)$/;"	f	class:SurfaceSDL
+draw_chars	text.cpp	/^Text::draw_chars(Surface* pchars,const  char* text, int x, int y, int update)$/;"	f	class:Text
+draw_demo	title.cpp	/^void draw_demo(GameSession* session, double frame_ratio)$/;"	f
+draw_intro	intro.cpp	/^void draw_intro()$/;"	f
+draw_item	menu.cpp	/^Menu::draw_item(int index, \/\/ Position of the current item in the menu$/;"	f	class:Menu
+draw_on_screen	type.h	/^  void draw_on_screen(float x = -1, float y = -1)$/;"	f	class:GameObject
+draw_part	sprite.cpp	/^Sprite::draw_part(float sx, float sy, float x, float y, float w, float h)$/;"	f	class:Sprite
+draw_part	texture.cpp	/^Surface::draw_part(float sx, float sy, float x, float y, float w, float h,  Uint8 alpha, bool update)$/;"	f	class:Surface
+draw_part	texture.cpp	/^SurfaceOpenGL::draw_part(float sx, float sy, float x, float y, float w, float h, Uint8 alpha, bool update)$/;"	f	class:SurfaceOpenGL
+draw_part	texture.cpp	/^SurfaceSDL::draw_part(float sx, float sy, float x, float y, float w, float h, Uint8 alpha, bool update)$/;"	f	class:SurfaceSDL
+draw_status	worldmap.cpp	/^WorldMap::draw_status()$/;"	f	class:WorldMapNS::WorldMap
+draw_stretched	texture.cpp	/^Surface::draw_stretched(float x, float y, int w, int h, Uint8 alpha, bool update)$/;"	f	class:Surface
+draw_stretched	texture.cpp	/^SurfaceOpenGL::draw_stretched(float x, float y, int sw, int sh, Uint8 alpha, bool update)$/;"	f	class:SurfaceOpenGL
+draw_stretched	texture.cpp	/^SurfaceSDL::draw_stretched(float x, float y, int sw, int sh, Uint8 alpha, bool update)$/;"	f	class:SurfaceSDL
+draw_stretched	tile.cpp	/^Tile::draw_stretched(float x, float y, int w, int h, unsigned int c, Uint8 alpha)$/;"	f	class:Tile
+drawendscreen	gameloop.cpp	/^GameSession::drawendscreen()$/;"	f	class:GameSession
+drawf	text.cpp	/^Text::drawf(const  char* text, int x, int y,$/;"	f	class:Text
+drawgradient	screen.cpp	/^void drawgradient(Color top_clr, Color bot_clr)$/;"	f
+drawline	screen.cpp	/^void drawline(int x1, int y1, int x2, int y2, int r, int g, int b, int a)$/;"	f
+drawpixel	screen.cpp	/^void drawpixel(int x, int y, Uint32 pixel)$/;"	f
+drawresultscreen	gameloop.cpp	/^GameSession::drawresultscreen(void)$/;"	f	class:GameSession
+drawstatus	gameloop.cpp	/^GameSession::drawstatus()$/;"	f	class:GameSession
+dsubdirs	setup.cpp	/^string_list_type dsubdirs(const char *rel_path,const  char* expected_file)$/;"	f
+duck	player.h	/^  bool duck;$/;"	m	class:Player
+duck	player.h	/^  int duck;$/;"	m	struct:PlayerKeymap
+duck_left	player.h	/^  Sprite* duck_left;$/;"	m	struct:PlayerSprite
+duck_right	player.h	/^  Sprite* duck_right;$/;"	m	struct:PlayerSprite
+dying	badguy.h	/^  DyingType  dying;$/;"	m	class:BadGuy
+dying	player.h	/^  DyingType dying;$/;"	m	class:Player
+east	worldmap.h	/^    bool east;$/;"	m	struct:WorldMapNS::WorldMap::Level
+east	worldmap.h	/^  bool east;$/;"	m	class:WorldMapNS::Tile
+editor_filenames	tile.h	/^  std::vector<std::string> editor_filenames;$/;"	m	class:Tile
+editor_images	tile.h	/^  std::vector<Surface*> editor_images;$/;"	m	class:Tile
+effect	menu.h	/^  Timer effect;$/;"	m	class:Menu
+enable_gravity	physic.cpp	/^Physic::enable_gravity(bool enable_gravity)$/;"	f	class:Physic
+enable_music	music_manager.cpp	/^MusicManager::enable_music(bool enable)$/;"	f	class:MusicManager
+end_marker	lispreader.cpp	/^static lisp_object_t end_marker = { LISP_TYPE_EOF, {{0, 0}} };$/;"	v	file:
+end_sequence	gameloop.h	/^  EndSequenceState end_sequence;$/;"	m	class:GameSession
+endsequence_timer	gameloop.h	/^  Timer endsequence_timer;$/;"	m	class:GameSession
+enter_level	worldmap.h	/^  bool enter_level;$/;"	m	class:WorldMapNS::WorldMap
+erasecenteredtext	text.cpp	/^Text::erasecenteredtext(const  char * text, int y, Surface * ptexture, int update, int shadowsize)$/;"	f	class:Text
+erasetext	text.cpp	/^Text::erasetext(const  char * text, int x, int y, Surface * ptexture, int update, int shadowsize)$/;"	f	class:Text
+error_object	lispreader.cpp	/^static lisp_object_t error_object = { LISP_TYPE_PARSE_ERROR , {{0,0}}  };$/;"	v	file:
+event	button.cpp	/^Button* ButtonPanel::event(SDL_Event& event)$/;"	f	class:ButtonPanel
+event	button.cpp	/^void Button::event(SDL_Event &event)$/;"	f	class:Button
+event	leveleditor.cpp	/^static SDL_Event event;$/;"	v	file:
+event	menu.cpp	/^Menu::event(SDL_Event& event)$/;"	f	class:Menu
+exec_prefix	Makefile	/^exec_prefix = ${prefix}$/;"	m
+exists_music	music_manager.cpp	/^MusicManager::exists_music(const std::string& file)$/;"	f	class:MusicManager
+exit_status	gameloop.h	/^  ExitStatus exit_status;$/;"	m	class:GameSession
+explode	badguy.cpp	/^void BadGuy::explode(BadGuy *badguy)$/;"	f	class:BadGuy
+extro_filename	worldmap.h	/^    std::string extro_filename;$/;"	m	struct:WorldMapNS::WorldMap::Level
+faccessible	setup.cpp	/^int faccessible(const char *filename)$/;"	f
+fade	screen.cpp	/^void fade(Surface *surface, int seconds, bool fade_out)$/;"	f
+fade	screen.cpp	/^void fade(const std::string& surface, int seconds, bool fade_out)$/;"	f
+fadeout	screen.cpp	/^void fadeout()$/;"	f
+fall	badguy.cpp	/^BadGuy::fall()$/;"	f	class:BadGuy
+fcreatedir	setup.cpp	/^int fcreatedir(const char* relative_dir)$/;"	f
+fg_tiles	level.h	/^  std::vector<unsigned int> fg_tiles[15]; \/* Tiles in the foreground *\/$/;"	m	class:Level
+file	lispreader.h	/^        FILE *file;$/;"	m	union:__anon3::__anon4
+file	texture.h	/^  std::string file;$/;"	m	class:SurfaceData
+filenames	tile.h	/^  std::vector<std::string>  filenames;$/;"	m	class:Tile
+fillrect	screen.cpp	/^void fillrect(float x, float y, float w, float h, int r, int g, int b, int a)$/;"	f
+fire	leveleditor.cpp	/^static int pos_x, cursor_x, cursor_y, fire;$/;"	v	file:
+fire	player.h	/^  int fire;$/;"	m	struct:PlayerKeymap
+fire	player.h	/^  int fire;$/;"	m	struct:player_input_type
+firetux	player.cpp	/^PlayerSprite firetux;$/;"	v
+firetux_sprite	worldmap.h	/^  Surface* firetux_sprite;$/;"	m	class:WorldMapNS::Tux
+firstsetbit	bitmask.cpp	/^static INLINE int firstsetbit(BITW w)$/;"	f	file:
+flipscreen	screen.cpp	/^void flipscreen(void)$/;"	f
+floating_scores	world.h	/^  std::vector<FloatingScore*> floating_scores;$/;"	m	class:World
+fps	sprite.h	/^  float fps;$/;"	m	class:Sprite
+fps_cnt	gameloop.h	/^  int fps_cnt;$/;"	m	class:GameSession
+fps_fps	gameloop.h	/^  float fps_fps;$/;"	m	class:GameSession
+fps_timer	gameloop.h	/^  Timer fps_timer;$/;"	m	class:GameSession
+frame	title.cpp	/^static int frame;$/;"	v	file:
+frame_	player.h	/^  int frame_;$/;"	m	class:Player
+frame_delay	sprite.h	/^  float frame_delay;$/;"	m	class:Sprite
+frame_main	player.h	/^  int frame_main;$/;"	m	class:Player
+frame_timer	gameloop.h	/^  Timer frame_timer;$/;"	m	class:GameSession
+frame_timer	player.h	/^  Timer frame_timer;$/;"	m	class:Player
+free_badguy_gfx	badguy.cpp	/^void free_badguy_gfx()$/;"	f
+free_chunk	sound.cpp	/^void free_chunk(Mix_Chunk *chunk)$/;"	f
+free_contrib_menu	title.cpp	/^void free_contrib_menu()$/;"	f
+free_music	music_manager.cpp	/^MusicManager::free_music(MusicResource* )$/;"	f	class:MusicManager
+free_special_gfx	special.cpp	/^void free_special_gfx()$/;"	f
+free_strings	setup.cpp	/^void free_strings(char **strings, int num)$/;"	f
+fullbox	tile.h	/^  bool fullbox;$/;"	m	class:Tile
+fwriteable	setup.cpp	/^int fwriteable(const char *filename)$/;"	f
+game_menu	menu.cpp	/^Menu* game_menu      = 0;$/;"	v
+game_object	button.h	/^  GameObject* game_object;$/;"	m	class:Button
+game_pause	gameloop.h	/^  bool game_pause;$/;"	m	class:GameSession
+game_speed	globals.cpp	/^float game_speed = 1.0f;$/;"	v
+generate_contrib_menu	title.cpp	/^void generate_contrib_menu()$/;"	f
+get	tile.h	/^  Tile* get(unsigned int id) {$/;"	f	class:TileManager
+get	worldmap.cpp	/^TileManager::get(int i)$/;"	f	class:WorldMapNS::TileManager
+get_acceleration_x	physic.cpp	/^Physic::get_acceleration_x()$/;"	f	class:Physic
+get_acceleration_y	physic.cpp	/^Physic::get_acceleration_y()$/;"	f	class:Physic
+get_active_item_id	menu.cpp	/^int Menu::get_active_item_id()$/;"	f	class:Menu
+get_controlfield_key_into_input	menu.cpp	/^void Menu::get_controlfield_key_into_input(MenuItem *item)$/;"	f	class:Menu
+get_current_frame	sprite.cpp	/^Sprite::get_current_frame() const$/;"	f	class:Sprite
+get_game_object	button.h	/^  GameObject* get_game_object() { return game_object; };$/;"	f	class:Button
+get_gone	timer.cpp	/^Timer::get_gone()$/;"	f	class:Timer
+get_height	menu.cpp	/^int Menu::get_height() const$/;"	f	class:Menu
+get_height	sprite.cpp	/^Sprite::get_height() const$/;"	f	class:Sprite
+get_input	worldmap.cpp	/^WorldMap::get_input()$/;"	f	class:WorldMapNS::WorldMap
+get_input_with_symbol	menu.cpp	/^std::string MenuItem::get_input_with_symbol(bool active_item)$/;"	f	class:MenuItem
+get_item	menu.h	/^  MenuItem& get_item(int index) { return item[index]; }$/;"	f	class:Menu
+get_item_by_id	menu.cpp	/^Menu::get_item_by_id(int id)$/;"	f	class:Menu
+get_left	timer.cpp	/^Timer::get_left()$/;"	f	class:Timer
+get_level	gameloop.h	/^  Level* get_level() { return world->get_level(); }$/;"	f	class:GameSession
+get_level	world.h	/^  Level*  get_level() { return level; }$/;"	f	class:World
+get_level_music	level.cpp	/^Level::get_level_music()$/;"	f	class:Level
+get_level_music_fast	level.cpp	/^Level::get_level_music_fast()$/;"	f	class:Level
+get_level_title	worldmap.cpp	/^void WorldMap::get_level_title(Levels::pointer level)$/;"	f	class:WorldMapNS::WorldMap
+get_music_type	world.cpp	/^World::get_music_type()$/;"	f	class:World
+get_name	sprite.h	/^  std::string get_name() const { return name; } $/;"	f	class:Sprite
+get_next_tile	worldmap.cpp	/^WorldMap::get_next_tile(Point pos, Direction direction)$/;"	f	class:WorldMapNS::WorldMap
+get_pos	button.h	/^  SDL_Rect get_pos() { return rect; }$/;"	f	class:Button
+get_pos	worldmap.cpp	/^Tux::get_pos()$/;"	f	class:WorldMapNS::Tux
+get_sdl_surface	texture.cpp	/^SDL_Surface* SurfaceImpl::get_sdl_surface() const$/;"	f	class:SurfaceImpl
+get_start_x	worldmap.h	/^  const int& get_start_x() const$/;"	f	class:WorldMapNS::WorldMap
+get_start_y	worldmap.h	/^  const int& get_start_y() const$/;"	f	class:WorldMapNS::WorldMap
+get_state	button.cpp	/^int Button::get_state()$/;"	f	class:Button
+get_tag	button.h	/^  int get_tag(){return tag; }$/;"	f	class:Button
+get_tile_at	level.cpp	/^Level::get_tile_at(int x, int y) const$/;"	f	class:Level
+get_tile_pos	worldmap.h	/^  Point get_tile_pos() const { return tile_pos; } $/;"	f	class:WorldMapNS::Tux
+get_tux	world.h	/^  Player* get_tux() { return &tux; }$/;"	f	class:World
+get_velocity_x	physic.cpp	/^Physic::get_velocity_x()$/;"	f	class:Physic
+get_velocity_y	physic.cpp	/^Physic::get_velocity_y()$/;"	f	class:Physic
+get_width	menu.cpp	/^int Menu::get_width() const$/;"	f	class:Menu
+get_width	sprite.cpp	/^Sprite::get_width() const$/;"	f	class:Sprite
+get_world	gameloop.h	/^  World* get_world() { return world; }$/;"	f	class:GameSession
+get_world_title	worldmap.h	/^  const std::string& get_world_title() const$/;"	f	class:WorldMapNS::WorldMap
+gettile	collision.cpp	/^Tile* gettile(float x, float y)$/;"	f
+gettileid	level.cpp	/^Level::gettileid(float x, float y) const$/;"	f	class:Level
+gl_texture	texture.h	/^  unsigned gl_texture;$/;"	m	class:SurfaceOpenGL
+global_frame_counter	scene.cpp	/^unsigned int global_frame_counter;$/;"	v
+goal	tile.h	/^  bool goal;$/;"	m	class:Tile
+gold_text	globals.cpp	/^Text* gold_text;$/;"	v
+got_coffee	player.h	/^  bool got_coffee;$/;"	m	class:Player
+grab_left	player.h	/^  Sprite* grab_left;$/;"	m	struct:PlayerSprite
+grab_right	player.h	/^  Sprite* grab_right;$/;"	m	struct:PlayerSprite
+grabdistros	player.cpp	/^Player::grabdistros()$/;"	f	class:Player
+gravity	level.h	/^  float gravity;$/;"	m	class:Level
+gravity_enabled	physic.h	/^    bool gravity_enabled;$/;"	m	class:Physic
+green	screen.h	/^  int red, green, blue;$/;"	m	struct:Color
+green_text	globals.cpp	/^Text* green_text;$/;"	v
+grow	player.cpp	/^Player::grow()$/;"	f	class:Player
+h	bitmask.h	/^  int w,h;$/;"	m	struct:bitmask
+h	text.h	/^  int h;$/;"	m	class:Text
+h	texture.h	/^  int h;$/;"	m	class:Surface
+h	texture.h	/^  int h;$/;"	m	class:SurfaceData
+h	texture.h	/^  int h;$/;"	m	class:SurfaceImpl
+halt_music	music_manager.cpp	/^MusicManager::halt_music()$/;"	f	class:MusicManager
+handle_horizontal_input	player.cpp	/^Player::handle_horizontal_input()$/;"	f	class:Player
+handle_input	player.cpp	/^Player::handle_input()$/;"	f	class:Player
+handle_vertical_input	player.cpp	/^Player::handle_vertical_input()$/;"	f	class:Player
+has_suffix	lispreader.cpp	/^bool has_suffix(const char* data, const char* suffix)$/;"	f
+height	type.h	/^  float height;$/;"	m	struct:base_type
+height	worldmap.h	/^  int height;$/;"	m	class:WorldMapNS::WorldMap
+herring_song	resources.cpp	/^MusicRef herring_song;$/;"	v
+hidden	button.h	/^  bool hidden;$/;"	m	class:ButtonPanel
+highlight_last	button.cpp	/^void ButtonPanel::highlight_last(bool b)$/;"	f	class:ButtonPanel
+highscore_filename	high_scores.cpp	/^const char * highscore_filename = "\/highscore";$/;"	v
+highscore_filename	high_scores.cpp	/^const char * highscore_filename = "\/st_highscore.dat";$/;"	v
+highscore_menu	menu.cpp	/^Menu* highscore_menu = 0;$/;"	v
+hit_item	menu.h	/^  int hit_item;$/;"	m	class:Menu
+hlast	button.h	/^  bool hlast;$/;"	m	class:ButtonPanel
+holding_something	player.h	/^  bool holding_something;$/;"	m	class:Player
+hor_autoscroll_speed	level.h	/^  float hor_autoscroll_speed;$/;"	m	class:Level
+host	Makefile	/^host = i686-pc-linux-gnu$/;"	m
+host_alias	Makefile	/^host_alias = $/;"	m
+host_cpu	Makefile	/^host_cpu = i686$/;"	m
+host_os	Makefile	/^host_os = linux-gnu$/;"	m
+host_triplet	Makefile	/^host_triplet = i686-pc-linux-gnu$/;"	m
+host_vendor	Makefile	/^host_vendor = pc$/;"	m
+hs_name	high_scores.cpp	/^std::string hs_name; \/* highscores global variables*\/$/;"	v
+hs_score	high_scores.cpp	/^int hs_score;$/;"	v
+ia_tiles	level.h	/^  std::vector<unsigned int> ia_tiles[15]; \/* Tiles which can interact in the game (solids for example)*\/$/;"	m	class:Level
+ice	tile.h	/^  bool ice;$/;"	m	class:Tile
+icon	button.h	/^  std::vector<Surface*> icon;$/;"	m	class:Button
+id	menu.h	/^  int id;   \/\/ item id$/;"	m	class:MenuItem
+id	tile.h	/^  int id;$/;"	m	class:Tile
+image	level.h	/^    Surface* image;$/;"	m	class:LevelSubset
+images	tile.h	/^  std::vector<Surface*> images;$/;"	m	class:Tile
+img_1up	special.cpp	/^Sprite* img_1up;$/;"	v
+img_bkgd	level.h	/^  Surface* img_bkgd;$/;"	m	class:Level
+img_bouncingsnowball_left	badguy.cpp	/^Sprite* img_bouncingsnowball_left;$/;"	v
+img_bouncingsnowball_right	badguy.cpp	/^Sprite* img_bouncingsnowball_right;$/;"	v
+img_bouncingsnowball_squished	badguy.cpp	/^Sprite* img_bouncingsnowball_squished;$/;"	v
+img_bullet	special.cpp	/^Sprite* img_bullet;$/;"	v
+img_choose_subset	title.cpp	/^static Surface* img_choose_subset;$/;"	v	file:
+img_cloud	resources.cpp	/^Surface* img_cloud[2][4];$/;"	v
+img_distro	world.cpp	/^Surface* img_distro[4];$/;"	v
+img_fish	badguy.cpp	/^Sprite* img_fish;$/;"	v
+img_fish_down	badguy.cpp	/^Sprite* img_fish_down;$/;"	v
+img_flag	resources.cpp	/^Surface* img_flag[2];$/;"	v
+img_flame	badguy.cpp	/^Sprite* img_flame;$/;"	v
+img_flyingsnowball	badguy.cpp	/^Sprite* img_flyingsnowball;$/;"	v
+img_flyingsnowball_squished	badguy.cpp	/^Sprite* img_flyingsnowball_squished;$/;"	v
+img_growup	special.cpp	/^Sprite* img_growup;$/;"	v
+img_iceflower	special.cpp	/^Sprite* img_iceflower;$/;"	v
+img_jumpy_left_down	badguy.cpp	/^Sprite* img_jumpy_left_down;$/;"	v
+img_jumpy_left_middle	badguy.cpp	/^Sprite* img_jumpy_left_middle;$/;"	v
+img_jumpy_left_up	badguy.cpp	/^Sprite* img_jumpy_left_up;$/;"	v
+img_mrbomb_explosion	badguy.cpp	/^Sprite* img_mrbomb_explosion;$/;"	v
+img_mrbomb_left	badguy.cpp	/^Sprite* img_mrbomb_left;$/;"	v
+img_mrbomb_right	badguy.cpp	/^Sprite* img_mrbomb_right;$/;"	v
+img_mrbomb_ticking_left	badguy.cpp	/^Sprite* img_mrbomb_ticking_left;$/;"	v
+img_mrbomb_ticking_right	badguy.cpp	/^Sprite* img_mrbomb_ticking_right;$/;"	v
+img_mriceblock_falling_left	badguy.cpp	/^Sprite* img_mriceblock_falling_left;$/;"	v
+img_mriceblock_falling_right	badguy.cpp	/^Sprite* img_mriceblock_falling_right;$/;"	v
+img_mriceblock_flat_left	badguy.cpp	/^Sprite* img_mriceblock_flat_left;$/;"	v
+img_mriceblock_flat_right	badguy.cpp	/^Sprite* img_mriceblock_flat_right;$/;"	v
+img_mriceblock_left	badguy.cpp	/^Sprite* img_mriceblock_left;$/;"	v
+img_mriceblock_right	badguy.cpp	/^Sprite* img_mriceblock_right;$/;"	v
+img_pole	resources.cpp	/^Surface* img_pole;$/;"	v
+img_poletop	resources.cpp	/^Surface* img_poletop;$/;"	v
+img_snowball_left	badguy.cpp	/^Sprite* img_snowball_left;$/;"	v
+img_snowball_right	badguy.cpp	/^Sprite* img_snowball_right;$/;"	v
+img_snowball_squished_left	badguy.cpp	/^Sprite* img_snowball_squished_left;$/;"	v
+img_snowball_squished_right	badguy.cpp	/^Sprite* img_snowball_squished_right;$/;"	v
+img_spiky_left	badguy.cpp	/^Sprite* img_spiky_left;$/;"	v
+img_spiky_right	badguy.cpp	/^Sprite* img_spiky_right;$/;"	v
+img_stalactite	badguy.cpp	/^Sprite* img_stalactite;$/;"	v
+img_stalactite_broken	badguy.cpp	/^Sprite* img_stalactite_broken;$/;"	v
+img_star	special.cpp	/^Sprite* img_star;$/;"	v
+img_water	resources.cpp	/^Surface* img_water;$/;"	v
+img_waves	resources.cpp	/^Surface* img_waves[3]; $/;"	v
+impl	texture.h	/^  SurfaceImpl* impl;$/;"	m	class:Surface
+includedir	Makefile	/^includedir = ${prefix}\/include$/;"	m
+index	lispreader.h	/^            int index;$/;"	m	struct:_lisp_object_t::__anon7::__anon9
+info	button.h	/^  std::string info;$/;"	m	class:Button
+infodir	Makefile	/^infodir = ${prefix}\/info$/;"	m
+init	gameobjs.cpp	/^BouncyBrick::init(float x, float y)$/;"	f	class:BouncyBrick
+init	gameobjs.cpp	/^BouncyDistro::init(float x, float y)$/;"	f	class:BouncyDistro
+init	gameobjs.cpp	/^BrokenBrick::init(Tile* tile_, float x, float y, float xm, float ym)$/;"	f	class:BrokenBrick
+init	gameobjs.cpp	/^FloatingScore::init(float x, float y, int s)$/;"	f	class:FloatingScore
+init	player.cpp	/^Player::init()$/;"	f	class:Player
+init	special.cpp	/^Bullet::init(float x, float y, float xm, Direction dir)$/;"	f	class:Bullet
+init	special.cpp	/^Upgrade::init(float x_, float y_, Direction dir_, UpgradeKind kind_)$/;"	f	class:Upgrade
+init	timer.cpp	/^Timer::init(bool st_ticks)$/;"	f	class:Timer
+init_defaults	level.cpp	/^Level::init_defaults()$/;"	f	class:Level
+init_defaults	sprite.cpp	/^Sprite::init_defaults()$/;"	f	class:Sprite
+input	menu.h	/^  char *input;$/;"	m	class:MenuItem
+input	player.h	/^  player_input_type  input;$/;"	m	class:Player
+input_direction	worldmap.h	/^  Direction input_direction;$/;"	m	class:WorldMapNS::Tux
+input_direction	worldmap.h	/^  Direction input_direction;$/;"	m	class:WorldMapNS::WorldMap
+input_flickering	menu.h	/^  bool input_flickering;$/;"	m	class:MenuItem
+input_flickering_timer	menu.h	/^  Timer input_flickering_timer;$/;"	m	class:MenuItem
+install_sh	Makefile	/^install_sh = \/home\/xingxingpan\/work\/emscripten\/WebSupertux\/install-sh$/;"	m
+install_sh_DATA	Makefile	/^install_sh_DATA = $(install_sh) -c -m 644$/;"	m
+install_sh_PROGRAM	Makefile	/^install_sh_PROGRAM = $(install_sh) -c$/;"	m
+install_sh_SCRIPT	Makefile	/^install_sh_SCRIPT = $(install_sh) -c$/;"	m
+instance	tile.h	/^  static TileManager* instance() { return instance_ ? instance_ : instance_ = new TileManager(); }$/;"	f	class:TileManager
+instance_	tile.cpp	/^TileManager* TileManager::instance_  = 0;$/;"	m	class:TileManager	file:
+instance_	tile.h	/^  static TileManager* instance_ ;$/;"	m	class:TileManager
+int_p	menu.h	/^  int *int_p;   \/\/ used for setting keys (can be used for more stuff...)$/;"	m	class:MenuItem
+integer	lispreader.h	/^        int integer;$/;"	m	union:_lisp_object_t::__anon7
+inverse_velocity_x	physic.cpp	/^void Physic::inverse_velocity_x()$/;"	f	class:Physic
+inverse_velocity_y	physic.cpp	/^void Physic::inverse_velocity_y()$/;"	f	class:Physic
+invincible_timer	player.h	/^  Timer invincible_timer;$/;"	m	class:Player
+invisible_teleporter	worldmap.h	/^	 bool invisible_teleporter;$/;"	m	struct:WorldMapNS::WorldMap::Level
+isToggled	menu.cpp	/^Menu::isToggled(int id)$/;"	f	class:Menu
+is_dead	player.cpp	/^bool Player::is_dead()$/;"	f	class:Player
+is_dying	player.cpp	/^Player::is_dying()$/;"	f	class:Player
+is_moving	worldmap.h	/^  bool is_moving() const { return moving; }$/;"	f	class:WorldMapNS::Tux
+is_removable	badguy.h	/^  bool is_removable() const { return removable; }$/;"	f	class:BadGuy
+is_tile	leveleditor.cpp	/^  bool is_tile; \/\/true for tile (false for object)$/;"	m	struct:TileOrObject	file:
+isbrick	collision.cpp	/^bool isbrick(float x, float y)$/;"	f
+isdistro	collision.cpp	/^bool isdistro(float x, float y)$/;"	f
+isfullbox	collision.cpp	/^bool isfullbox(float x, float y)$/;"	f
+isice	collision.cpp	/^bool isice(float x, float y)$/;"	f
+issolid	collision.cpp	/^bool issolid(float x, float y)$/;"	f
+item	button.h	/^  std::vector<Button*> item;$/;"	m	class:ButtonPanel
+item	menu.h	/^  std::vector<MenuItem> item;$/;"	m	class:Menu
+item	type.h	/^  char **item;$/;"	m	struct:string_list_type
+joystick_keymap	globals.cpp	/^JoystickKeymap joystick_keymap;$/;"	v
+joystick_num	globals.cpp	/^int joystick_num = 0;$/;"	v
+js	globals.cpp	/^SDL_Joystick * js;$/;"	v
+jump	player.h	/^  int jump;$/;"	m	struct:PlayerKeymap
+jump_left	player.h	/^  Sprite* jump_left;$/;"	m	struct:PlayerSprite
+jump_of_badguy	player.cpp	/^Player::jump_of_badguy(BadGuy* badguy)$/;"	f	class:Player
+jump_right	player.h	/^  Sprite* jump_right;$/;"	m	struct:PlayerSprite
+jumping	player.h	/^  bool jumping;$/;"	m	class:Player
+key_event	player.cpp	/^Player::key_event(SDLKey key, int state)$/;"	f	class:Player
+keymap	player.cpp	/^PlayerKeymap keymap;$/;"	v
+kick_left	player.h	/^  Sprite* kick_left;$/;"	m	struct:PlayerSprite
+kick_right	player.h	/^  Sprite* kick_right;$/;"	m	struct:PlayerSprite
+kick_timer	player.h	/^  Timer kick_timer;$/;"	m	class:Player
+kill	player.cpp	/^Player::kill(HurtMode mode)$/;"	f	class:Player
+kill_me	badguy.cpp	/^BadGuy::kill_me(int score)$/;"	f	class:BadGuy
+kind	badguy.h	/^  BadGuyKind kind;$/;"	m	class:BadGuy
+kind	badguy.h	/^  BadGuyKind kind;$/;"	m	struct:BadGuyData
+kind	menu.h	/^  MenuItemKind kind;$/;"	m	class:MenuItem
+kind	special.h	/^  UpgradeKind kind;$/;"	m	class:Upgrade
+kind	text.h	/^  int kind;$/;"	m	class:Text
+largetux	player.cpp	/^PlayerSprite largetux;$/;"	v
+largetux_sprite	worldmap.h	/^  Surface* largetux_sprite;$/;"	m	class:WorldMapNS::Tux
+largetux_star	player.cpp	/^Sprite* largetux_star;$/;"	v
+last_clicked	button.h	/^  std::vector<Button*>::iterator last_clicked;$/;"	m	class:ButtonPanel
+last_menus	menu.cpp	/^std::vector<Menu*> Menu::last_menus;$/;"	m	class:Menu	file:
+last_menus	menu.h	/^  static std::vector<Menu*> last_menus;$/;"	m	class:Menu
+last_update_time	gameloop.h	/^  unsigned int last_update_time;$/;"	m	class:GameSession
+last_update_time	title.cpp	/^static unsigned int last_update_time;$/;"	v	file:
+last_update_time	worldmap.h	/^  unsigned int last_update_time;$/;"	m	class:WorldMapNS::WorldMap
+last_x_pos	gameloop.h	/^  float last_x_pos;$/;"	m	class:GameSession
+launch_leveleditor_mode	globals.cpp	/^bool launch_leveleditor_mode = false;$/;"	v
+layer	particlesystem.h	/^        int layer;$/;"	m	class:ParticleSystem::Particle
+le_change	leveleditor.cpp	/^void le_change(float x, float y, int tm, unsigned int c)$/;"	f
+le_change_object_properties	leveleditor.cpp	/^void le_change_object_properties(GameObject *pobj)$/;"	f
+le_checkevents	leveleditor.cpp	/^void le_checkevents()$/;"	f
+le_current	leveleditor.cpp	/^static TileOrObject le_current;$/;"	v	file:
+le_drawinterface	leveleditor.cpp	/^void le_drawinterface()$/;"	f
+le_drawlevel	leveleditor.cpp	/^void le_drawlevel()$/;"	f
+le_drawminimap	leveleditor.cpp	/^void le_drawminimap()$/;"	f
+le_exit_bt	leveleditor.cpp	/^static Button* le_exit_bt;$/;"	v	file:
+le_frame	leveleditor.cpp	/^static int le_frame;$/;"	v	file:
+le_goto_level	leveleditor.cpp	/^void le_goto_level(int levelnb)$/;"	f
+le_help_shown	leveleditor.cpp	/^static bool le_help_shown;$/;"	v	file:
+le_highlight_selection	leveleditor.cpp	/^void le_highlight_selection()$/;"	f
+le_init	leveleditor.cpp	/^int le_init()$/;"	f
+le_init_menus	leveleditor.cpp	/^void le_init_menus()$/;"	f
+le_level	leveleditor.cpp	/^static int le_level;$/;"	v	file:
+le_level_changed	leveleditor.cpp	/^static bool le_level_changed;  \/* if changes, ask for saving, when quiting*\/$/;"	v	file:
+le_level_subset	leveleditor.cpp	/^static LevelSubset* le_level_subset;$/;"	v	file:
+le_load_level_subset	leveleditor.cpp	/^int le_load_level_subset(char *filename)$/;"	f
+le_mouse_clicked	leveleditor.cpp	/^static bool le_mouse_clicked[2];$/;"	v	file:
+le_mouse_pressed	leveleditor.cpp	/^static bool le_mouse_pressed[2];$/;"	v	file:
+le_move_left_bt	leveleditor.cpp	/^static Button* le_move_left_bt;$/;"	v	file:
+le_move_right_bt	leveleditor.cpp	/^static Button* le_move_right_bt;$/;"	v	file:
+le_next_level_bt	leveleditor.cpp	/^static Button* le_next_level_bt;$/;"	v	file:
+le_object_properties_bt	leveleditor.cpp	/^static Button* le_object_properties_bt;$/;"	v	file:
+le_object_select_bt	leveleditor.cpp	/^static Button* le_object_select_bt;$/;"	v	file:
+le_objects_bt	leveleditor.cpp	/^static Button* le_objects_bt;$/;"	v	file:
+le_previous_level_bt	leveleditor.cpp	/^static Button* le_previous_level_bt;$/;"	v	file:
+le_quit	leveleditor.cpp	/^void le_quit(void)$/;"	f
+le_rubber_bt	leveleditor.cpp	/^static Button* le_rubber_bt;$/;"	v	file:
+le_save_level_bt	leveleditor.cpp	/^static Button* le_save_level_bt;$/;"	v	file:
+le_select_mode_one_bt	leveleditor.cpp	/^static Button* le_select_mode_one_bt;$/;"	v	file:
+le_select_mode_two_bt	leveleditor.cpp	/^static Button* le_select_mode_two_bt;$/;"	v	file:
+le_selection	leveleditor.cpp	/^static Surface* le_selection;$/;"	v	file:
+le_selection_mode	leveleditor.cpp	/^static int le_selection_mode;$/;"	v	file:
+le_settings_bt	leveleditor.cpp	/^static Button* le_settings_bt;$/;"	v	file:
+le_show_grid	leveleditor.cpp	/^static int le_show_grid;$/;"	v	file:
+le_showhelp	leveleditor.cpp	/^void le_showhelp()$/;"	f
+le_test_level_bt	leveleditor.cpp	/^static Button* le_test_level_bt;$/;"	v	file:
+le_testlevel	leveleditor.cpp	/^void le_testlevel()$/;"	f
+le_tilegroup_bt	leveleditor.cpp	/^static Button* le_tilegroup_bt;$/;"	v	file:
+le_tilemap_panel	leveleditor.cpp	/^static ButtonPanel* le_tilemap_panel;$/;"	v	file:
+le_unload_level	leveleditor.cpp	/^void le_unload_level()$/;"	f
+le_world	leveleditor.cpp	/^static World* le_world;$/;"	v	file:
+left	player.h	/^  int left;$/;"	m	struct:PlayerKeymap
+left	player.h	/^  int left;$/;"	m	struct:player_input_type
+level	world.h	/^  Level* level;$/;"	m	class:World
+level_begin	player.cpp	/^Player::level_begin()$/;"	f	class:Player
+level_end_song	resources.cpp	/^MusicRef level_end_song;$/;"	v
+level_settings_menu	leveleditor.cpp	/^static Menu* level_settings_menu;$/;"	v	file:
+level_song	level.h	/^  MusicRef level_song;$/;"	m	class:Level
+level_song_fast	level.h	/^  MusicRef level_song_fast;$/;"	m	class:Level
+level_sprite	worldmap.h	/^  Surface* level_sprite;$/;"	m	class:WorldMapNS::WorldMap
+level_startup_file	globals.cpp	/^char* level_startup_file = 0;$/;"	v
+level_subsets	leveleditor.cpp	/^static string_list_type level_subsets;$/;"	v	file:
+leveldot_green	worldmap.h	/^  Surface* leveldot_green;$/;"	m	class:WorldMapNS::WorldMap
+leveldot_red	worldmap.h	/^  Surface* leveldot_red;$/;"	m	class:WorldMapNS::WorldMap
+leveldot_teleporter	worldmap.h	/^  Surface* leveldot_teleporter;$/;"	m	class:WorldMapNS::WorldMap
+leveleditor	leveleditor.cpp	/^int leveleditor(char* filename)$/;"	f
+leveleditor_menu	leveleditor.cpp	/^static Menu* leveleditor_menu;$/;"	v	file:
+levelintro	gameloop.cpp	/^GameSession::levelintro(void)$/;"	f	class:GameSession
+levelnb	gameloop.h	/^  int levelnb;$/;"	m	class:GameSession
+levels	level.h	/^    int levels;$/;"	m	class:LevelSubset
+levels	worldmap.h	/^  Levels levels;$/;"	m	class:WorldMapNS::WorldMap
+libdir	Makefile	/^libdir = ${exec_prefix}\/lib$/;"	m
+libexecdir	Makefile	/^libexecdir = ${exec_prefix}\/libexec$/;"	m
+life_count	special.h	/^  int life_count;$/;"	m	class:Bullet
+lisp_boolean	lispreader.cpp	/^lisp_boolean (lisp_object_t *obj)$/;"	f
+lisp_boolean_p	lispreader.h	159;"	d
+lisp_car	lispreader.cpp	/^lisp_car (lisp_object_t *obj)$/;"	f
+lisp_cdr	lispreader.cpp	/^lisp_cdr (lisp_object_t *obj)$/;"	f
+lisp_compile_pattern	lispreader.cpp	/^lisp_compile_pattern (lisp_object_t **obj, int *num_subs)$/;"	f
+lisp_cons_p	lispreader.h	158;"	d
+lisp_cxr	lispreader.cpp	/^lisp_cxr (lisp_object_t *obj, const char *x)$/;"	f
+lisp_dump	lispreader.cpp	/^lisp_dump (lisp_object_t *obj, FILE *out)$/;"	f
+lisp_free	lispreader.cpp	/^lisp_free (lisp_object_t *obj)$/;"	f
+lisp_integer	lispreader.cpp	/^lisp_integer (lisp_object_t *obj)$/;"	f
+lisp_integer_p	lispreader.h	154;"	d
+lisp_list_length	lispreader.cpp	/^lisp_list_length (lisp_object_t *obj)$/;"	f
+lisp_list_nth	lispreader.cpp	/^lisp_list_nth (lisp_object_t *obj, int index)$/;"	f
+lisp_list_nth_cdr	lispreader.cpp	/^lisp_list_nth_cdr (lisp_object_t *obj, int index)$/;"	f
+lisp_make_boolean	lispreader.cpp	/^lisp_make_boolean (int value)$/;"	f
+lisp_make_cons	lispreader.cpp	/^lisp_make_cons (lisp_object_t *car, lisp_object_t *cdr)$/;"	f
+lisp_make_integer	lispreader.cpp	/^lisp_make_integer (int value)$/;"	f
+lisp_make_pattern_cons	lispreader.cpp	/^lisp_make_pattern_cons (lisp_object_t *car, lisp_object_t *cdr)$/;"	f	file:
+lisp_make_pattern_var	lispreader.cpp	/^lisp_make_pattern_var (int type, int index, lisp_object_t *sub)$/;"	f	file:
+lisp_make_real	lispreader.cpp	/^lisp_make_real (float value)$/;"	f
+lisp_make_string	lispreader.cpp	/^lisp_make_string (const char *value)$/;"	f
+lisp_make_symbol	lispreader.cpp	/^lisp_make_symbol (const char *value)$/;"	f
+lisp_match_pattern	lispreader.cpp	/^lisp_match_pattern (lisp_object_t *pattern, lisp_object_t *obj, lisp_object_t **vars, int num_subs)$/;"	f
+lisp_match_string	lispreader.cpp	/^lisp_match_string (const char *pattern_string, lisp_object_t *obj, lisp_object_t **vars)$/;"	f
+lisp_nil	lispreader.h	151;"	d
+lisp_nil_p	lispreader.h	153;"	d
+lisp_object_alloc	lispreader.cpp	/^lisp_object_alloc (int type)$/;"	f	file:
+lisp_object_t	lispreader.h	/^typedef struct _lisp_object_t lisp_object_t;$/;"	t	typeref:struct:_lisp_object_t
+lisp_objs	lispreader.h	/^    std::vector<lisp_object_t*> lisp_objs;$/;"	m	class:LispWriter
+lisp_read	lispreader.cpp	/^lisp_read (lisp_stream_t *in)$/;"	f
+lisp_read_from_file	lispreader.cpp	/^lisp_object_t* lisp_read_from_file(const std::string& filename)$/;"	f
+lisp_read_from_gzfile	lispreader.cpp	/^lisp_object_t* lisp_read_from_gzfile(const char* filename)$/;"	f
+lisp_read_from_string	lispreader.cpp	/^lisp_read_from_string (const char *buf)$/;"	f
+lisp_real	lispreader.cpp	/^lisp_real (lisp_object_t *obj)$/;"	f
+lisp_real_p	lispreader.h	155;"	d
+lisp_stream_init_any	lispreader.cpp	/^lisp_stream_init_any (lisp_stream_t *stream, void *data,$/;"	f
+lisp_stream_init_file	lispreader.cpp	/^lisp_stream_init_file (lisp_stream_t *stream, FILE *file)$/;"	f
+lisp_stream_init_string	lispreader.cpp	/^lisp_stream_init_string (lisp_stream_t *stream, char *buf)$/;"	f
+lisp_stream_t	lispreader.h	/^lisp_stream_t;$/;"	t	typeref:struct:__anon3
+lisp_string	lispreader.cpp	/^lisp_string (lisp_object_t *obj)$/;"	f
+lisp_string_p	lispreader.h	157;"	d
+lisp_symbol	lispreader.cpp	/^lisp_symbol (lisp_object_t *obj)$/;"	f
+lisp_symbol_p	lispreader.h	156;"	d
+lisp_type	lispreader.cpp	/^lisp_type (lisp_object_t *obj)$/;"	f
+list	menu.h	/^  string_list_type* list;$/;"	m	class:MenuItem
+lives	scene.h	/^  int  lives;$/;"	m	struct:PlayerStatus
+load	level.cpp	/^Level::load(const std::string& filename)$/;"	f	class:Level
+load	level.cpp	/^Level::load(const std::string& subset, int level)$/;"	f	class:Level
+load	level.cpp	/^void LevelSubset::load(char *subset)$/;"	f	class:LevelSubset
+load	sprite_manager.cpp	/^SpriteManager::load(const std::string& name)$/;"	f	class:SpriteManager
+load_badguy_gfx	badguy.cpp	/^void load_badguy_gfx()$/;"	f
+load_game_menu	menu.cpp	/^Menu* load_game_menu = 0;$/;"	v
+load_gfx	level.cpp	/^Level::load_gfx()$/;"	f	class:Level
+load_hs	high_scores.cpp	/^void load_hs(void)$/;"	f
+load_image	level.cpp	/^void Level::load_image(Surface** ptexture, string theme,const  char * file, int use_alpha)$/;"	f	class:Level
+load_map	worldmap.cpp	/^WorldMap::load_map()$/;"	f	class:WorldMapNS::WorldMap
+load_music	music_manager.cpp	/^MusicManager::load_music(const std::string& file)$/;"	f	class:MusicManager
+load_resfile	sprite_manager.cpp	/^SpriteManager::load_resfile(const std::string& filename)$/;"	f	class:SpriteManager
+load_song	level.cpp	/^Level::load_song()$/;"	f	class:Level
+load_sound	sound.cpp	/^Mix_Chunk* load_sound(const std::string& file)$/;"	f
+load_special_gfx	special.cpp	/^void load_special_gfx()$/;"	f
+load_tileset	tile.cpp	/^void TileManager::load_tileset(std::string filename)$/;"	f	class:TileManager
+loadconfig	configfile.cpp	/^void loadconfig(void)$/;"	f
+loadgame	worldmap.cpp	/^WorldMap::loadgame(const std::string& filename)$/;"	f	class:WorldMapNS::WorldMap
+loadmap	worldmap.cpp	/^WorldMap::loadmap(const std::string& filename)$/;"	f	class:WorldMapNS::WorldMap
+loadshared	resources.cpp	/^void loadshared()$/;"	f
+localstatedir	Makefile	/^localstatedir = ${prefix}\/var$/;"	m
+logo	title.cpp	/^static Surface* logo;$/;"	v	file:
+loop	worldmap.cpp	/^WorldMap::loop()$/;"	f	class:WorldMapNS::WorldMap
+loopRetFrom	globals.cpp	/^LoopRetFrom loopRetFrom = LRF_NONE;$/;"	v
+looponce	supertux.cpp	/^void looponce()$/;"	f
+lrf_status	globals.cpp	/^GameSession::ExitStatus lrf_status = GameSession::ES_NONE;$/;"	v
+lst	lispreader.h	/^    lisp_object_t* lst;$/;"	m	class:LispReader
+main	supertux.cpp	/^int main(int argc, char * argv[])$/;"	f
+main_menu	menu.cpp	/^Menu* main_menu      = 0;$/;"	v
+mainloop	gameloop.cpp	/^GameSession::mainloop()$/;"	f	class:GameSession
+make_list2	lispreader.cpp	/^LispWriter::make_list2 (lisp_object_t* a, lisp_object_t* b)$/;"	f	class:LispWriter
+make_list3	lispreader.cpp	/^LispWriter::make_list3 (lisp_object_t* a, lisp_object_t* b, lisp_object_t* c)$/;"	f	class:LispWriter
+manager	music_manager.h	/^    MusicManager* manager;$/;"	m	class:MusicManager::MusicResource
+mandir	Makefile	/^mandir = ${prefix}\/man$/;"	m
+manipulate_button	button.cpp	/^Button* ButtonPanel::manipulate_button(int i)$/;"	f	class:ButtonPanel
+map_file	worldmap.h	/^  std::string map_file;$/;"	m	class:WorldMapNS::WorldMap
+menuaction	menu.h	/^  MenuAction menuaction;$/;"	m	class:Menu
+mid_x	mousecursor.h	/^    int mid_x, mid_y;$/;"	m	class:MouseCursor
+mid_y	mousecursor.h	/^    int mid_x, mid_y;$/;"	m	class:MouseCursor
+mkdir	setup.cpp	59;"	d	file:
+mkinstalldirs	Makefile	/^mkinstalldirs = $(SHELL) $(top_srcdir)\/mkinstalldirs$/;"	m
+mn_input_char	menu.h	/^  char mn_input_char;$/;"	m	class:Menu
+mode	badguy.h	/^  BadGuyMode mode;$/;"	m	class:BadGuy
+mouse_cursor	globals.cpp	/^MouseCursor * mouse_cursor;$/;"	v
+mouse_select_object	leveleditor.cpp	/^static MouseCursor* mouse_select_object;$/;"	v	file:
+move_to	type.h	/^void move_to(float x, float y) { base.x = x; base.y = y; };$/;"	f	class:GameObject
+moving	worldmap.h	/^  bool  moving;$/;"	m	class:WorldMapNS::Tux
+music	music_manager.h	/^    Mix_Music* music;$/;"	m	class:MusicManager::MusicResource
+music	musicref.h	/^  MusicManager::MusicResource* music;$/;"	m	class:MusicRef
+music	worldmap.h	/^  std::string music;$/;"	m	class:WorldMapNS::WorldMap
+music_enabled	music_manager.h	/^  bool music_enabled;$/;"	m	class:MusicManager
+music_manager	resources.cpp	/^MusicManager* music_manager = 0;$/;"	v
+musics	music_manager.h	/^  std::map<std::string, MusicResource> musics;$/;"	m	class:MusicManager
+name	level.h	/^    std::string name;$/;"	m	class:LevelSubset
+name	level.h	/^  std::string name;$/;"	m	class:Level
+name	sprite.h	/^  std::string name;$/;"	m	class:Sprite
+name	tile.h	/^  std::string name;$/;"	m	struct:TileGroup
+name	worldmap.h	/^    std::string name;$/;"	m	struct:WorldMapNS::WorldMap::Level
+name	worldmap.h	/^  std::string name;$/;"	m	class:WorldMapNS::WorldMap
+next_char	lispreader.h	/^            int (*next_char) (void *data);$/;"	m	struct:__anon3::__anon4::__anon6
+next_tile	tile.h	/^  int next_tile;$/;"	m	class:Tile
+north	worldmap.h	/^    bool north;$/;"	m	struct:WorldMapNS::WorldMap::Level
+north	worldmap.h	/^  bool north;$/;"	m	class:WorldMapNS::Tile
+num_items	type.h	/^  int num_items;$/;"	m	struct:string_list_type
+obj	leveleditor.cpp	/^  GameObject* obj;$/;"	m	struct:TileOrObject	file:
+objects_map	leveleditor.cpp	/^static ButtonPanelMap objects_map;$/;"	v	file:
+offset	gameobjs.h	/^  float offset;$/;"	m	class:BouncyBrick
+offset	worldmap.h	/^  Point offset;$/;"	m	class:WorldMapNS::WorldMap
+offset	worldmap.h	/^  float offset;$/;"	m	class:WorldMapNS::Tux
+offset_m	gameobjs.h	/^  float offset_m;$/;"	m	class:BouncyBrick
+old_base	special.h	/^  base_type old_base;$/;"	m	class:Bullet
+old_base	type.h	/^  base_type old_base;$/;"	m	class:GameObject
+old_dir	player.h	/^  Direction old_dir;$/;"	m	class:Player
+old_fire	player.h	/^  int old_fire;$/;"	m	struct:player_input_type
+old_up	player.h	/^  int old_up;$/;"	m	struct:player_input_type
+oldincludedir	Makefile	/^oldincludedir = \/usr\/include$/;"	m
+on_escape_press	gameloop.cpp	/^GameSession::on_escape_press()$/;"	f	class:GameSession
+on_escape_press	worldmap.cpp	/^WorldMap::on_escape_press()$/;"	f	class:WorldMapNS::WorldMap
+on_ground	player.cpp	/^Player::on_ground()$/;"	f	class:Player
+one_way	worldmap.h	/^  int one_way;$/;"	m	class:WorldMapNS::Tile
+open_audio	sound.cpp	/^int open_audio (int frequency, Uint16 format, int channels, int chunksize)$/;"	f
+opendata	setup.cpp	/^FILE * opendata(const char * rel_filename, const char * mode)$/;"	f
+operator <	tile.h	/^  friend bool operator<(const TileGroup& lhs, const TileGroup& rhs)$/;"	f	struct:TileGroup
+operator =	musicref.cpp	/^MusicRef::operator =(const MusicRef& other)$/;"	f	class:MusicRef
+operator =	worldmap.h	/^  Point& operator=(const Point& pos)$/;"	f	struct:WorldMapNS::Point
+operator >	tile.h	/^  friend bool operator>(const TileGroup& lhs, const TileGroup& rhs)$/;"	f	struct:TileGroup
+options_joystick_menu	menu.cpp	/^Menu* options_joystick_menu = 0;$/;"	v
+options_keys_menu	menu.cpp	/^Menu* options_keys_menu     = 0;$/;"	v
+options_menu	menu.cpp	/^Menu* options_menu   = 0;$/;"	v
+parse	level.cpp	/^void LevelSubset::parse (lisp_object_t* cursor)$/;"	f	class:LevelSubset
+parseargs	setup.cpp	/^void parseargs(int argc, char * argv[])$/;"	f
+particle_system	level.h	/^  std::string particle_system;$/;"	m	class:Level
+particle_systems	world.h	/^  ParticleSystems particle_systems;$/;"	m	class:World
+particles	particlesystem.h	/^    std::vector<Particle*> particles;$/;"	m	class:ParticleSystem
+passive_message	worldmap.h	/^    bool passive_message;$/;"	m	struct:WorldMapNS::WorldMap::Level
+passive_message	worldmap.h	/^  std::string passive_message;$/;"	m	class:WorldMapNS::WorldMap
+passive_message_timer	worldmap.h	/^  Timer passive_message_timer;$/;"	m	class:WorldMapNS::WorldMap
+path_ok	worldmap.cpp	/^WorldMap::path_ok(Direction direction, Point old_pos, Point* new_pos)$/;"	f	class:WorldMapNS::WorldMap
+pattern	lispreader.h	/^        pattern;$/;"	m	union:_lisp_object_t::__anon7	typeref:struct:_lisp_object_t::__anon7::__anon9
+pause_menu_frame	gameloop.h	/^  int pause_menu_frame;$/;"	m	class:GameSession
+period	timer.h	/^  unsigned int period;$/;"	m	class:Timer
+physic	badguy.h	/^  Physic physic;$/;"	m	class:BadGuy
+physic	player.h	/^  Physic physic;$/;"	m	class:Player
+physic	special.h	/^  Physic physic;$/;"	m	class:Upgrade
+pkgdatadir	Makefile	/^pkgdatadir = $(datadir)\/supertux$/;"	m
+pkgincludedir	Makefile	/^pkgincludedir = $(includedir)\/supertux$/;"	m
+pkglibdir	Makefile	/^pkglibdir = $(libdir)\/supertux$/;"	m
+play_music	music_manager.cpp	/^MusicManager::play_music(const MusicRef& musicref, int loops)$/;"	f	class:MusicManager
+play_music	world.cpp	/^World::play_music(int musictype)$/;"	f	class:World
+play_sound	sound.cpp	/^void play_sound(Mix_Chunk * snd, enum Sound_Speaker whichSpeaker)$/;"	f
+player_input_init	player.cpp	/^void player_input_init(player_input_type* pplayer_input)$/;"	f
+player_input_type	player.h	/^struct player_input_type$/;"	s
+player_status	scene.cpp	/^PlayerStatus player_status;$/;"	v
+pop_current	menu.cpp	/^Menu::pop_current()$/;"	f	class:Menu
+popup_timer	button.cpp	/^Timer Button::popup_timer;$/;"	m	class:Button	file:
+popup_timer	button.h	/^  static Timer popup_timer;$/;"	m	class:Button
+pos	lispreader.h	/^            int pos;$/;"	m	struct:__anon3::__anon4::__anon5
+pos_x	leveleditor.cpp	/^static int pos_x, cursor_x, cursor_y, fire;$/;"	v	file:
+pos_x	menu.h	/^  int pos_x;$/;"	m	class:Menu
+pos_y	menu.h	/^  int pos_y;$/;"	m	class:Menu
+power_of_two	texture.cpp	/^static int power_of_two(int input)$/;"	f	file:
+prefix	Makefile	/^prefix = \/home\/emscripten$/;"	m
+previous_base	player.h	/^  base_type  previous_base;$/;"	m	class:Player
+process_events	gameloop.cpp	/^GameSession::process_events()$/;"	f	class:GameSession
+process_load_game_menu	setup.cpp	/^bool process_load_game_menu()$/;"	f
+process_menu	gameloop.cpp	/^GameSession::process_menu()$/;"	f	class:GameSession
+process_options_menu	setup.cpp	/^void process_options_menu(void)$/;"	f
+program_transform_name	Makefile	/^program_transform_name = s,x,x,$/;"	m
+push_current	menu.cpp	/^Menu::push_current(Menu* pmenu)$/;"	f	class:Menu
+putpixel	screen.cpp	/^void putpixel(SDL_Surface *surface, int x, int y, Uint32 pixel)$/;"	f
+pxx_x	collision.cpp	/^int pxx_x=0, pxx_y=0;$/;"	v
+pxx_y	collision.cpp	/^int pxx_x=0, pxx_y=0;$/;"	v
+quit	worldmap.h	/^  bool quit;$/;"	m	class:WorldMapNS::WorldMap
+random_timer	title.cpp	/^static Timer random_timer;$/;"	v	file:
+read_bool	lispreader.cpp	/^LispReader::read_bool (const char* name, bool* b)$/;"	f	class:LispReader
+read_char_vector	lispreader.cpp	/^LispReader::read_char_vector (const char* name, std::vector<char>* vec)$/;"	f	class:LispReader
+read_float	lispreader.cpp	/^LispReader::read_float (const char* name, float* f)$/;"	f	class:LispReader
+read_int	lispreader.cpp	/^LispReader::read_int (const char* name, int* i)$/;"	f	class:LispReader
+read_int_vector	lispreader.cpp	/^LispReader::read_int_vector (const char* name, std::vector<int>* vec)$/;"	f	class:LispReader
+read_lisp	lispreader.cpp	/^LispReader::read_lisp(const char* name, lisp_object_t** b)$/;"	f	class:LispReader
+read_string	lispreader.cpp	/^LispReader::read_string (const char* name, std::string* str)$/;"	f	class:LispReader
+read_string_vector	lispreader.cpp	/^LispReader::read_string_vector (const char* name, std::vector<std::string>* vec)$/;"	f	class:LispReader
+real	lispreader.h	/^        float real;$/;"	m	union:_lisp_object_t::__anon7
+rect	button.h	/^  SDL_Rect rect;$/;"	m	class:Button
+rect	button.h	/^  SDL_Rect rect;$/;"	m	class:ButtonPanel
+rectcollision	collision.cpp	/^bool rectcollision(const base_type& one, const base_type& two)$/;"	f
+rectcollision_offset	collision.cpp	/^bool rectcollision_offset(const base_type& one, const base_type& two, float off_x, float off_y)$/;"	f
+red	screen.h	/^  int red, green, blue;$/;"	m	struct:Color
+red_text	globals.cpp	/^Text* red_text;$/;"	v
+refcount	music_manager.h	/^    int refcount;$/;"	m	class:MusicManager::MusicResource
+reload	texture.cpp	/^Surface::reload()$/;"	f	class:Surface
+reload_all	texture.cpp	/^Surface::reload_all()$/;"	f	class:Surface
+removable	badguy.h	/^  bool removable;$/;"	m	class:BadGuy
+remove_me	badguy.cpp	/^BadGuy::remove_me()$/;"	f	class:BadGuy
+remove_me	special.cpp	/^Bullet::remove_me()$/;"	f	class:Bullet
+remove_me	special.cpp	/^Upgrade::remove_me()$/;"	f	class:Upgrade
+remove_powerups	player.cpp	/^Player::remove_powerups()$/;"	f	class:Player
+reset	physic.cpp	/^Physic::reset()$/;"	f	class:Physic
+reset	scene.cpp	/^void PlayerStatus::reset()$/;"	f	class:PlayerStatus
+reset	sprite.cpp	/^Sprite::reset()$/;"	f	class:Sprite
+reset_points	level.h	/^  std::vector<ResetPoint> reset_points;$/;"	m	class:Level
+resize	texture.cpp	/^Surface::resize(int w_, int h_)$/;"	f	class:Surface
+resize	texture.cpp	/^int SurfaceImpl::resize(int w_, int h_)$/;"	f	class:SurfaceImpl
+restart_level	gameloop.cpp	/^GameSession::restart_level()$/;"	f	class:GameSession
+reverse_dir	worldmap.cpp	/^Direction reverse_dir(Direction direction)$/;"	f	namespace:WorldMapNS
+right	player.h	/^  int right;$/;"	m	struct:PlayerKeymap
+right	player.h	/^  int right;$/;"	m	struct:player_input_type
+run	gameloop.cpp	/^GameSession::run()$/;"	f	class:GameSession
+safe_timer	player.h	/^  Timer safe_timer;$/;"	m	class:Player
+save	level.cpp	/^Level::save(const std::string& subset, int level)$/;"	f	class:Level
+save	level.cpp	/^void LevelSubset::save()$/;"	f	class:LevelSubset
+save_game_menu	menu.cpp	/^Menu* save_game_menu = 0;$/;"	v
+save_hs	high_scores.cpp	/^void save_hs(int score)$/;"	f
+save_subset_settings_menu	leveleditor.cpp	/^void save_subset_settings_menu()$/;"	f
+saveconfig	configfile.cpp	/^void saveconfig (void)$/;"	f
+savegame	worldmap.cpp	/^WorldMap::savegame(const std::string& filename)$/;"	f	class:WorldMapNS::WorldMap
+savegame_file	worldmap.h	/^  std::string savegame_file;$/;"	m	class:WorldMapNS::WorldMap
+sbindir	Makefile	/^sbindir = ${exec_prefix}\/sbin$/;"	m
+score	scene.h	/^  int  score;$/;"	m	struct:PlayerStatus
+score_multiplier	scene.h	/^  int  score_multiplier;$/;"	m	struct:PlayerStatus
+screen	globals.cpp	/^SDL_Surface * screen;$/;"	v
+scroll_x	scene.cpp	/^float scroll_x;$/;"	v
+scrolling	world.cpp	/^void World::scrolling(double frame_ratio)$/;"	f	class:World
+scrolling_timer	world.h	/^  Timer scrolling_timer;$/;"	m	class:World
+sdl_surface	texture.h	/^  SDL_Surface* sdl_surface;$/;"	m	class:SurfaceImpl
+sdl_surface_from_file	texture.cpp	/^sdl_surface_from_file(const std::string& file, int use_alpha)$/;"	f
+sdl_surface_from_sdl_surface	texture.cpp	/^sdl_surface_from_sdl_surface(SDL_Surface* sdl_surf, int use_alpha)$/;"	f
+sdl_surface_part_from_file	texture.cpp	/^sdl_surface_part_from_file(const std::string& file, int x, int y, int w, int h,  int use_alpha)$/;"	f
+search_for	lispreader.cpp	/^LispReader::search_for(const char* name)$/;"	f	class:LispReader
+seen	badguy.h	/^  bool seen;$/;"	m	class:BadGuy
+select_objects_menu	leveleditor.cpp	/^static Menu* select_objects_menu;$/;"	v	file:
+select_objects_menu_effect	leveleditor.cpp	/^static Timer select_objects_menu_effect;$/;"	v	file:
+select_tilegroup_menu	leveleditor.cpp	/^static Menu* select_tilegroup_menu;$/;"	v	file:
+select_tilegroup_menu_effect	leveleditor.cpp	/^static Timer select_tilegroup_menu_effect;$/;"	v	file:
+selected_game_object	leveleditor.cpp	/^static GameObject* selected_game_object;$/;"	v	file:
+selection	leveleditor.cpp	/^static square selection;$/;"	v	file:
+session	supertux.cpp	/^GameSession *session=NULL;$/;"	v
+set_acceleration	physic.cpp	/^Physic::set_acceleration(float nax, float nay)$/;"	f	class:Physic
+set_acceleration_x	physic.cpp	/^Physic::set_acceleration_x(float nax)$/;"	f	class:Physic
+set_acceleration_y	physic.cpp	/^Physic::set_acceleration_y(float nay)$/;"	f	class:Physic
+set_active	button.h	/^  void set_active(bool active) { active ? state = BUTTON_NONE : state = BUTTON_DEACTIVE; };$/;"	f	class:Button
+set_button_size	button.cpp	/^void ButtonPanel::set_button_size(int w, int h)$/;"	f	class:ButtonPanel
+set_current	menu.cpp	/^Menu::set_current(Menu* menu)$/;"	f	class:Menu
+set_current	mousecursor.h	/^    static void set_current(MouseCursor* pcursor) {  current_ = pcursor; };$/;"	f	class:MouseCursor
+set_current	world.h	/^  static void set_current(World* w) { current_ = w; }$/;"	f	class:World
+set_defaults	world.cpp	/^World::set_defaults()$/;"	f	class:World
+set_direction	worldmap.h	/^  void set_direction(Direction d) { input_direction = d; }$/;"	f	class:WorldMapNS::Tux
+set_game_object	button.h	/^  void set_game_object(GameObject* game_object_) { game_object = game_object_; }$/;"	f	class:Button
+set_last_clicked	button.h	/^  void set_last_clicked(unsigned int last)$/;"	f	class:ButtonPanel
+set_levels_as_solved	worldmap.h	/^  void set_levels_as_solved()$/;"	f	class:WorldMapNS::WorldMap
+set_map_file	worldmap.cpp	/^WorldMap::set_map_file(std::string mapfile)$/;"	f	class:WorldMapNS::WorldMap
+set_mid	mousecursor.cpp	/^void MouseCursor::set_mid(int x, int y)$/;"	f	class:MouseCursor
+set_pos	menu.cpp	/^void Menu::set_pos(int x, int y, float rw, float rh)$/;"	f	class:Menu
+set_sprite	badguy.cpp	/^BadGuy::set_sprite(Sprite* left, Sprite* right) $/;"	f	class:BadGuy
+set_state	mousecursor.cpp	/^void MouseCursor::set_state(int nstate)$/;"	f	class:MouseCursor
+set_tile_pos	worldmap.h	/^  void  set_tile_pos(Point p) { tile_pos = p; } $/;"	f	class:WorldMapNS::Tux
+set_velocity	physic.cpp	/^Physic::set_velocity(float nvx, float nvy)$/;"	f	class:Physic
+set_velocity_x	physic.cpp	/^Physic::set_velocity_x(float nvx)$/;"	f	class:Physic
+set_velocity_y	physic.cpp	/^Physic::set_velocity_y(float nvy)$/;"	f	class:Physic
+seticon	setup.cpp	/^void seticon(void)$/;"	f
+shadow_chars	text.h	/^  Surface* shadow_chars;$/;"	m	class:Text
+shape	gameobjs.h	/^  int shape;$/;"	m	class:BouncyBrick
+sharedstatedir	Makefile	/^sharedstatedir = ${prefix}\/com$/;"	m
+shortcut	button.h	/^  SDLKey shortcut;$/;"	m	class:Button
+show_fps	globals.cpp	/^bool show_fps;$/;"	v
+show_info	button.h	/^  bool show_info;$/;"	m	class:Button
+show_minimap	leveleditor.cpp	/^static bool show_minimap;$/;"	v	file:
+show_selections	leveleditor.cpp	/^static bool show_selections;$/;"	v	file:
+silver_text	globals.cpp	/^Text* silver_text;$/;"	v
+simulate	particlesystem.cpp	/^void CloudParticleSystem::simulate(float elapsed_time)$/;"	f	class:CloudParticleSystem
+simulate	particlesystem.cpp	/^void SnowParticleSystem::simulate(float elapsed_time)$/;"	f	class:SnowParticleSystem
+size	player.h	/^  int size;$/;"	m	class:Player
+skid_left	player.h	/^  Sprite* skid_left;$/;"	m	struct:PlayerSprite
+skid_right	player.h	/^  Sprite* skid_right;$/;"	m	struct:PlayerSprite
+skidding_timer	player.h	/^  Timer skidding_timer;$/;"	m	class:Player
+slotinfo	gameloop.cpp	/^std::string slotinfo(int slot)$/;"	f
+smalltux	player.cpp	/^PlayerSprite smalltux;$/;"	v
+smalltux_gameover	player.cpp	/^Sprite* smalltux_gameover;$/;"	v
+smalltux_sprite	worldmap.h	/^  Surface* smalltux_sprite;$/;"	m	class:WorldMapNS::Tux
+smalltux_star	player.cpp	/^Sprite* smalltux_star;$/;"	v
+snowimages	particlesystem.h	/^    Surface* snowimages[3];$/;"	m	class:SnowParticleSystem
+solid	tile.h	/^  bool solid;$/;"	m	class:Tile
+solved	worldmap.h	/^    bool solved;$/;"	m	struct:WorldMapNS::WorldMap::Level
+song	worldmap.h	/^  MusicRef song;$/;"	m	class:WorldMapNS::WorldMap
+song_title	level.h	/^  std::string song_title;$/;"	m	class:Level
+soundfilenames	sound.cpp	/^char * soundfilenames[NUM_SOUNDS] = {$/;"	v
+sounds	sound.cpp	/^Mix_Chunk * sounds[NUM_SOUNDS];$/;"	v
+south	worldmap.h	/^    bool south;$/;"	m	struct:WorldMapNS::WorldMap::Level
+south	worldmap.h	/^  bool south;$/;"	m	class:WorldMapNS::Tile
+speed	particlesystem.h	/^        float speed;$/;"	m	class:CloudParticleSystem::CloudParticle
+speed	particlesystem.h	/^        float speed;$/;"	m	class:SnowParticleSystem::SnowParticle
+sprite	worldmap.h	/^  Surface* sprite;$/;"	m	class:WorldMapNS::Tile
+sprite_left	badguy.h	/^  Sprite*   sprite_left;$/;"	m	class:BadGuy
+sprite_manager	resources.cpp	/^SpriteManager* sprite_manager = 0;$/;"	v
+sprite_right	badguy.h	/^  Sprite*   sprite_right;$/;"	m	class:BadGuy
+sprites	sprite_manager.h	/^  Sprites sprites;$/;"	m	class:SpriteManager
+square	leveleditor.h	/^struct square$/;"	s
+squish	badguy.cpp	/^BadGuy::squish(Player* player)$/;"	f	class:BadGuy
+squish_me	badguy.cpp	/^BadGuy::squish_me(Player* player)$/;"	f	class:BadGuy
+squishcount	badguy.h	/^  int squishcount; \/\/\/ number of times this enemy was squiched$/;"	m	class:BadGuy
+srcdir	Makefile	/^srcdir = .$/;"	m
+st_abort	setup.cpp	/^void st_abort(const std::string& reason, const std::string& details)$/;"	f
+st_audio_setup	setup.cpp	/^void st_audio_setup(void)$/;"	f
+st_dir	globals.cpp	/^char *st_dir, *st_save_dir;$/;"	v
+st_directory_setup	setup.cpp	/^void st_directory_setup(void)$/;"	f
+st_general_free	setup.cpp	/^void st_general_free(void)$/;"	f
+st_general_setup	setup.cpp	/^void st_general_setup(void)$/;"	f
+st_get_ticks	timer.cpp	/^unsigned int st_get_ticks(void)$/;"	f
+st_gl_mode	gameloop.h	/^  int st_gl_mode;$/;"	m	class:GameSession
+st_joystick_setup	setup.cpp	/^void st_joystick_setup(void)$/;"	f
+st_menu	setup.cpp	/^void st_menu(void)$/;"	f
+st_pause_count	timer.cpp	/^unsigned int st_pause_ticks, st_pause_count;$/;"	v
+st_pause_ticks	timer.cpp	/^unsigned int st_pause_ticks, st_pause_count;$/;"	v
+st_pause_ticks_init	timer.cpp	/^void st_pause_ticks_init(void)$/;"	f
+st_pause_ticks_start	timer.cpp	/^void st_pause_ticks_start(void)$/;"	f
+st_pause_ticks_started	timer.cpp	/^bool st_pause_ticks_started(void)$/;"	f
+st_pause_ticks_stop	timer.cpp	/^void st_pause_ticks_stop(void)$/;"	f
+st_save_dir	globals.cpp	/^char *st_dir, *st_save_dir;$/;"	v
+st_shutdown	setup.cpp	/^void st_shutdown(void)$/;"	f
+st_video_setup	setup.cpp	/^void st_video_setup(void)$/;"	f
+st_video_setup_gl	setup.cpp	/^void st_video_setup_gl(void)$/;"	f
+st_video_setup_sdl	setup.cpp	/^void st_video_setup_sdl(void)$/;"	f
+stand_left	player.h	/^  Sprite* stand_left;$/;"	m	struct:PlayerSprite
+stand_right	player.h	/^  Sprite* stand_right;$/;"	m	struct:PlayerSprite
+start	timer.cpp	/^Timer::start(unsigned int period_)$/;"	f	class:Timer
+start_button	globals.h	/^  int start_button;$/;"	m	struct:JoystickKeymap
+start_pos_x	level.h	/^  int start_pos_x;$/;"	m	class:Level
+start_pos_y	level.h	/^  int start_pos_y;$/;"	m	class:Level
+start_timers	gameloop.cpp	/^GameSession::start_timers()$/;"	f	class:GameSession
+start_x	worldmap.h	/^  int start_x;$/;"	m	class:WorldMapNS::WorldMap
+start_y	worldmap.h	/^  int start_y;$/;"	m	class:WorldMapNS::WorldMap
+started	timer.cpp	/^Timer::started()$/;"	f	class:Timer
+state	button.h	/^  ButtonState state;$/;"	m	class:Button
+state	mousecursor.cpp	/^int MouseCursor::state()$/;"	f	class:MouseCursor
+state_before_click	mousecursor.h	/^    int state_before_click;$/;"	m	class:MouseCursor
+stay_on_platform	badguy.h	/^  bool stay_on_platform;$/;"	m	class:BadGuy
+stay_on_platform	badguy.h	/^  bool stay_on_platform;$/;"	m	struct:BadGuyData
+stop	timer.cpp	/^Timer::stop()$/;"	f	class:Timer
+stop	worldmap.cpp	/^Tux::stop()$/;"	f	class:WorldMapNS::Tux
+stop	worldmap.h	/^  bool stop;$/;"	m	class:WorldMapNS::Tile
+string	lispreader.h	/^        char *string;$/;"	m	union:_lisp_object_t::__anon7
+string	lispreader.h	/^        string;$/;"	m	union:__anon3::__anon4	typeref:struct:__anon3::__anon4::__anon5
+string_list_active	type.cpp	/^char* string_list_active(string_list_type* pstring_list)$/;"	f
+string_list_add_item	type.cpp	/^void string_list_add_item(string_list_type* pstring_list,const  char* str)$/;"	f
+string_list_copy	type.cpp	/^void string_list_copy(string_list_type* pstring_list, string_list_type pstring_list_orig)$/;"	f
+string_list_find	type.cpp	/^int string_list_find(string_list_type* pstring_list,const  char* str)$/;"	f
+string_list_free	type.cpp	/^void string_list_free(string_list_type* pstring_list)$/;"	f
+string_list_init	type.cpp	/^void string_list_init(string_list_type* pstring_list)$/;"	f
+string_list_sort	type.cpp	/^void string_list_sort(string_list_type* pstring_list)$/;"	f
+string_list_type	type.h	/^struct string_list_type$/;"	s
+string_to_bonus	scene.cpp	/^PlayerStatus::BonusType string_to_bonus(const std::string& str)$/;"	f
+string_to_direction	worldmap.cpp	/^string_to_direction(const std::string& directory)$/;"	f	namespace:WorldMapNS
+sub	lispreader.h	/^            struct _lisp_object_t *sub;$/;"	m	struct:_lisp_object_t::__anon7::__anon9	typeref:struct:_lisp_object_t::__anon7::__anon9::_lisp_object_t
+subdir	Makefile	/^subdir = src$/;"	m
+subset	gameloop.h	/^  std::string subset;$/;"	m	class:GameSession
+subset_load_menu	leveleditor.cpp	/^static Menu* subset_load_menu;$/;"	v	file:
+subset_new_menu	leveleditor.cpp	/^static Menu* subset_new_menu;$/;"	v	file:
+subset_settings_menu	leveleditor.cpp	/^static Menu* subset_settings_menu;$/;"	v	file:
+supertux_DEPENDENCIES	Makefile	/^supertux_DEPENDENCIES =$/;"	m
+supertux_LDADD	Makefile	/^supertux_LDADD = $(LDADD)$/;"	m
+supertux_LDFLAGS	Makefile	/^supertux_LDFLAGS =$/;"	m
+supertux_OBJECTS	Makefile	/^supertux_OBJECTS = $(am_supertux_OBJECTS)$/;"	m
+supertux_SOURCES	Makefile	/^supertux_SOURCES = \\$/;"	m
+surface	texture.h	/^  SDL_Surface* surface;$/;"	m	class:SurfaceData
+surfaces	sprite.h	/^  std::vector<Surface*> surfaces;$/;"	m	class:Sprite
+surfaces	texture.cpp	/^Surface::Surfaces Surface::surfaces;$/;"	m	class:Surface	file:
+surfaces	texture.h	/^  static Surfaces surfaces;$/;"	m	class:Surface
+sysconfdir	Makefile	/^sysconfdir = ${prefix}\/etc$/;"	m
+tag	button.h	/^  int tag;$/;"	m	class:Button
+target	Makefile	/^target = i686-pc-linux-gnu$/;"	m
+target_alias	Makefile	/^target_alias = $/;"	m
+target_cpu	Makefile	/^target_cpu = i686$/;"	m
+target_menu	menu.h	/^  Menu* target_menu;$/;"	m	class:MenuItem
+target_os	Makefile	/^target_os = linux-gnu$/;"	m
+target_vendor	Makefile	/^target_vendor = pc$/;"	m
+teleport_dest_x	worldmap.h	/^	 int teleport_dest_x;$/;"	m	struct:WorldMapNS::WorldMap::Level
+teleport_dest_y	worldmap.h	/^	 int teleport_dest_y;$/;"	m	struct:WorldMapNS::WorldMap::Level
+teleport_message	worldmap.h	/^	 std::string teleport_message;$/;"	m	struct:WorldMapNS::WorldMap::Level
+test_goal_tile_function	collision.cpp	/^static void* test_goal_tile_function(Tile* tile)$/;"	f	file:
+text	menu.h	/^  char *text;$/;"	m	class:MenuItem
+texture	particlesystem.h	/^        Surface* texture;$/;"	m	class:ParticleSystem::Particle
+tile	gameobjs.h	/^  Tile* tile;$/;"	m	class:BrokenBrick
+tile	leveleditor.cpp	/^  unsigned int tile;$/;"	m	struct:TileOrObject	file:
+tile_manager	worldmap.h	/^  TileManager* tile_manager;$/;"	m	class:WorldMapNS::WorldMap
+tile_pos	worldmap.h	/^  Point tile_pos;$/;"	m	class:WorldMapNS::Tux
+tilegroups	tile.h	/^  static std::set<TileGroup>* tilegroups() { if(!instance_) { instance_ = new TileManager(); } return tilegroups_ ? tilegroups_ : tilegroups_ = new std::set<TileGroup>; }$/;"	f	class:TileManager
+tilegroups_	tile.cpp	/^std::set<TileGroup>* TileManager::tilegroups_  = 0;$/;"	m	class:TileManager	file:
+tilegroups_	tile.h	/^  static std::set<TileGroup>* tilegroups_;$/;"	m	class:TileManager
+tilegroups_map	leveleditor.cpp	/^static ButtonPanelMap tilegroups_map;$/;"	v	file:
+tilemap	worldmap.h	/^  std::vector<int> tilemap;$/;"	m	class:WorldMapNS::WorldMap
+tiles	tile.h	/^  std::vector<Tile*> tiles;$/;"	m	class:TileManager
+tiles	tile.h	/^  std::vector<int> tiles;$/;"	m	struct:TileGroup
+tiles	worldmap.h	/^  Tiles tiles;$/;"	m	class:WorldMapNS::TileManager
+tiletestfunction	collision.h	/^typedef void* (*tiletestfunction)(Tile* tile);$/;"	t
+time	sprite.h	/^  float time;$/;"	m	class:Sprite
+time	timer.h	/^  unsigned int time;$/;"	m	class:Timer
+time_left	gameloop.h	/^  Timer time_left;$/;"	m	class:GameSession
+time_left	level.h	/^  int time_left;$/;"	m	class:Level
+timer	badguy.h	/^  Timer timer;$/;"	m	class:BadGuy
+timer	gameobjs.h	/^  Timer timer;$/;"	m	class:BrokenBrick
+timer	gameobjs.h	/^  Timer timer;$/;"	m	class:FloatingScore
+timer	mousecursor.h	/^    Timer timer;$/;"	m	class:MouseCursor
+title	level.h	/^    std::string title;$/;"	m	class:LevelSubset
+title	title.cpp	/^void title(void)$/;"	f
+title	worldmap.h	/^    std::string title;$/;"	m	struct:WorldMapNS::WorldMap::Level
+title_loop	title.cpp	/^void title_loop()$/;"	f
+title_session	title.cpp	/^static GameSession* title_session;$/;"	v	file:
+toggled	menu.h	/^  int toggled;$/;"	m	class:MenuItem
+token_length	lispreader.cpp	/^static int token_length = 0;$/;"	v	file:
+token_string	lispreader.cpp	/^static char token_string[MAX_TOKEN_LENGTH + 1] = "";$/;"	v	file:
+top_builddir	Makefile	/^top_builddir = ..$/;"	m
+top_distdir	Makefile	/^top_distdir = ..$/;"	m
+top_srcdir	Makefile	/^top_srcdir = ..$/;"	m
+tot_frames	mousecursor.h	/^    int cur_frame, tot_frames;$/;"	m	class:MouseCursor
+transform	Makefile	/^transform = $(program_transform_name)$/;"	m
+trybreakbrick	world.cpp	/^World::trybreakbrick(float x, float y, bool small, Direction col_side)$/;"	f	class:World
+trybumpbadguy	world.cpp	/^World::trybumpbadguy(float x, float y)$/;"	f	class:World
+tryemptybox	world.cpp	/^World::tryemptybox(float x, float y, Direction col_side)$/;"	f	class:World
+trygrabdistro	world.cpp	/^World::trygrabdistro(float x, float y, int bounciness)$/;"	f	class:World
+tux	world.h	/^  Player tux;$/;"	m	class:World
+tux	worldmap.h	/^  Tux* tux;$/;"	m	class:WorldMapNS::WorldMap
+tux_life	player.cpp	/^Surface* tux_life;$/;"	v
+type	badguy.h	/^  std::string type() { return "BadGuy"; };$/;"	f	class:BadGuy
+type	gameobjs.h	/^  std::string type() { return "BouncyBrick"; };$/;"	f	class:BouncyBrick
+type	gameobjs.h	/^  std::string type() { return "BouncyDistro"; };$/;"	f	class:BouncyDistro
+type	gameobjs.h	/^  std::string type() { return "BrokenBrick"; };$/;"	f	class:BrokenBrick
+type	gameobjs.h	/^  std::string type() { return "FloatingScore"; };$/;"	f	class:FloatingScore
+type	lispreader.h	/^            int type;$/;"	m	struct:_lisp_object_t::__anon7::__anon9
+type	lispreader.h	/^    int type;$/;"	m	struct:__anon3
+type	lispreader.h	/^    int type;$/;"	m	struct:_lisp_object_t
+type	player.h	/^  std::string type() { return "Player";};$/;"	f	class:Player
+type	special.h	/^  std::string type() { return "Bullet"; };$/;"	f	class:Bullet
+type	special.h	/^  std::string type() { return "Upgrade"; };$/;"	f	class:Upgrade
+type	texture.h	/^  ConstructorType type;$/;"	m	class:SurfaceData
+under_solid	player.cpp	/^Player::under_solid()$/;"	f	class:Player
+unget_char	lispreader.h	/^            void (*unget_char) (char c, void *data);$/;"	m	struct:__anon3::__anon4::__anon6
+unloadshared	resources.cpp	/^void unloadshared(void)$/;"	f
+up	player.h	/^  int up;$/;"	m	struct:player_input_type
+update	sprite.cpp	/^Sprite::update(float \/*delta*\/)$/;"	f	class:Sprite
+update	worldmap.cpp	/^Tux::update(float delta)$/;"	f	class:WorldMapNS::Tux
+update	worldmap.cpp	/^WorldMap::update(float delta)$/;"	f	class:WorldMapNS::WorldMap
+update_level_settings_menu	leveleditor.cpp	/^void update_level_settings_menu()$/;"	f
+update_load_save_game_menu	setup.cpp	/^void update_load_save_game_menu(Menu* pmenu)$/;"	f
+update_rect	screen.cpp	/^void update_rect(SDL_Surface *scr, Sint32 x, Sint32 y, Sint32 w, Sint32 h)$/;"	f
+update_subset_settings_menu	leveleditor.cpp	/^void update_subset_settings_menu()$/;"	f
+update_time	gameloop.h	/^  unsigned int update_time;$/;"	m	class:GameSession
+update_time	title.cpp	/^static unsigned int update_time;$/;"	v	file:
+update_time	worldmap.h	/^  unsigned int update_time;$/;"	m	class:WorldMapNS::WorldMap
+updatescreen	screen.cpp	/^void updatescreen(void)$/;"	f
+upgrades	world.h	/^  std::vector<Upgrade> upgrades;$/;"	m	class:World
+usage	setup.cpp	/^void usage(char * prog, int ret)$/;"	f
+use_alpha	texture.h	/^  int use_alpha;$/;"	m	class:SurfaceData
+use_fullscreen	globals.cpp	/^bool use_fullscreen;$/;"	v
+use_gl	globals.cpp	/^bool use_gl;$/;"	v
+use_joystick	globals.cpp	/^bool use_joystick;$/;"	v
+use_music	sound.cpp	/^bool use_music = true;    \/* handle music on\/off menu and command-line option *\/$/;"	v
+use_sound	sound.cpp	/^bool use_sound = true;    \/* handle sound on\/off menu and command-line option *\/$/;"	v
+use_st_ticks	timer.h	/^  bool use_st_ticks;$/;"	m	class:Timer
+v	lispreader.h	/^      } v;$/;"	m	struct:__anon3	typeref:union:__anon3::__anon4
+v	lispreader.h	/^      } v;$/;"	m	struct:_lisp_object_t	typeref:union:_lisp_object_t::__anon7
+value	gameobjs.h	/^  int value;$/;"	m	class:FloatingScore
+virtual_height	particlesystem.h	/^    float virtual_width, virtual_height;$/;"	m	class:ParticleSystem
+virtual_width	particlesystem.h	/^    float virtual_width, virtual_height;$/;"	m	class:ParticleSystem
+vx	physic.h	/^    float vx, vy;$/;"	m	class:Physic
+vy	physic.h	/^    float vx, vy;$/;"	m	class:Physic
+w	bitmask.h	/^  int w,h;$/;"	m	struct:bitmask
+w	text.h	/^  int w;$/;"	m	class:Text
+w	texture.h	/^  int w; $/;"	m	class:Surface
+w	texture.h	/^  int w;$/;"	m	class:SurfaceData
+w	texture.h	/^  int w;$/;"	m	class:SurfaceImpl
+wait_for_event	globals.cpp	/^int wait_for_event(SDL_Event& event,unsigned int min_delay, unsigned int max_delay, bool empty_events)$/;"	f
+walk_left	player.h	/^  Sprite* walk_left;$/;"	m	struct:PlayerSprite
+walk_right	player.h	/^  Sprite* walk_right;$/;"	m	struct:PlayerSprite
+walking	title.cpp	/^static bool walking;$/;"	v	file:
+water	tile.h	/^  bool water;$/;"	m	class:Tile
+west	worldmap.h	/^    bool west;$/;"	m	struct:WorldMapNS::WorldMap::Level
+west	worldmap.h	/^  bool west;$/;"	m	class:WorldMapNS::Tile
+white_big_text	globals.cpp	/^Text* white_big_text;$/;"	v
+white_small_text	globals.cpp	/^Text* white_small_text;$/;"	v
+white_text	globals.cpp	/^Text* white_text;$/;"	v
+width	level.h	/^  int width;$/;"	m	class:Level
+width	type.h	/^  float width;$/;"	m	struct:base_type
+width	worldmap.h	/^  int width;$/;"	m	class:WorldMapNS::WorldMap
+wm_session	worldmap.cpp	/^GameSession *wm_session;$/;"	m	namespace:WorldMapNS	file:
+wm_session_loop	worldmap.cpp	/^void wm_session_loop()$/;"	f	namespace:WorldMapNS
+world	gameloop.h	/^  World* world;$/;"	m	class:GameSession
+worldmap	globals.cpp	/^WorldMapNS::WorldMap *worldmap;$/;"	v
+worldmap	worldmap.h	/^  WorldMap* worldmap;$/;"	m	class:WorldMapNS::Tux
+worldmap_list	title.cpp	/^static string_list_type worldmap_list;$/;"	v	file:
+worldmap_loop	globals.cpp	/^void worldmap_loop()$/;"	f
+worldmap_menu	menu.cpp	/^Menu* worldmap_menu  = 0;$/;"	v
+write_boolean	lispreader.cpp	/^LispWriter::write_boolean (const char* name, bool b)$/;"	f	class:LispWriter
+write_float	lispreader.cpp	/^LispWriter::write_float (const char* name, float f)$/;"	f	class:LispWriter
+write_int	lispreader.cpp	/^LispWriter::write_int (const char* name, int i)$/;"	f	class:LispWriter
+write_lisp_obj	lispreader.cpp	/^LispWriter::write_lisp_obj(const char* name, lisp_object_t* lst)$/;"	f	class:LispWriter
+write_string	lispreader.cpp	/^LispWriter::write_string (const char* name, const char* str)$/;"	f	class:LispWriter
+write_symbol	lispreader.cpp	/^LispWriter::write_symbol (const char* name, const char* symname)$/;"	f	class:LispWriter
+x	badguy.h	/^  int x;$/;"	m	struct:BadGuyData
+x	level.h	/^  int x;$/;"	m	struct:ResetPoint
+x	particlesystem.h	/^        float x, y;$/;"	m	class:ParticleSystem::Particle
+x	texture.h	/^  int x;$/;"	m	class:SurfaceData
+x	type.h	/^  float x;$/;"	m	struct:base_type
+x	worldmap.h	/^    int x;$/;"	m	struct:WorldMapNS::WorldMap::Level
+x	worldmap.h	/^  int x;$/;"	m	struct:WorldMapNS::Point
+x1	leveleditor.h	/^  int x1, y1, x2, y2;$/;"	m	struct:square
+x2	leveleditor.h	/^  int x1, y1, x2, y2;$/;"	m	struct:square
+x_axis	globals.h	/^  int x_axis;$/;"	m	struct:JoystickKeymap
+x_hotspot	sprite.h	/^  int x_hotspot;$/;"	m	class:Sprite
+xm	type.h	/^  float xm;$/;"	m	struct:base_type
+y	badguy.h	/^  int y;$/;"	m	struct:BadGuyData
+y	level.h	/^  int y;$/;"	m	struct:ResetPoint
+y	particlesystem.h	/^        float x, y;$/;"	m	class:ParticleSystem::Particle
+y	texture.h	/^  int y;$/;"	m	class:SurfaceData
+y	type.h	/^  float y;$/;"	m	struct:base_type
+y	worldmap.h	/^    int y;$/;"	m	struct:WorldMapNS::WorldMap::Level
+y	worldmap.h	/^  int y;$/;"	m	struct:WorldMapNS::Point
+y1	leveleditor.h	/^  int x1, y1, x2, y2;$/;"	m	struct:square
+y2	leveleditor.h	/^  int x1, y1, x2, y2;$/;"	m	struct:square
+y_axis	globals.h	/^  int y_axis;$/;"	m	struct:JoystickKeymap
+y_hotspot	sprite.h	/^  int y_hotspot;$/;"	m	class:Sprite
+yellow_nums	globals.cpp	/^Text* yellow_nums;$/;"	v
+ym	type.h	/^  float ym;$/;"	m	struct:base_type
+~Button	button.cpp	/^Button::~Button()$/;"	f	class:Button
+~ButtonPanel	button.cpp	/^ButtonPanel::~ButtonPanel()$/;"	f	class:ButtonPanel
+~CloudParticleSystem	particlesystem.cpp	/^CloudParticleSystem::~CloudParticleSystem()$/;"	f	class:CloudParticleSystem
+~GameObject	type.h	/^  virtual ~GameObject() {};$/;"	f	class:GameObject
+~GameSession	gameloop.cpp	/^GameSession::~GameSession()$/;"	f	class:GameSession
+~Level	level.cpp	/^Level::~Level()$/;"	f	class:Level
+~LevelSubset	level.cpp	/^LevelSubset::~LevelSubset()$/;"	f	class:LevelSubset
+~Menu	menu.cpp	/^Menu::~Menu()$/;"	f	class:Menu
+~MouseCursor	mousecursor.cpp	/^MouseCursor::~MouseCursor()$/;"	f	class:MouseCursor
+~MusicManager	music_manager.cpp	/^MusicManager::~MusicManager()$/;"	f	class:MusicManager
+~MusicRef	musicref.cpp	/^MusicRef::~MusicRef()$/;"	f	class:MusicRef
+~MusicResource	music_manager.cpp	/^MusicManager::MusicResource::~MusicResource()$/;"	f	class:MusicManager::MusicResource
+~Particle	particlesystem.h	/^        virtual ~Particle()$/;"	f	class:ParticleSystem::Particle
+~ParticleSystem	particlesystem.cpp	/^ParticleSystem::~ParticleSystem()$/;"	f	class:ParticleSystem
+~Physic	physic.cpp	/^Physic::~Physic()$/;"	f	class:Physic
+~SnowParticleSystem	particlesystem.cpp	/^SnowParticleSystem::~SnowParticleSystem()$/;"	f	class:SnowParticleSystem
+~Sprite	sprite.cpp	/^Sprite::~Sprite()$/;"	f	class:Sprite
+~SpriteManager	sprite_manager.cpp	/^SpriteManager::~SpriteManager()$/;"	f	class:SpriteManager
+~Surface	texture.cpp	/^Surface::~Surface()$/;"	f	class:Surface
+~SurfaceData	texture.cpp	/^SurfaceData::~SurfaceData()$/;"	f	class:SurfaceData
+~SurfaceImpl	texture.cpp	/^SurfaceImpl::~SurfaceImpl()$/;"	f	class:SurfaceImpl
+~SurfaceOpenGL	texture.cpp	/^SurfaceOpenGL::~SurfaceOpenGL()$/;"	f	class:SurfaceOpenGL
+~SurfaceSDL	texture.cpp	/^SurfaceSDL::~SurfaceSDL()$/;"	f	class:SurfaceSDL
+~Text	text.cpp	/^Text::~Text()$/;"	f	class:Text
+~Tile	tile.cpp	/^Tile::~Tile()$/;"	f	class:Tile
+~Tile	worldmap.cpp	/^Tile::~Tile()$/;"	f	class:WorldMapNS::Tile
+~TileManager	tile.cpp	/^TileManager::~TileManager()$/;"	f	class:TileManager
+~TileManager	worldmap.cpp	/^TileManager::~TileManager()$/;"	f	class:WorldMapNS::TileManager
+~Tux	worldmap.cpp	/^Tux::~Tux()$/;"	f	class:WorldMapNS::Tux
+~Upgrade	special.h	/^  ~Upgrade() {};$/;"	f	class:Upgrade
+~World	world.cpp	/^World::~World()$/;"	f	class:World
+~WorldMap	worldmap.cpp	/^WorldMap::~WorldMap()$/;"	f	class:WorldMapNS::WorldMap

@@ -1,0 +1,10 @@
+Making all in src
+make[1]: 正在进入目录 `/home/xingxingpan/work/emscripten/WebSupertux/src'
+/home/xingxingpan/work/emscripten/latest/emscripten/em++  -g -O2 -D_GNU_SOURCE=1 -D_REENTRANT -DNOOPENGL -DDATA_PREFIX='"/home/emscripten/share/supertux"'   -o supertux  badguy.o bitmask.o button.o collision.o configfile.o intro.o gameloop.o globals.o high_scores.o level.o leveleditor.o lispreader.o menu.o particlesystem.o physic.o player.o scene.o screen.o setup.o sound.o special.o supertux.o text.o texture.o timer.o title.o type.o world.o worldmap.o tile.o mousecursor.o resources.o gameobjs.o sprite.o sprite_manager.o music_manager.o musicref.o  -lz -lSDL_image -lSDL_mixer  -lSDL
+emcc: warning: -Ox flags ignored, since not generating JavaScript
+make[1]:正在离开目录 `/home/xingxingpan/work/emscripten/WebSupertux/src'
+Making all in data
+make[1]: 正在进入目录 `/home/xingxingpan/work/emscripten/WebSupertux/data'
+make[1]: *** 没有规则可以创建“all-am”需要的目标“images/icon.xpm”。 停止。
+make[1]:正在离开目录 `/home/xingxingpan/work/emscripten/WebSupertux/data'
+make: *** [all-recursive] 错误 1

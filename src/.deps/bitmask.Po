@@ -1,0 +1,199 @@
+bitmask.o: bitmask.cpp \
+  /home/xingxingpan/work/emscripten/latest/emscripten/system/include/libc/stdlib.h \
+  /home/xingxingpan/work/emscripten/latest/emscripten/system/include/libc/machine/ieeefp.h \
+  /home/xingxingpan/work/emscripten/latest/emscripten/system/include/libc/_ansi.h \
+  /home/xingxingpan/work/emscripten/latest/emscripten/system/include/libc/newlib.h \
+  /home/xingxingpan/work/emscripten/latest/emscripten/system/include/libc/sys/config.h \
+  /home/xingxingpan/work/emscripten/latest/emscripten/system/include/libc/sys/features.h \
+  /home/xingxingpan/work/emscripten/latest/emscripten/system/include/libc/stddef.h \
+  /home/xingxingpan/work/emscripten/latest/emscripten/system/include/libc/sys/reent.h \
+  /home/xingxingpan/work/emscripten/latest/emscripten/system/include/libc/sys/_types.h \
+  /home/xingxingpan/work/emscripten/latest/emscripten/system/include/libc/machine/_types.h \
+  /home/xingxingpan/work/emscripten/latest/emscripten/system/include/libc/machine/_default_types.h \
+  /home/xingxingpan/work/emscripten/latest/emscripten/system/include/libc/sys/lock.h \
+  /home/xingxingpan/work/emscripten/latest/emscripten/system/include/libc/machine/stdlib.h \
+  /home/xingxingpan/work/emscripten/latest/emscripten/system/include/libc/alloca.h \
+  /home/xingxingpan/work/emscripten/latest/emscripten/system/include/libc/stdio.h \
+  /home/xingxingpan/work/emscripten/latest/emscripten/system/include/libc/stdarg.h \
+  /home/xingxingpan/work/emscripten/latest/emscripten/system/include/libc/sys/types.h \
+  /home/xingxingpan/work/emscripten/latest/emscripten/system/include/libc/machine/types.h \
+  /home/xingxingpan/work/emscripten/latest/emscripten/system/include/libc/stdint.h \
+  /home/xingxingpan/work/emscripten/latest/emscripten/system/include/libc/sys/sched.h \
+  /home/xingxingpan/work/emscripten/latest/emscripten/system/include/libc/sys/stdio.h \
+  bitmask.h \
+  /home/xingxingpan/work/emscripten/latest/emscripten/system/include/SDL/SDL.h \
+  /home/xingxingpan/work/emscripten/latest/emscripten/system/include/SDL/SDL_main.h \
+  /home/xingxingpan/work/emscripten/latest/emscripten/system/include/SDL/SDL_stdinc.h \
+  /home/xingxingpan/work/emscripten/latest/emscripten/system/include/SDL/SDL_config.h \
+  /home/xingxingpan/work/emscripten/latest/emscripten/system/include/SDL/SDL_platform.h \
+  /home/xingxingpan/work/emscripten/latest/emscripten/system/include/SDL/begin_code.h \
+  /home/xingxingpan/work/emscripten/latest/emscripten/system/include/SDL/close_code.h \
+  /home/xingxingpan/work/emscripten/latest/emscripten/system/include/SDL/SDL_config_minimal.h \
+  /home/xingxingpan/work/emscripten/latest/emscripten/system/include/libc/string.h \
+  /home/xingxingpan/work/emscripten/latest/emscripten/system/include/libc/sys/string.h \
+  /home/xingxingpan/work/emscripten/latest/emscripten/system/include/libc/strings.h \
+  /home/xingxingpan/work/emscripten/latest/emscripten/system/include/libc/inttypes.h \
+  /home/xingxingpan/work/emscripten/latest/emscripten/system/include/SDL/SDL_assert.h \
+  /home/xingxingpan/work/emscripten/latest/emscripten/system/include/SDL/SDL_atomic.h \
+  /home/xingxingpan/work/emscripten/latest/emscripten/system/include/SDL/SDL_audio.h \
+  /home/xingxingpan/work/emscripten/latest/emscripten/system/include/SDL/SDL_error.h \
+  /home/xingxingpan/work/emscripten/latest/emscripten/system/include/SDL/SDL_endian.h \
+  /home/xingxingpan/work/emscripten/latest/emscripten/system/include/SDL/SDL_mutex.h \
+  /home/xingxingpan/work/emscripten/latest/emscripten/system/include/SDL/SDL_thread.h \
+  /home/xingxingpan/work/emscripten/latest/emscripten/system/include/SDL/SDL_rwops.h \
+  /home/xingxingpan/work/emscripten/latest/emscripten/system/include/SDL/SDL_clipboard.h \
+  /home/xingxingpan/work/emscripten/latest/emscripten/system/include/SDL/SDL_cpuinfo.h \
+  /home/xingxingpan/work/emscripten/latest/emscripten/system/include/SDL/SDL_events.h \
+  /home/xingxingpan/work/emscripten/latest/emscripten/system/include/SDL/SDL_video.h \
+  /home/xingxingpan/work/emscripten/latest/emscripten/system/include/SDL/SDL_pixels.h \
+  /home/xingxingpan/work/emscripten/latest/emscripten/system/include/SDL/SDL_rect.h \
+  /home/xingxingpan/work/emscripten/latest/emscripten/system/include/SDL/SDL_surface.h \
+  /home/xingxingpan/work/emscripten/latest/emscripten/system/include/SDL/SDL_blendmode.h \
+  /home/xingxingpan/work/emscripten/latest/emscripten/system/include/SDL/SDL_keyboard.h \
+  /home/xingxingpan/work/emscripten/latest/emscripten/system/include/SDL/SDL_keycode.h \
+  /home/xingxingpan/work/emscripten/latest/emscripten/system/include/SDL/SDL_scancode.h \
+  /home/xingxingpan/work/emscripten/latest/emscripten/system/include/SDL/SDL_mouse.h \
+  /home/xingxingpan/work/emscripten/latest/emscripten/system/include/SDL/SDL_joystick.h \
+  /home/xingxingpan/work/emscripten/latest/emscripten/system/include/SDL/SDL_quit.h \
+  /home/xingxingpan/work/emscripten/latest/emscripten/system/include/SDL/SDL_gesture.h \
+  /home/xingxingpan/work/emscripten/latest/emscripten/system/include/SDL/SDL_touch.h \
+  /home/xingxingpan/work/emscripten/latest/emscripten/system/include/SDL/SDL_hints.h \
+  /home/xingxingpan/work/emscripten/latest/emscripten/system/include/SDL/SDL_loadso.h \
+  /home/xingxingpan/work/emscripten/latest/emscripten/system/include/SDL/SDL_log.h \
+  /home/xingxingpan/work/emscripten/latest/emscripten/system/include/SDL/SDL_power.h \
+  /home/xingxingpan/work/emscripten/latest/emscripten/system/include/SDL/SDL_render.h \
+  /home/xingxingpan/work/emscripten/latest/emscripten/system/include/SDL/SDL_timer.h \
+  /home/xingxingpan/work/emscripten/latest/emscripten/system/include/SDL/SDL_version.h \
+  /home/xingxingpan/work/emscripten/latest/emscripten/system/include/SDL/SDL_compat.h
+
+/home/xingxingpan/work/emscripten/latest/emscripten/system/include/libc/stdlib.h:
+
+/home/xingxingpan/work/emscripten/latest/emscripten/system/include/libc/machine/ieeefp.h:
+
+/home/xingxingpan/work/emscripten/latest/emscripten/system/include/libc/_ansi.h:
+
+/home/xingxingpan/work/emscripten/latest/emscripten/system/include/libc/newlib.h:
+
+/home/xingxingpan/work/emscripten/latest/emscripten/system/include/libc/sys/config.h:
+
+/home/xingxingpan/work/emscripten/latest/emscripten/system/include/libc/sys/features.h:
+
+/home/xingxingpan/work/emscripten/latest/emscripten/system/include/libc/stddef.h:
+
+/home/xingxingpan/work/emscripten/latest/emscripten/system/include/libc/sys/reent.h:
+
+/home/xingxingpan/work/emscripten/latest/emscripten/system/include/libc/sys/_types.h:
+
+/home/xingxingpan/work/emscripten/latest/emscripten/system/include/libc/machine/_types.h:
+
+/home/xingxingpan/work/emscripten/latest/emscripten/system/include/libc/machine/_default_types.h:
+
+/home/xingxingpan/work/emscripten/latest/emscripten/system/include/libc/sys/lock.h:
+
+/home/xingxingpan/work/emscripten/latest/emscripten/system/include/libc/machine/stdlib.h:
+
+/home/xingxingpan/work/emscripten/latest/emscripten/system/include/libc/alloca.h:
+
+/home/xingxingpan/work/emscripten/latest/emscripten/system/include/libc/stdio.h:
+
+/home/xingxingpan/work/emscripten/latest/emscripten/system/include/libc/stdarg.h:
+
+/home/xingxingpan/work/emscripten/latest/emscripten/system/include/libc/sys/types.h:
+
+/home/xingxingpan/work/emscripten/latest/emscripten/system/include/libc/machine/types.h:
+
+/home/xingxingpan/work/emscripten/latest/emscripten/system/include/libc/stdint.h:
+
+/home/xingxingpan/work/emscripten/latest/emscripten/system/include/libc/sys/sched.h:
+
+/home/xingxingpan/work/emscripten/latest/emscripten/system/include/libc/sys/stdio.h:
+
+bitmask.h:
+
+/home/xingxingpan/work/emscripten/latest/emscripten/system/include/SDL/SDL.h:
+
+/home/xingxingpan/work/emscripten/latest/emscripten/system/include/SDL/SDL_main.h:
+
+/home/xingxingpan/work/emscripten/latest/emscripten/system/include/SDL/SDL_stdinc.h:
+
+/home/xingxingpan/work/emscripten/latest/emscripten/system/include/SDL/SDL_config.h:
+
+/home/xingxingpan/work/emscripten/latest/emscripten/system/include/SDL/SDL_platform.h:
+
+/home/xingxingpan/work/emscripten/latest/emscripten/system/include/SDL/begin_code.h:
+
+/home/xingxingpan/work/emscripten/latest/emscripten/system/include/SDL/close_code.h:
+
+/home/xingxingpan/work/emscripten/latest/emscripten/system/include/SDL/SDL_config_minimal.h:
+
+/home/xingxingpan/work/emscripten/latest/emscripten/system/include/libc/string.h:
+
+/home/xingxingpan/work/emscripten/latest/emscripten/system/include/libc/sys/string.h:
+
+/home/xingxingpan/work/emscripten/latest/emscripten/system/include/libc/strings.h:
+
+/home/xingxingpan/work/emscripten/latest/emscripten/system/include/libc/inttypes.h:
+
+/home/xingxingpan/work/emscripten/latest/emscripten/system/include/SDL/SDL_assert.h:
+
+/home/xingxingpan/work/emscripten/latest/emscripten/system/include/SDL/SDL_atomic.h:
+
+/home/xingxingpan/work/emscripten/latest/emscripten/system/include/SDL/SDL_audio.h:
+
+/home/xingxingpan/work/emscripten/latest/emscripten/system/include/SDL/SDL_error.h:
+
+/home/xingxingpan/work/emscripten/latest/emscripten/system/include/SDL/SDL_endian.h:
+
+/home/xingxingpan/work/emscripten/latest/emscripten/system/include/SDL/SDL_mutex.h:
+
+/home/xingxingpan/work/emscripten/latest/emscripten/system/include/SDL/SDL_thread.h:
+
+/home/xingxingpan/work/emscripten/latest/emscripten/system/include/SDL/SDL_rwops.h:
+
+/home/xingxingpan/work/emscripten/latest/emscripten/system/include/SDL/SDL_clipboard.h:
+
+/home/xingxingpan/work/emscripten/latest/emscripten/system/include/SDL/SDL_cpuinfo.h:
+
+/home/xingxingpan/work/emscripten/latest/emscripten/system/include/SDL/SDL_events.h:
+
+/home/xingxingpan/work/emscripten/latest/emscripten/system/include/SDL/SDL_video.h:
+
+/home/xingxingpan/work/emscripten/latest/emscripten/system/include/SDL/SDL_pixels.h:
+
+/home/xingxingpan/work/emscripten/latest/emscripten/system/include/SDL/SDL_rect.h:
+
+/home/xingxingpan/work/emscripten/latest/emscripten/system/include/SDL/SDL_surface.h:
+
+/home/xingxingpan/work/emscripten/latest/emscripten/system/include/SDL/SDL_blendmode.h:
+
+/home/xingxingpan/work/emscripten/latest/emscripten/system/include/SDL/SDL_keyboard.h:
+
+/home/xingxingpan/work/emscripten/latest/emscripten/system/include/SDL/SDL_keycode.h:
+
+/home/xingxingpan/work/emscripten/latest/emscripten/system/include/SDL/SDL_scancode.h:
+
+/home/xingxingpan/work/emscripten/latest/emscripten/system/include/SDL/SDL_mouse.h:
+
+/home/xingxingpan/work/emscripten/latest/emscripten/system/include/SDL/SDL_joystick.h:
+
+/home/xingxingpan/work/emscripten/latest/emscripten/system/include/SDL/SDL_quit.h:
+
+/home/xingxingpan/work/emscripten/latest/emscripten/system/include/SDL/SDL_gesture.h:
+
+/home/xingxingpan/work/emscripten/latest/emscripten/system/include/SDL/SDL_touch.h:
+
+/home/xingxingpan/work/emscripten/latest/emscripten/system/include/SDL/SDL_hints.h:
+
+/home/xingxingpan/work/emscripten/latest/emscripten/system/include/SDL/SDL_loadso.h:
+
+/home/xingxingpan/work/emscripten/latest/emscripten/system/include/SDL/SDL_log.h:
+
+/home/xingxingpan/work/emscripten/latest/emscripten/system/include/SDL/SDL_power.h:
+
+/home/xingxingpan/work/emscripten/latest/emscripten/system/include/SDL/SDL_render.h:
+
+/home/xingxingpan/work/emscripten/latest/emscripten/system/include/SDL/SDL_timer.h:
+
+/home/xingxingpan/work/emscripten/latest/emscripten/system/include/SDL/SDL_version.h:
+
+/home/xingxingpan/work/emscripten/latest/emscripten/system/include/SDL/SDL_compat.h:
