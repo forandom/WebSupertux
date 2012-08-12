@@ -1,11 +1,5 @@
 Making all in src
 make[1]: 正在进入目录 `/home/xingxingpan/work/emscripten/WebSupertux/src'
-if /home/xingxingpan/work/emscripten/latest/emscripten/em++ -DPACKAGE_NAME=\"SuperTux\" -DPACKAGE_TARNAME=\"supertux\" -DPACKAGE_VERSION=\"0.1.3\" -DPACKAGE_STRING=\"SuperTux\ 0.1.3\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE=\"supertux\" -DVERSION=\"0.1.3\" -DHAVE_DIRENT_H=1 -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_UNISTD_H=1 -DHAVE_LIBSDL_MIXER=1 -DHAVE_LIBSDL_IMAGE=1 -DHAVE_LIBZ=1 -DHAVE_MKDIR=1 -DHAVE_STRDUP=1 -DHAVE_STRSTR=1  -I. -I.     -g -O2 -D_GNU_SOURCE=1 -D_REENTRANT -DNOOPENGL -DDATA_PREFIX='"/home/emscripten/share/supertux"' -MT title.o -MD -MP -MF ".deps/title.Tpo" \
-	  -c -o title.o `test -f 'title.cpp' || echo './'`title.cpp; \
-	then mv -f ".deps/title.Tpo" ".deps/title.Po"; \
-	else rm -f ".deps/title.Tpo"; exit 1; \
-	fi
-emcc: warning: -Ox flags ignored, since not generating JavaScript
 /home/xingxingpan/work/emscripten/latest/emscripten/em++  -g -O2 -D_GNU_SOURCE=1 -D_REENTRANT -DNOOPENGL -DDATA_PREFIX='"/home/emscripten/share/supertux"'   -o supertux  badguy.o bitmask.o button.o collision.o configfile.o intro.o gameloop.o globals.o high_scores.o level.o leveleditor.o lispreader.o menu.o particlesystem.o physic.o player.o scene.o screen.o setup.o sound.o special.o supertux.o text.o texture.o timer.o title.o type.o world.o worldmap.o tile.o mousecursor.o resources.o gameobjs.o sprite.o sprite_manager.o music_manager.o musicref.o  -lz -lSDL_image -lSDL_mixer  -lSDL
 emcc: warning: -Ox flags ignored, since not generating JavaScript
 make[1]:正在离开目录 `/home/xingxingpan/work/emscripten/WebSupertux/src'

@@ -18,7 +18,7 @@ if [ -f ${old_file} ];then
 	src_file=`cat resource-rel`
 	echo emcc ${new_file} -o ${target_file}.html `for file in ${src_file};do echo --preload-file ${file} " ";done` "\n" &> /tmp/emcc.log
 	echo "compile command is save in /tmp/emcc.log"
-	emcc -O1 ${new_file} -o index.html `for file in ${src_file};do echo --preload-file ${file} " ";done`
+	emcc -O2 ${new_file} -o index.html `for file in ${src_file};do echo --preload-file ${file} " ";done`
 else
 	echo "${old_file} dose not exists" 
 	echo "usage: compile_to_html filename"
